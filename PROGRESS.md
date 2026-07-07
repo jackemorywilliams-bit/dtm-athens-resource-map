@@ -40,10 +40,15 @@
 - [x] Known limitation logged: verify.py's padded bounding box (lat 33.80–34.08) can admit near-boundary Oconee County addresses (Watkinsville ≈ 33.86). A rectangle cannot trace the county line; the QA gate and orchestrator review are the backstop. Tightening requires a real county-boundary source — human call if wanted.
 
 ### 2D UI
-- [ ] (in progress)
+- [x] ui-developer built index.html (first spawn died on a connection error before writing; second spawn completed). build.py exit 0, 23 entries inlined; injection marker preserved.
+- [x] Orchestrator verification (static, from the built file): `fetch(` appears only in the FILE-1 comment; `map.locate()` exists only inside the Near-me click handler; `typeof L === "undefined"` guard + markercluster fallback confirmed; Project Safe renders with no address/coords and no Directions link; per-day hours render; unverified-badge path present (currently unexercised — all entries verified); mailto suggest-update on every card and popup; OSM attribution in map control and footer; built page 53KB.
+- [x] Report-only reviews (run as general-purpose stand-ins — the new reviewer agent definitions load at next restart): web-integrator review PASS on all 4 dimensions (external surface / embed safety / lightweight / DTM fit, WCAG-AA+ contrast); security review clean on all 4 dimensions (privacy incl. Project Safe confidentiality, provenance — inlined data byte-identical to resources.json, integrity — diff touched only index.html + docs, secrets/XSS — esc() applied at every interpolation site).
+- [x] Accepted low-severity hardening applied by ui-developer and independently re-verified by orchestrator: SRI hashes on the three markercluster CDN assets (recomputed from live downloads — match), deferred CDN scripts with DOMContentLoaded init (fallback guard intact), https?://-only website links. Committed "ui: warm interactive map."
 
 ### 2E Finalize
-- [ ] EDITING_GUIDE.md, README.md, commit log, diagnostic summary.
+- [x] EDITING_GUIDE.md — browser-only editing for a non-coder staffer: field meanings, source-or-blank rule, category list, lastVerified bumping, how the Action catches a broken comma before it reaches the live map, revert via History, call-down pointer.
+- [x] README.md — architecture, enforcement model, HSDS crosswalk, build/verify usage, GitHub Pages steps, iframe embed snippet, DEPLOY-1 (publishing is a manual human step after phone verification).
+- [x] Docs committed; full commit log in session summary. PREFLIGHT_REPORT.md, QA_REPORT.md, PROGRESS.md all saved.
 
 ## Needs human call-down
 
