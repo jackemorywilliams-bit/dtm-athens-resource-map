@@ -3,29 +3,850 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DTM Athens Resource Map</title>
+<title>Athens Resource Map — Downtown Ministries</title>
+<meta name="description" content="A warm, welcoming map of food, shelter, healthcare, and helping hands in Athens-Clarke County, Georgia. From Downtown Ministries.">
+
+<!-- Leaflet core (ARCH-1: CDN only; clustering below is a progressive enhancement) -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"
+      integrity="sha384-pmjIAcz2bAn0xukfxADbZIb3t8oRT9Sv0rvO+BR5Csr6Dhqq+nZs59P0pPKQJkEV" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"
+      integrity="sha384-wgw+aLYNQ7dlhK47ZPK7FRACiq7ROZwgFNg0m04avm4CaXS+Z9Y7nMu8yNjBKYC+" crossorigin="anonymous">
+
 <style>
-  /* PLACEHOLDER PAGE — the ui-developer agent replaces this file in Session 2.
-     The injection marker in the script below MUST be preserved in the source file. */
-  body { font-family: system-ui, sans-serif; margin: 2rem; color: #222; }
-  .note { background: #fff8e6; border: 1px solid #e6d9a8; padding: 1rem; border-radius: 8px; }
-  li { margin: .5rem 0; }
+  :root {
+    --ink: #2b2118;          /* deep warm brown — body text */
+    --ink-soft: #5b4a3f;     /* softer brown — secondary text (AA on cream) */
+    --cream: #fdf8f0;        /* page background */
+    --card: #ffffff;
+    --green: #2e5d43;        /* deep fellowship green — primary */
+    --green-dark: #234733;
+    --terracotta: #b34a26;   /* warm accent (AA on white for text) */
+    --amber-bg: #fff3d6;     /* gentle "call to confirm" badge */
+    --amber-ink: #6b4d00;
+    --line: #e8dfd2;
+    --focus: #1a6fb5;
+    --radius: 14px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.55;
+    font-size: 1rem;
+  }
+
+  a { color: var(--green); }
+  a:hover { color: var(--green-dark); }
+
+  :focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: -999px;
+    top: 0;
+    background: var(--green);
+    color: #fff;
+    padding: .75rem 1rem;
+    z-index: 2000;
+    border-radius: 0 0 8px 0;
+  }
+  .skip-link:focus { left: 0; color: #fff; }
+
+  /* ---------- Header ---------- */
+  header.site {
+    background: var(--green);
+    color: #fff;
+    padding: 1.25rem 1rem 1.4rem;
+  }
+  header.site .inner { max-width: 72rem; margin: 0 auto; }
+  header.site h1 {
+    margin: 0 0 .3rem;
+    font-size: 1.45rem;
+    line-height: 1.25;
+  }
+  header.site .kicker {
+    margin: 0 0 .35rem;
+    font-size: .85rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #d7e6dc;
+  }
+  header.site p.welcome {
+    margin: 0;
+    max-width: 46rem;
+    color: #f0f5ef;
+  }
+  .disclaimer {
+    margin: .6rem 0 0;
+    font-size: .95rem;
+    color: #ffe9b8;
+    max-width: 46rem;
+  }
+
+  main { max-width: 72rem; margin: 0 auto; padding: 1rem; }
+
+  /* ---------- Filters ---------- */
+  .filters {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  .filters .row { display: flex; flex-wrap: wrap; gap: .75rem; }
+  .field { flex: 1 1 14rem; min-width: 0; }
+  .field label {
+    display: block;
+    font-weight: 600;
+    font-size: .95rem;
+    margin-bottom: .3rem;
+  }
+  .field input[type="search"],
+  .field select {
+    width: 100%;
+    min-height: 48px;
+    padding: .6rem .75rem;
+    font-size: 1rem;
+    color: var(--ink);
+    background: #fff;
+    border: 1.5px solid #b9ab99;
+    border-radius: 10px;
+  }
+
+  fieldset.chips {
+    border: 0;
+    margin: .9rem 0 0;
+    padding: 0;
+  }
+  fieldset.chips legend {
+    font-weight: 600;
+    font-size: .95rem;
+    padding: 0;
+    margin-bottom: .4rem;
+  }
+  .chip-wrap { display: flex; flex-wrap: wrap; gap: .5rem; }
+  button.chip {
+    font: inherit;
+    font-size: .95rem;
+    min-height: 44px;
+    padding: .45rem .9rem;
+    border-radius: 999px;
+    border: 1.5px solid var(--green);
+    background: #fff;
+    color: var(--green-dark);
+    cursor: pointer;
+  }
+  button.chip[aria-pressed="true"] {
+    background: var(--green);
+    color: #fff;
+  }
+  button.chip:hover { border-color: var(--green-dark); }
+
+  .filter-foot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .75rem;
+    margin-top: .9rem;
+  }
+  #result-count { font-weight: 600; }
+  button.linkish {
+    font: inherit;
+    background: none;
+    border: 0;
+    color: var(--green);
+    text-decoration: underline;
+    cursor: pointer;
+    min-height: 44px;
+    padding: .25rem .4rem;
+  }
+
+  /* ---------- Layout: map + list ---------- */
+  .content { display: block; }
+
+  .map-panel {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 1rem;
+  }
+  #map {
+    height: 55vh;
+    min-height: 320px;
+    width: 100%;
+    background: #e9e4da;
+  }
+  .map-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .6rem;
+    padding: .6rem .8rem;
+    border-top: 1px solid var(--line);
+  }
+  button.near-me {
+    font: inherit;
+    font-weight: 600;
+    min-height: 48px;
+    padding: .5rem 1.1rem;
+    border-radius: 10px;
+    border: 0;
+    background: var(--terracotta);
+    color: #fff;
+    cursor: pointer;
+  }
+  button.near-me:hover { background: #99401f; }
+  #locate-msg { font-size: .95rem; color: var(--ink-soft); }
+
+  .map-fallback {
+    padding: 1rem;
+    background: var(--amber-bg);
+    color: var(--amber-ink);
+    display: none;
+  }
+
+  /* ---------- Cards ---------- */
+  #list-heading { font-size: 1.2rem; margin: 0 0 .6rem; }
+  ul.cards { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
+
+  article.card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1rem 1.1rem 1.1rem;
+  }
+  .card h3 { margin: 0 0 .2rem; font-size: 1.15rem; line-height: 1.3; }
+  .tags { display: flex; flex-wrap: wrap; gap: .35rem; margin: .35rem 0 .5rem; }
+  .tag {
+    font-size: .8rem;
+    font-weight: 600;
+    padding: .15rem .6rem;
+    border-radius: 999px;
+    background: #e7efe9;
+    color: var(--green-dark);
+  }
+  .tag.pop { background: #f3e9e2; color: #7c3a1d; }
+  .badge-confirm {
+    display: inline-block;
+    font-size: .85rem;
+    padding: .2rem .65rem;
+    border-radius: 999px;
+    background: var(--amber-bg);
+    color: var(--amber-ink);
+    margin: .1rem 0 .4rem;
+  }
+  .offmap {
+    display: inline-block;
+    font-size: .85rem;
+    color: var(--ink-soft);
+    margin: .1rem 0 .4rem;
+  }
+
+  .card p.desc { margin: .3rem 0 .6rem; }
+
+  .next-step {
+    background: #eef5f0;
+    border-left: 4px solid var(--green);
+    border-radius: 0 10px 10px 0;
+    padding: .6rem .8rem;
+    margin: .6rem 0;
+  }
+  .next-step strong { color: var(--green-dark); }
+
+  dl.details { margin: .6rem 0 0; }
+  dl.details div { display: flex; gap: .5rem; margin: .3rem 0; }
+  dl.details dt {
+    flex: 0 0 6.2rem;
+    font-weight: 600;
+    color: var(--ink-soft);
+    font-size: .95rem;
+  }
+  dl.details dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+  dd.hours span { display: block; }
+
+  .card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin-top: .8rem;
+  }
+  .card-actions a, .card-actions button {
+    font: inherit;
+    font-size: .95rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: .45rem .9rem;
+    border-radius: 10px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  a.act-call { background: var(--green); color: #fff; border: 0; }
+  a.act-call:hover { background: var(--green-dark); color: #fff; }
+  a.act-dir, button.act-map, a.act-web {
+    background: #fff;
+    color: var(--green-dark);
+    border: 1.5px solid var(--green);
+  }
+  a.act-dir:hover, button.act-map:hover, a.act-web:hover { border-color: var(--green-dark); }
+  a.act-suggest {
+    background: none;
+    border: 0;
+    color: var(--ink-soft);
+    text-decoration: underline;
+  }
+  a.act-suggest:hover { color: var(--ink); }
+
+  .verified-note { font-size: .85rem; color: var(--ink-soft); margin-top: .5rem; }
+
+  .empty {
+    background: var(--card);
+    border: 1px dashed #c9bda9;
+    border-radius: var(--radius);
+    padding: 1.4rem;
+    text-align: center;
+    display: none;
+  }
+
+  /* ---------- Popups & tooltips ---------- */
+  .leaflet-popup-content { font-family: inherit; font-size: .95rem; line-height: 1.45; margin: .8rem .9rem; }
+  .leaflet-popup-content h3 { margin: 0 0 .3rem; font-size: 1.05rem; }
+  .popup-next { background: #eef5f0; border-radius: 8px; padding: .4rem .55rem; margin: .4rem 0; }
+  .popup-row { margin: .25rem 0; }
+  .popup-row .lbl { font-weight: 600; color: var(--ink-soft); }
+  .popup-links { margin-top: .45rem; display: flex; flex-wrap: wrap; gap: .35rem .8rem; }
+  .popup-links a { font-weight: 600; }
+  .popup-confirm {
+    display: inline-block; font-size: .8rem; padding: .1rem .5rem;
+    border-radius: 999px; background: var(--amber-bg); color: var(--amber-ink);
+    margin-bottom: .3rem;
+  }
+  .tip-cats { color: #555; font-size: .85rem; }
+
+  footer.site {
+    max-width: 72rem;
+    margin: 1.5rem auto 0;
+    padding: 1rem 1rem 2rem;
+    color: var(--ink-soft);
+    font-size: .95rem;
+    border-top: 1px solid var(--line);
+  }
+  footer.site a { color: var(--green-dark); }
+
+  /* ---------- Wider screens ---------- */
+  @media (min-width: 900px) {
+    header.site h1 { font-size: 1.8rem; }
+    .content {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 1rem;
+      align-items: start;
+    }
+    .map-panel {
+      position: sticky;
+      top: 1rem;
+      margin-bottom: 0;
+      order: 2;
+    }
+    #map { height: 62vh; }
+    .list-panel { order: 1; }
+  }
 </style>
 </head>
 <body>
-<h1>DTM Athens Resource Map</h1>
-<p class="note">Placeholder UI — scaffold only. The real map is built in Session 2.
-Things change — please call ahead before you go.</p>
-<ul id="list"></ul>
+<a class="skip-link" href="#list-heading">Skip to the list of resources</a>
+
+<header class="site">
+  <div class="inner">
+    <p class="kicker">Downtown Ministries &middot; Athens, Georgia</p>
+    <h1>Athens Resource Map</h1>
+    <p class="welcome">You're not alone. Here are neighbors, churches, and helping hands
+      across Athens-Clarke County ready to share a meal, a bed, or a next step —
+      whatever today calls for.</p>
+    <p class="disclaimer">Things change — please call ahead before you go.</p>
+  </div>
+</header>
+
+<main>
+  <!-- Filters -->
+  <section class="filters" aria-label="Find a resource">
+    <div class="row">
+      <div class="field">
+        <label for="search">Search</label>
+        <input type="search" id="search" placeholder="Try &ldquo;meal&rdquo;, &ldquo;shelter&rdquo;, &ldquo;GED&rdquo;&hellip;" autocomplete="off">
+      </div>
+      <div class="field">
+        <label for="pop-filter">Who it serves</label>
+        <select id="pop-filter">
+          <option value="">Everyone</option>
+        </select>
+      </div>
+    </div>
+    <fieldset class="chips">
+      <legend>What kind of help?</legend>
+      <div class="chip-wrap" id="chips"></div>
+    </fieldset>
+    <div class="filter-foot">
+      <span id="result-count" role="status" aria-live="polite"></span>
+      <button type="button" class="linkish" id="clear-filters">Clear all filters</button>
+    </div>
+  </section>
+
+  <div class="content">
+    <!-- Map -->
+    <section class="map-panel" aria-label="Map of resources">
+      <div id="map" role="application" aria-label="Interactive map of Athens resources"></div>
+      <div class="map-fallback" id="map-fallback">
+        The map couldn't load just now — no worries. Every resource is listed right
+        below, with phone numbers and addresses.
+      </div>
+      <div class="map-toolbar">
+        <button type="button" class="near-me" id="near-me">Near me</button>
+        <span id="locate-msg" role="status" aria-live="polite"></span>
+      </div>
+    </section>
+
+    <!-- List -->
+    <section class="list-panel" aria-label="List of resources">
+      <h2 id="list-heading">Places that can help</h2>
+      <ul class="cards" id="cards"></ul>
+      <div class="empty" id="empty">
+        <p><strong>Nothing matched those filters — but help is still here.</strong></p>
+        <p>Try clearing a filter or two, or search for something simpler like
+          &ldquo;food&rdquo; or &ldquo;shelter&rdquo;.</p>
+        <button type="button" class="linkish" id="empty-clear">Show everything</button>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site">
+  <p>Made with love by <a href="https://downtownministries.org/" target="_blank" rel="noopener">Downtown Ministries</a>.
+    Spot something out of date? <a id="footer-suggest" href="mailto:admin@downtownministries.org?subject=Update%20for%20the%20Athens%20Resource%20Map">Suggest an update</a> —
+    it helps the whole neighborhood.</p>
+  <p>Map data &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>.
+    Things change — please call ahead before you go.</p>
+</footer>
+
+<script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script defer src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"
+        integrity="sha384-eXVCORTRlv4FUUgS/xmOyr66XBVraen8ATNLMESp92FKXLAMiKkerixTiBvXriZr" crossorigin="anonymous"></script>
+
 <script>
-  // build.py replaces the marker below with the contents of resources.json.
-  const RESOURCES = /*==INJECT_RESOURCES==*/null;
-  const list = document.getElementById("list");
-  (RESOURCES || []).forEach(function (r) {
-    const li = document.createElement("li");
-    li.textContent = r.name + " — " + (r.categories || []).join(", ");
-    list.appendChild(li);
+"use strict";
+
+// FILE-1: build.py inlines resources.json here. Never fetch() at runtime.
+const RESOURCES = /*==INJECT_RESOURCES==*/null;
+
+// CDN scripts above are deferred (non-render-blocking). Deferred scripts run
+// before DOMContentLoaded, so by the time initApp runs, Leaflet is either
+// present or definitively unavailable — the typeof L guard in initMap still
+// works, and the list renders either way (UI-2).
+function initApp() {
+
+const DTM_EMAIL = "admin@downtownministries.org";
+const ATHENS_CENTER = [33.957, -83.376];
+
+/* ---------- small helpers ---------- */
+
+function esc(s) {
+  return String(s)
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+}
+
+// Contact fields are {value, source}; render only non-empty values.
+function val(field) {
+  if (!field || typeof field.value !== "string") return "";
+  return field.value.trim();
+}
+
+function telHref(phone) {
+  const digits = phone.replace(/[^\d+]/g, "");
+  return "tel:" + digits;
+}
+
+function hasGeo(r) {
+  return r.geo && typeof r.geo.lat === "number" && typeof r.geo.lng === "number";
+}
+
+function directionsUrl(r) {
+  if (hasGeo(r)) {
+    return "https://www.google.com/maps/dir/?api=1&destination=" +
+      r.geo.lat + "," + r.geo.lng;
+  }
+  const addr = val(r.contact && r.contact.address);
+  if (addr) {
+    return "https://www.google.com/maps/dir/?api=1&destination=" +
+      encodeURIComponent(addr);
+  }
+  return "";
+}
+
+function suggestUrl(r) {
+  return "mailto:" + DTM_EMAIL + "?subject=" +
+    encodeURIComponent("Update for " + r.name);
+}
+
+function hoursHtml(hours) {
+  // Hours may have per-day lines separated by newlines; keep them readable.
+  return hours.split(/\n/).map(function (line) {
+    return "<span>" + esc(line.trim()) + "</span>";
+  }).join("");
+}
+
+function prettyDate(iso) {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || "");
+  if (!m) return iso || "";
+  const months = ["January","February","March","April","May","June",
+                  "July","August","September","October","November","December"];
+  return months[Number(m[2]) - 1] + " " + Number(m[3]) + ", " + m[1];
+}
+
+const data = Array.isArray(RESOURCES) ? RESOURCES : [];
+
+/* ---------- filter state ---------- */
+
+const state = { query: "", cats: new Set(), pop: "" };
+
+function matches(r) {
+  if (state.cats.size > 0) {
+    const cats = r.categories || [];
+    // Chips match ANY value in the entry's categories array.
+    if (!cats.some(function (c) { return state.cats.has(c); })) return false;
+  }
+  if (state.pop) {
+    const pops = r.servesPopulation || [];
+    if (pops.indexOf(state.pop) === -1) return false;
+  }
+  if (state.query) {
+    const q = state.query.toLowerCase();
+    const hay = [
+      r.name, r.description, r.whatToBring, r.warmNextStep, r.busRoute,
+      (r.categories || []).join(" "),
+      (r.servesPopulation || []).join(" "),
+      val(r.contact && r.contact.address),
+      val(r.contact && r.contact.hours)
+    ].join(" ").toLowerCase();
+    if (hay.indexOf(q) === -1) return false;
+  }
+  return true;
+}
+
+/* ---------- build filter controls from the data ---------- */
+
+const chipWrap = document.getElementById("chips");
+const popSelect = document.getElementById("pop-filter");
+const searchInput = document.getElementById("search");
+
+(function buildControls() {
+  const cats = [];
+  const pops = [];
+  data.forEach(function (r) {
+    (r.categories || []).forEach(function (c) {
+      if (cats.indexOf(c) === -1) cats.push(c);
+    });
+    (r.servesPopulation || []).forEach(function (p) {
+      if (pops.indexOf(p) === -1) pops.push(p);
+    });
   });
+  cats.sort();
+  pops.sort();
+
+  cats.forEach(function (c) {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "chip";
+    b.textContent = c;
+    b.setAttribute("aria-pressed", "false");
+    b.addEventListener("click", function () {
+      if (state.cats.has(c)) { state.cats.delete(c); b.setAttribute("aria-pressed", "false"); }
+      else { state.cats.add(c); b.setAttribute("aria-pressed", "true"); }
+      refresh();
+    });
+    chipWrap.appendChild(b);
+  });
+
+  pops.forEach(function (p) {
+    const opt = document.createElement("option");
+    opt.value = p;
+    opt.textContent = p;
+    popSelect.appendChild(opt);
+  });
+})();
+
+searchInput.addEventListener("input", function () {
+  state.query = searchInput.value.trim();
+  refresh();
+});
+popSelect.addEventListener("change", function () {
+  state.pop = popSelect.value;
+  refresh();
+});
+
+function clearFilters() {
+  state.query = "";
+  state.pop = "";
+  state.cats.clear();
+  searchInput.value = "";
+  popSelect.value = "";
+  chipWrap.querySelectorAll(".chip").forEach(function (b) {
+    b.setAttribute("aria-pressed", "false");
+  });
+  refresh();
+}
+document.getElementById("clear-filters").addEventListener("click", clearFilters);
+document.getElementById("empty-clear").addEventListener("click", clearFilters);
+
+/* ---------- list view (works even if the map never loads — UI-2) ---------- */
+
+const cardsEl = document.getElementById("cards");
+const emptyEl = document.getElementById("empty");
+const countEl = document.getElementById("result-count");
+
+function cardHtml(r) {
+  const phone = val(r.contact && r.contact.phone);
+  const address = val(r.contact && r.contact.address);
+  const hours = val(r.contact && r.contact.hours);
+  const website = val(r.contact && r.contact.website);
+  const dirs = directionsUrl(r);
+
+  let h = "";
+  h += "<h3>" + esc(r.name) + "</h3>";
+
+  h += '<div class="tags">' +
+    (r.categories || []).map(function (c) {
+      return '<span class="tag">' + esc(c) + "</span>";
+    }).join("") +
+    (r.servesPopulation || []).map(function (p) {
+      return '<span class="tag pop">' + esc(p) + "</span>";
+    }).join("") +
+    "</div>";
+
+  if (r.verified === false) {
+    h += '<span class="badge-confirm">Please call to confirm — we haven&rsquo;t double-checked this one yet</span> ';
+  }
+  if (!hasGeo(r)) {
+    h += '<span class="offmap">Not shown on the map' +
+      (phone ? " — a phone call is the best first step" : "") + '</span>';
+  }
+
+  if (r.description) h += '<p class="desc">' + esc(r.description) + "</p>";
+
+  if (r.warmNextStep) {
+    h += '<div class="next-step"><strong>A warm next step:</strong> ' +
+      esc(r.warmNextStep) + "</div>";
+  }
+
+  let dl = "";
+  if (phone) {
+    dl += '<div><dt>Phone</dt><dd><a href="' + esc(telHref(phone)) + '">' +
+      esc(phone) + "</a></dd></div>";
+  }
+  if (address) dl += "<div><dt>Address</dt><dd>" + esc(address) + "</dd></div>";
+  if (hours) dl += '<div><dt>Hours</dt><dd class="hours">' + hoursHtml(hours) + "</dd></div>";
+  if (r.whatToBring) dl += "<div><dt>What to bring</dt><dd>" + esc(r.whatToBring) + "</dd></div>";
+  if (r.busRoute) dl += "<div><dt>Bus route</dt><dd>" + esc(r.busRoute) + "</dd></div>";
+  if (website) {
+    // Only link http(s) URLs; anything else renders as plain text
+    // (defense-in-depth against e.g. a future javascript: value).
+    if (/^https?:\/\//i.test(website)) {
+      dl += '<div><dt>Website</dt><dd><a href="' + esc(website) +
+        '" target="_blank" rel="noopener">' + esc(website) + "</a></dd></div>";
+    } else {
+      dl += "<div><dt>Website</dt><dd>" + esc(website) + "</dd></div>";
+    }
+  }
+  if (dl) h += '<dl class="details">' + dl + "</dl>";
+
+  h += '<div class="card-actions">';
+  if (phone) h += '<a class="act-call" href="' + esc(telHref(phone)) + '">Call ' + esc(phone) + "</a>";
+  if (dirs) h += '<a class="act-dir" href="' + esc(dirs) + '" target="_blank" rel="noopener">Directions</a>';
+  if (hasGeo(r)) h += '<button type="button" class="act-map" data-id="' + esc(r.id) + '">Show on map</button>';
+  h += '<a class="act-suggest" href="' + esc(suggestUrl(r)) + '">Suggest an update</a>';
+  h += "</div>";
+
+  if (r.verified !== false && r.lastVerified) {
+    h += '<p class="verified-note">Details checked on ' + esc(prettyDate(r.lastVerified)) +
+      ". Things change — please call ahead before you go.</p>";
+  }
+  return h;
+}
+
+function renderList(visible) {
+  cardsEl.innerHTML = "";
+  visible.forEach(function (r) {
+    const li = document.createElement("li");
+    const art = document.createElement("article");
+    art.className = "card";
+    art.id = "card-" + r.id;
+    art.innerHTML = cardHtml(r);
+    li.appendChild(art);
+    cardsEl.appendChild(li);
+  });
+
+  emptyEl.style.display = visible.length === 0 ? "block" : "none";
+  countEl.textContent = visible.length === data.length
+    ? "Showing all " + data.length + " resources"
+    : "Showing " + visible.length + " of " + data.length + " resources";
+}
+
+// "Show on map" — delegate clicks from the list.
+cardsEl.addEventListener("click", function (ev) {
+  const btn = ev.target.closest("button.act-map");
+  if (!btn || !mapReady) return;
+  const id = btn.getAttribute("data-id");
+  const m = markersById[id];
+  if (!m) return;
+  document.getElementById("map").scrollIntoView({ behavior: "smooth", block: "center" });
+  map.setView(m.getLatLng(), 16);
+  setTimeout(function () { m.openPopup(); }, 350);
+});
+
+/* ---------- map (progressive enhancement — UI-2) ---------- */
+
+let map = null;
+let mapReady = false;
+let markerLayer = null;
+const markersById = {};
+
+function popupHtml(r) {
+  const phone = val(r.contact && r.contact.phone);
+  const address = val(r.contact && r.contact.address);
+  const hours = val(r.contact && r.contact.hours);
+  const dirs = directionsUrl(r);
+
+  let h = "<h3>" + esc(r.name) + "</h3>";
+  if (r.verified === false) {
+    h += '<span class="popup-confirm">Please call to confirm</span>';
+  }
+  if (phone) {
+    h += '<div class="popup-row"><span class="lbl">Phone:</span> <a href="' +
+      esc(telHref(phone)) + '">' + esc(phone) + "</a></div>";
+  }
+  if (address) h += '<div class="popup-row"><span class="lbl">Address:</span> ' + esc(address) + "</div>";
+  if (hours) {
+    h += '<div class="popup-row"><span class="lbl">Hours:</span><br>' +
+      hours.split(/\n/).map(function (l) { return esc(l.trim()); }).join("<br>") + "</div>";
+  }
+  if (r.warmNextStep) h += '<div class="popup-next">' + esc(r.warmNextStep) + "</div>";
+  h += '<div class="popup-links">';
+  if (dirs) h += '<a href="' + esc(dirs) + '" target="_blank" rel="noopener">Directions</a>';
+  h += '<a href="' + esc(suggestUrl(r)) + '">Suggest an update</a>';
+  h += "</div>";
+  return h;
+}
+
+function initMap() {
+  if (typeof L === "undefined") throw new Error("Leaflet unavailable");
+
+  map = L.map("map", { center: ATHENS_CENTER, zoom: 13, scrollWheelZoom: false });
+
+  // ATTR-1: OSM attribution is a license requirement.
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+  }).addTo(map);
+
+  // Clustering is an enhancement, never a dependency (UI-2).
+  markerLayer = (typeof L.markerClusterGroup === "function")
+    ? L.markerClusterGroup({ showCoverageOnHover: false, maxClusterRadius: 44 })
+    : L.layerGroup();
+  markerLayer.addTo(map);
+
+  data.forEach(function (r) {
+    if (!hasGeo(r)) return; // still fully present in the list view
+    const m = L.marker([r.geo.lat, r.geo.lng], { title: r.name });
+    // UI-1: hover = light tooltip (name + categories); click/tap = full popup.
+    m.bindTooltip(
+      "<strong>" + esc(r.name) + "</strong><br><span class=\"tip-cats\">" +
+      esc((r.categories || []).join(" · ")) + "</span>",
+      { direction: "top", opacity: 0.95 }
+    );
+    m.bindPopup(popupHtml(r), { maxWidth: 300 });
+    markersById[r.id] = m;
+  });
+
+  mapReady = true;
+}
+
+function renderMarkers(visible) {
+  if (!mapReady) return;
+  markerLayer.clearLayers();
+  visible.forEach(function (r) {
+    const m = markersById[r.id];
+    if (m) markerLayer.addLayer(m);
+  });
+}
+
+try {
+  initMap();
+} catch (err) {
+  // The list below still fully works.
+  document.getElementById("map").style.display = "none";
+  document.getElementById("map-fallback").style.display = "block";
+  document.getElementById("near-me").style.display = "none";
+}
+
+/* ---------- Near me (UI-3: only on tap, never on load) ---------- */
+
+const locateMsg = document.getElementById("locate-msg");
+document.getElementById("near-me").addEventListener("click", function () {
+  if (!mapReady) return;
+  locateMsg.textContent = "Looking for you…";
+  map.locate({ setView: true, maxZoom: 15 });
+});
+
+let hereMarker = null;
+function onLocationFound(e) {
+  locateMsg.textContent = "Here you are — the closest help is nearby.";
+  if (hereMarker) map.removeLayer(hereMarker);
+  hereMarker = L.circleMarker(e.latlng, {
+    radius: 9, color: "#1a6fb5", fillColor: "#1a6fb5", fillOpacity: 0.5
+  }).addTo(map).bindTooltip("You are here");
+}
+function onLocationError() {
+  locateMsg.textContent =
+    "That's okay — we couldn't find your location. Browse the map or the list below instead.";
+}
+if (mapReady) {
+  map.on("locationfound", onLocationFound);
+  map.on("locationerror", onLocationError);
+}
+
+/* ---------- tie it together ---------- */
+
+function refresh() {
+  const visible = data.filter(matches);
+  renderList(visible);
+  renderMarkers(visible);
+}
+
+refresh();
+
+} // end initApp
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initApp);
+} else {
+  initApp();
+}
 </script>
 </body>
 </html>
