@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Athens Resource Map — Downtown Ministries</title>
-<meta name="description" content="A warm, welcoming map of food, shelter, healthcare, and helping hands in Athens-Clarke County, Georgia. From Downtown Ministries.">
+<title>Athens Area Resource Map | Downtown Ministries</title>
+<meta name="description" content="A map of food, shelter, healthcare, and helping hands in Athens-Clarke County, Georgia, from Downtown Ministries.">
 
 <!-- Leaflet core (ARCH-1: CDN only; clustering below is a progressive enhancement) -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -16,18 +16,18 @@
 
 <style>
   :root {
-    --ink: #2b2118;          /* deep warm brown — body text */
-    --ink-soft: #5b4a3f;     /* softer brown — secondary text (AA on cream) */
-    --cream: #fdf8f0;        /* page background */
-    --card: #ffffff;
-    --green: #2e5d43;        /* deep fellowship green — primary */
-    --green-dark: #234733;
-    --terracotta: #b34a26;   /* warm accent (AA on white for text) */
-    --amber-bg: #fff3d6;     /* gentle "call to confirm" badge */
-    --amber-ink: #6b4d00;
-    --line: #e8dfd2;
-    --focus: #1a6fb5;
-    --radius: 14px;
+    --ink: #1c1c1c;
+    --ink-soft: #4a4a4a;
+    --ink-fade: #8c867c;
+    --paper: #fafaf7;
+    --rule-soft: #c8c2b5;
+    --accent: #8b3a2b;
+    --accent-deep: #6e2c20;
+    --accent-soft: #efe6dd;
+    --dta-red: #c8323e;
+    --gold: #d4a574;
+    --closed-red: #962828;
+    --font-serif: 'Liberation Serif', Georgia, 'Times New Roman', serif;
   }
 
   * { box-sizing: border-box; }
@@ -36,80 +36,112 @@
 
   body {
     margin: 0;
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    background: var(--cream);
+    font-family: var(--font-serif);
+    background: var(--paper);
     color: var(--ink);
-    line-height: 1.55;
     font-size: 1rem;
+    line-height: 1.5;
   }
 
-  a { color: var(--green); }
-  a:hover { color: var(--green-dark); }
+  a { color: var(--accent); }
+  a:hover { color: var(--accent-deep); }
 
   :focus-visible {
-    outline: 3px solid var(--focus);
+    outline: 3px solid var(--accent);
     outline-offset: 2px;
-    border-radius: 4px;
+    border-radius: 2px;
   }
 
   .skip-link {
     position: absolute;
     left: -999px;
     top: 0;
-    background: var(--green);
+    background: var(--accent);
     color: #fff;
     padding: .75rem 1rem;
     z-index: 2000;
-    border-radius: 0 0 8px 0;
   }
   .skip-link:focus { left: 0; color: #fff; }
 
-  /* ---------- Header ---------- */
-  header.site {
-    background: var(--green);
-    color: #fff;
-    padding: 1.25rem 1rem 1.4rem;
-  }
-  header.site .inner { max-width: 72rem; margin: 0 auto; }
-  header.site h1 {
-    margin: 0 0 .3rem;
-    font-size: 1.45rem;
-    line-height: 1.25;
-  }
-  header.site .kicker {
-    margin: 0 0 .35rem;
-    font-size: .85rem;
-    letter-spacing: .08em;
+  .eyebrow {
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .26em;
     text-transform: uppercase;
-    color: #d7e6dc;
+    color: var(--accent);
   }
-  header.site p.welcome {
+
+  /* ---------- Brand header lockup ---------- */
+  header.brand {
+    text-align: center;
+    padding: 2rem 1rem 1.4rem;
+  }
+  header.brand img.bird {
+    display: block;
+    margin: 0 auto .6rem;
+    height: 76px;
+    width: auto;
+  }
+  .wordmark {
     margin: 0;
-    max-width: 46rem;
-    color: #f0f5ef;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ink);
   }
-  .disclaimer {
-    margin: .6rem 0 0;
-    font-size: .95rem;
-    color: #ffe9b8;
-    max-width: 46rem;
+  .hairline {
+    border: 0;
+    border-top: 1px solid var(--rule-soft);
+    width: 14rem;
+    max-width: 70%;
+    margin: .55rem auto;
+  }
+  .lineup {
+    margin: 0;
+    font-weight: 700;
+    font-size: .85rem;
+    letter-spacing: .18em;
+    color: var(--ink);
+  }
+  .lineup .dta { color: var(--dta-red); }
+  .brick-rule {
+    height: 3px;
+    background: var(--accent);
+    width: 60%;
+    max-width: 26rem;
+    margin: 1.3rem auto 1.1rem;
+  }
+  header.brand h1 {
+    margin: 0 0 .3rem;
+    font-weight: 700;
+    font-size: clamp(1.9rem, 5vw, 2.7rem);
+    line-height: 1.15;
+    color: var(--ink);
+  }
+  header.brand .subtitle {
+    margin: 0 auto;
+    max-width: 42rem;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--accent);
   }
 
-  main { max-width: 72rem; margin: 0 auto; padding: 1rem; }
+  main { max-width: 70rem; margin: 0 auto; padding: 0 1rem; }
 
-  /* ---------- Filters ---------- */
-  .filters {
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    padding: 1rem;
-    margin-bottom: 1rem;
+  /* ---------- Search + filters ---------- */
+  .finder {
+    background: var(--accent-soft);
+    border: 1px solid var(--accent);
+    padding: 1rem 1.1rem 1.1rem;
+    margin-bottom: 1.1rem;
   }
-  .filters .row { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .field { flex: 1 1 14rem; min-width: 0; }
+  .finder .eyebrow { display: block; margin-bottom: .55rem; }
+  .finder .row { display: flex; flex-wrap: wrap; gap: .75rem; }
+  .field { flex: 1 1 15rem; min-width: 0; }
   .field label {
     display: block;
-    font-weight: 600;
+    font-weight: 700;
     font-size: .95rem;
     margin-bottom: .3rem;
   }
@@ -117,283 +149,393 @@
   .field select {
     width: 100%;
     min-height: 48px;
-    padding: .6rem .75rem;
-    font-size: 1rem;
+    padding: .55rem .75rem;
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
     color: var(--ink);
-    background: #fff;
-    border: 1.5px solid #b9ab99;
-    border-radius: 10px;
+    background: var(--paper);
+    border: 1px solid var(--accent);
+    border-radius: 3px;
   }
 
-  fieldset.chips {
-    border: 0;
-    margin: .9rem 0 0;
-    padding: 0;
-  }
+  fieldset.chips { border: 0; margin: .9rem 0 0; padding: 0; }
   fieldset.chips legend {
-    font-weight: 600;
+    font-weight: 700;
     font-size: .95rem;
     padding: 0;
-    margin-bottom: .4rem;
+    margin-bottom: .45rem;
   }
-  .chip-wrap { display: flex; flex-wrap: wrap; gap: .5rem; }
+  .chip-wrap { display: flex; flex-wrap: wrap; gap: .45rem; }
   button.chip {
-    font: inherit;
+    font-family: var(--font-serif);
     font-size: .95rem;
     min-height: 44px;
-    padding: .45rem .9rem;
+    padding: .4rem .85rem;
+    border: 1px solid var(--accent);
     border-radius: 999px;
-    border: 1.5px solid var(--green);
-    background: #fff;
-    color: var(--green-dark);
+    background: var(--paper);
+    color: var(--ink);
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: .45rem;
   }
+  button.chip:hover { border-color: var(--accent-deep); color: var(--accent-deep); }
   button.chip[aria-pressed="true"] {
-    background: var(--green);
+    background: var(--accent);
+    border-color: var(--accent);
     color: #fff;
   }
-  button.chip:hover { border-color: var(--green-dark); }
+  .chip-dot {
+    width: .8em;
+    height: .8em;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid var(--ink);
+    flex: 0 0 auto;
+  }
 
-  .filter-foot {
+  .finder-foot {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: .75rem;
     margin-top: .9rem;
   }
-  #result-count { font-weight: 600; }
+  #result-count { font-weight: 700; }
   button.linkish {
-    font: inherit;
+    font-family: var(--font-serif);
+    font-size: 1rem;
     background: none;
     border: 0;
-    color: var(--green);
+    color: var(--accent);
     text-decoration: underline;
     cursor: pointer;
     min-height: 44px;
     padding: .25rem .4rem;
   }
+  button.linkish:hover { color: var(--accent-deep); }
 
-  /* ---------- Layout: map + list ---------- */
-  .content { display: block; }
-
-  .map-panel {
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    overflow: hidden;
-    margin-bottom: 1rem;
-  }
-  #map {
-    height: 55vh;
-    min-height: 320px;
-    width: 100%;
-    background: #e9e4da;
-  }
-  .map-toolbar {
+  /* ---------- Map key ---------- */
+  .key { margin-bottom: 1.1rem; }
+  .key .eyebrow { display: block; margin-bottom: .5rem; }
+  ul.key-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-wrap: wrap;
+    gap: .5rem 1.2rem;
+  }
+  ul.key-list li { display: flex; align-items: center; gap: .45rem; font-size: .95rem; }
+
+  /* Shared pin look: map markers, key swatches, card dots */
+  .dtm-pin {
+    display: flex;
     align-items: center;
-    gap: .6rem;
-    padding: .6rem .8rem;
-    border-top: 1px solid var(--line);
-  }
-  button.near-me {
-    font: inherit;
-    font-weight: 600;
-    min-height: 48px;
-    padding: .5rem 1.1rem;
-    border-radius: 10px;
-    border: 0;
-    background: var(--terracotta);
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid var(--ink);
     color: #fff;
-    cursor: pointer;
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 1;
+    box-shadow: 0 1px 3px rgba(28,28,28,.35);
   }
-  button.near-me:hover { background: #99401f; }
-  #locate-msg { font-size: .95rem; color: var(--ink-soft); }
+  .key .dtm-pin { width: 24px; height: 24px; font-size: 13px; flex: 0 0 auto; box-shadow: none; }
+  /* Dark glyph on the two light pin colors for WCAG contrast
+     (map pins + key swatches + card dots). */
+  .dtm-pin.ink-glyph, .card-pin.ink-glyph { color: var(--ink); }
 
-  .map-fallback {
-    padding: 1rem;
-    background: var(--amber-bg);
-    color: var(--amber-ink);
-    display: none;
-  }
-
-  /* ---------- Cards ---------- */
-  #list-heading { font-size: 1.2rem; margin: 0 0 .6rem; }
+  /* ---------- Results list ---------- */
+  .list-panel { margin-bottom: 1.25rem; }
+  #list-heading { font-size: 1.35rem; margin: 0 0 .6rem; }
+  .cards-scroll { }
   ul.cards { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
 
   article.card {
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
+    background: var(--paper);
+    border: 1px solid var(--rule-soft);
+    border-left: 5px solid var(--ink-fade);
     padding: 1rem 1.1rem 1.1rem;
   }
-  .card h3 { margin: 0 0 .2rem; font-size: 1.15rem; line-height: 1.3; }
-  .tags { display: flex; flex-wrap: wrap; gap: .35rem; margin: .35rem 0 .5rem; }
+  .card h3 {
+    margin: 0 0 .25rem;
+    font-size: 1.15rem;
+    line-height: 1.3;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+  }
+  .card h3 .card-pin {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 2px solid var(--ink);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    flex: 0 0 auto;
+  }
+  .tags { display: flex; flex-wrap: wrap; gap: .35rem; margin: .3rem 0 .5rem; }
   .tag {
     font-size: .8rem;
-    font-weight: 600;
-    padding: .15rem .6rem;
+    font-weight: 700;
+    padding: .1rem .6rem;
     border-radius: 999px;
-    background: #e7efe9;
-    color: var(--green-dark);
+    border: 1px solid var(--accent);
+    color: var(--accent-deep);
+    background: var(--accent-soft);
   }
-  .tag.pop { background: #f3e9e2; color: #7c3a1d; }
+  .tag.pop { border-color: var(--rule-soft); color: var(--ink-soft); background: transparent; }
   .badge-confirm {
     display: inline-block;
     font-size: .85rem;
-    padding: .2rem .65rem;
+    font-style: italic;
+    padding: .15rem .6rem;
+    border: 1px solid var(--rule-soft);
     border-radius: 999px;
-    background: var(--amber-bg);
-    color: var(--amber-ink);
+    background: var(--accent-soft);
+    color: var(--ink-soft);
     margin: .1rem 0 .4rem;
   }
   .offmap {
     display: inline-block;
     font-size: .85rem;
     color: var(--ink-soft);
+    font-style: italic;
     margin: .1rem 0 .4rem;
   }
 
   .card p.desc { margin: .3rem 0 .6rem; }
 
   .next-step {
-    background: #eef5f0;
-    border-left: 4px solid var(--green);
-    border-radius: 0 10px 10px 0;
-    padding: .6rem .8rem;
+    background: var(--accent-soft);
+    border-left: 4px solid var(--accent);
+    padding: .55rem .8rem;
     margin: .6rem 0;
   }
-  .next-step strong { color: var(--green-dark); }
+  .next-step strong { color: var(--accent-deep); }
 
   dl.details { margin: .6rem 0 0; }
   dl.details div { display: flex; gap: .5rem; margin: .3rem 0; }
   dl.details dt {
-    flex: 0 0 6.2rem;
-    font-weight: 600;
+    flex: 0 0 6.4rem;
+    font-weight: 700;
     color: var(--ink-soft);
     font-size: .95rem;
   }
   dl.details dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
   dd.hours span { display: block; }
 
-  .card-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: .5rem;
-    margin-top: .8rem;
-  }
+  .card-actions { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .8rem; }
   .card-actions a, .card-actions button {
-    font: inherit;
+    font-family: var(--font-serif);
     font-size: .95rem;
-    font-weight: 600;
+    font-weight: 700;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     min-height: 44px;
     padding: .45rem .9rem;
-    border-radius: 10px;
+    border-radius: 3px;
     text-decoration: none;
     cursor: pointer;
   }
-  a.act-call { background: var(--green); color: #fff; border: 0; }
-  a.act-call:hover { background: var(--green-dark); color: #fff; }
-  a.act-dir, button.act-map, a.act-web {
-    background: #fff;
-    color: var(--green-dark);
-    border: 1.5px solid var(--green);
+  a.act-call { background: var(--accent); color: #fff; border: 1px solid var(--accent); }
+  a.act-call:hover { background: var(--accent-deep); border-color: var(--accent-deep); color: #fff; }
+  a.act-dir, button.act-map {
+    background: var(--paper);
+    color: var(--accent-deep);
+    border: 1px solid var(--accent);
   }
-  a.act-dir:hover, button.act-map:hover, a.act-web:hover { border-color: var(--green-dark); }
+  a.act-dir:hover, button.act-map:hover { border-color: var(--accent-deep); }
   a.act-suggest {
     background: none;
     border: 0;
     color: var(--ink-soft);
     text-decoration: underline;
+    font-weight: 400;
   }
   a.act-suggest:hover { color: var(--ink); }
 
-  .verified-note { font-size: .85rem; color: var(--ink-soft); margin-top: .5rem; }
+  .verified-note { font-size: .85rem; color: var(--ink-soft); margin: .5rem 0 0; }
 
   .empty {
-    background: var(--card);
-    border: 1px dashed #c9bda9;
-    border-radius: var(--radius);
+    background: var(--accent-soft);
+    border: 1px dashed var(--accent);
     padding: 1.4rem;
     text-align: center;
     display: none;
   }
 
-  /* ---------- Popups & tooltips ---------- */
-  .leaflet-popup-content { font-family: inherit; font-size: .95rem; line-height: 1.45; margin: .8rem .9rem; }
+  /* ---------- Map (bottom half of the viewport, full width) ---------- */
+  .map-band { border-top: 1px solid var(--rule-soft); }
+  .map-toolbar {
+    max-width: 70rem;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .6rem;
+    padding: .7rem 1rem;
+  }
+  button.near-me {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-weight: 700;
+    min-height: 48px;
+    padding: .5rem 1.2rem;
+    border: 1px solid var(--accent);
+    border-radius: 3px;
+    background: var(--accent);
+    color: #fff;
+    cursor: pointer;
+  }
+  button.near-me:hover { background: var(--accent-deep); border-color: var(--accent-deep); }
+  #locate-msg { font-size: .95rem; color: var(--ink-soft); }
+
+  #map {
+    height: 50vh;
+    min-height: 380px;
+    width: 100%;
+    background: var(--accent-soft);
+  }
+  .map-fallback {
+    display: none;
+    max-width: 70rem;
+    margin: 0 auto;
+    padding: 1rem;
+    background: var(--accent-soft);
+    border: 1px solid var(--accent);
+    color: var(--ink);
+  }
+
+  .leaflet-container { font-family: var(--font-serif); }
+  .dtm-pin-wrap { background: none; border: 0; }
+  .dtm-cluster {
+    background: none;
+    border: 0;
+  }
+  .dtm-cluster .cluster-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--ink);
+    color: #fff;
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: 15px;
+    box-shadow: 0 1px 3px rgba(28,28,28,.35);
+  }
+  .dtm-cluster.dim { opacity: .25; }
+  .leaflet-marker-icon.dim-pin { opacity: .25; }
+
+  .leaflet-popup-content-wrapper, .leaflet-tooltip {
+    background: var(--paper);
+    color: var(--ink);
+    border-radius: 4px;
+  }
+  .leaflet-popup-tip { background: var(--paper); }
+  .leaflet-popup-content { font-size: .95rem; line-height: 1.45; margin: .8rem .9rem; }
   .leaflet-popup-content h3 { margin: 0 0 .3rem; font-size: 1.05rem; }
-  .popup-next { background: #eef5f0; border-radius: 8px; padding: .4rem .55rem; margin: .4rem 0; }
+  .popup-next { background: var(--accent-soft); border-left: 3px solid var(--accent); padding: .4rem .55rem; margin: .4rem 0; }
   .popup-row { margin: .25rem 0; }
-  .popup-row .lbl { font-weight: 600; color: var(--ink-soft); }
+  .popup-row .lbl { font-weight: 700; color: var(--ink-soft); }
   .popup-links { margin-top: .45rem; display: flex; flex-wrap: wrap; gap: .35rem .8rem; }
-  .popup-links a { font-weight: 600; }
+  .popup-links a { font-weight: 700; }
   .popup-confirm {
-    display: inline-block; font-size: .8rem; padding: .1rem .5rem;
-    border-radius: 999px; background: var(--amber-bg); color: var(--amber-ink);
+    display: inline-block; font-size: .8rem; font-style: italic; padding: .1rem .5rem;
+    border: 1px solid var(--rule-soft); border-radius: 999px;
+    background: var(--accent-soft); color: var(--ink-soft);
     margin-bottom: .3rem;
   }
-  .tip-cats { color: #555; font-size: .85rem; }
+  .tip-cats { color: var(--ink-soft); font-size: .85rem; }
 
-  footer.site {
-    max-width: 72rem;
-    margin: 1.5rem auto 0;
-    padding: 1rem 1rem 2rem;
+  /* ---------- Footer ---------- */
+  .pre-footer {
+    max-width: 70rem;
+    margin: 1.4rem auto 0;
+    padding: 0 1rem;
+    text-align: center;
     color: var(--ink-soft);
     font-size: .95rem;
-    border-top: 1px solid var(--line);
   }
-  footer.site a { color: var(--green-dark); }
+  .pre-footer .disclaimer { font-style: italic; color: var(--ink); margin: 0 0 .3rem; }
+  .pre-footer p { margin: .2rem 0; }
+
+  footer.site {
+    border-top: 1px solid var(--rule-soft);
+    margin-top: 1.2rem;
+    padding: 1.1rem 1rem 2rem;
+  }
+  .foot-row {
+    max-width: 70rem;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: .6rem 1.5rem;
+  }
+  .foot-left { margin: 0; font-weight: 700; }
+  .foot-mission {
+    margin: 0;
+    font-style: italic;
+    color: var(--accent);
+    text-align: center;
+    flex: 1 1 20rem;
+  }
+  .foot-tag { margin: 0; }
 
   /* ---------- Wider screens ---------- */
   @media (min-width: 900px) {
-    header.site h1 { font-size: 1.8rem; }
-    .content {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: 1rem;
-      align-items: start;
+    ul.cards { grid-template-columns: 1fr 1fr; }
+    .cards-scroll {
+      max-height: 46vh;
+      overflow-y: auto;
+      padding-right: .4rem;
     }
-    .map-panel {
-      position: sticky;
-      top: 1rem;
-      margin-bottom: 0;
-      order: 2;
-    }
-    #map { height: 62vh; }
-    .list-panel { order: 1; }
   }
 </style>
 </head>
 <body>
-<a class="skip-link" href="#list-heading">Skip to the list of resources</a>
+<a class="skip-link" href="#search">Skip to search</a>
 
-<header class="site">
-  <div class="inner">
-    <p class="kicker">Downtown Ministries &middot; Athens, Georgia</p>
-    <h1>Athens Resource Map</h1>
-    <p class="welcome">You're not alone. Here are neighbors, churches, and helping hands
-      across Athens-Clarke County ready to share a meal, a bed, or a next step —
-      whatever today calls for.</p>
-    <p class="disclaimer">Things change — please call ahead before you go.</p>
-  </div>
+<!-- 1. Brand header lockup -->
+<header class="brand">
+  <img class="bird" src="brand/dtm-bird.png" alt="Downtown Ministries bird logo">
+  <p class="wordmark">Downtown Ministries</p>
+  <hr class="hairline">
+  <p class="lineup">DTM &middot; ODB &middot; <span class="dta">DTA</span></p>
+  <div class="brick-rule" role="presentation"></div>
+  <h1>Athens Area Resource Map</h1>
+  <p class="subtitle">Food, shelter, healthcare, and a place to begin in Athens-Clarke County.</p>
 </header>
 
 <main>
-  <!-- Filters -->
-  <section class="filters" aria-label="Find a resource">
+  <!-- 2. Search + filters -->
+  <section class="finder" aria-label="Search and filters">
+    <span class="eyebrow">Find help</span>
     <div class="row">
       <div class="field">
         <label for="search">Search</label>
-        <input type="search" id="search" placeholder="Try &ldquo;meal&rdquo;, &ldquo;shelter&rdquo;, &ldquo;GED&rdquo;&hellip;" autocomplete="off">
+        <input type="search" id="search" placeholder="Try &ldquo;meal&rdquo;, &ldquo;shelter&rdquo;, or &ldquo;GED&rdquo;" autocomplete="off">
       </div>
       <div class="field">
         <label for="pop-filter">Who it serves</label>
         <select id="pop-filter">
-          <option value="">Everyone</option>
+          <option value="">Show all</option>
         </select>
       </div>
     </div>
@@ -401,46 +543,59 @@
       <legend>What kind of help?</legend>
       <div class="chip-wrap" id="chips"></div>
     </fieldset>
-    <div class="filter-foot">
+    <div class="finder-foot">
       <span id="result-count" role="status" aria-live="polite"></span>
       <button type="button" class="linkish" id="clear-filters">Clear all filters</button>
     </div>
   </section>
 
-  <div class="content">
-    <!-- Map -->
-    <section class="map-panel" aria-label="Map of resources">
-      <div id="map" role="application" aria-label="Interactive map of Athens resources"></div>
-      <div class="map-fallback" id="map-fallback">
-        The map couldn't load just now — no worries. Every resource is listed right
-        below, with phone numbers and addresses.
-      </div>
-      <div class="map-toolbar">
-        <button type="button" class="near-me" id="near-me">Near me</button>
-        <span id="locate-msg" role="status" aria-live="polite"></span>
-      </div>
-    </section>
+  <!-- 3. Color-coded map key -->
+  <section class="key" aria-label="Map key">
+    <span class="eyebrow">Map key</span>
+    <ul class="key-list" id="key-list"></ul>
+  </section>
 
-    <!-- List -->
-    <section class="list-panel" aria-label="List of resources">
-      <h2 id="list-heading">Places that can help</h2>
+  <!-- 4. Results list -->
+  <section class="list-panel" aria-label="List of resources">
+    <h2 id="list-heading">Places that can help</h2>
+    <div class="cards-scroll">
       <ul class="cards" id="cards"></ul>
       <div class="empty" id="empty">
-        <p><strong>Nothing matched those filters — but help is still here.</strong></p>
+        <p><strong>Nothing matched those filters, but help is still here.</strong></p>
         <p>Try clearing a filter or two, or search for something simpler like
           &ldquo;food&rdquo; or &ldquo;shelter&rdquo;.</p>
         <button type="button" class="linkish" id="empty-clear">Show everything</button>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </main>
 
-<footer class="site">
-  <p>Made with love by <a href="https://downtownministries.org/" target="_blank" rel="noopener">Downtown Ministries</a>.
-    Spot something out of date? <a id="footer-suggest" href="mailto:admin@downtownministries.org?subject=Update%20for%20the%20Athens%20Resource%20Map">Suggest an update</a> —
-    it helps the whole neighborhood.</p>
+<!-- 5. Map: bottom half of the viewport, full width -->
+<section class="map-band" aria-label="Map of resources">
+  <div class="map-toolbar">
+    <button type="button" class="near-me" id="near-me">Near me</button>
+    <span id="locate-msg" role="status" aria-live="polite"></span>
+  </div>
+  <div id="map" role="application" aria-label="Interactive map of Athens area resources"></div>
+  <div class="map-fallback" id="map-fallback">
+    The map could not load just now. Every resource is listed above, with phone
+    numbers and addresses.
+  </div>
+</section>
+
+<!-- 6. Brand footer -->
+<div class="pre-footer">
+  <p class="disclaimer">Things change, please call ahead before you go.</p>
   <p>Map data &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>.
-    Things change — please call ahead before you go.</p>
+    Spot something out of date?
+    <a href="mailto:admin@downtownministries.org?subject=Update%20for%20the%20Athens%20Area%20Resource%20Map">Suggest an update</a>.</p>
+</div>
+<footer class="site">
+  <div class="foot-row">
+    <p class="foot-left">Downtown Ministries &middot; Athens, Georgia</p>
+    <p class="foot-mission">We treat what is. We educate so what is, will not always be.</p>
+    <p class="foot-tag eyebrow">Resource Map</p>
+  </div>
 </footer>
 
 <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
@@ -456,12 +611,74 @@ const RESOURCES = /*==INJECT_RESOURCES==*/null;
 
 // CDN scripts above are deferred (non-render-blocking). Deferred scripts run
 // before DOMContentLoaded, so by the time initApp runs, Leaflet is either
-// present or definitively unavailable — the typeof L guard in initMap still
+// present or definitively unavailable; the typeof L guard in initMap still
 // works, and the list renders either way (UI-2).
 function initApp() {
 
 const DTM_EMAIL = "admin@downtownministries.org";
 const ATHENS_CENTER = [33.957, -83.376];
+
+/* ---------- category color groups (validated palette; glyph is the
+   color-blind-safe secondary encoding) ---------- */
+
+const GROUPS = [
+  { label: "Food", color: "#e77f3b", glyph: "F", inkGlyph: true,
+    cats: ["Food"] },
+  { label: "Housing & Shelter", color: "#4178bc", glyph: "H",
+    cats: ["Housing & Shelter"] },
+  { label: "Healthcare (free/low-cost)", color: "#e0344c", glyph: "+",
+    cats: ["Healthcare (free/low-cost)"] },
+  { label: "Mental Health & Recovery", color: "#239f6b", glyph: "R",
+    cats: ["Counseling & Mental Health", "Addiction Recovery"] },
+  { label: "Jobs, Legal & Financial Help", color: "#f89604", glyph: "$", inkGlyph: true,
+    cats: ["Jobs & Workforce", "Legal Aid"] },
+  { label: "Education, Youth & Family", color: "#4a3aa7", glyph: "E",
+    cats: ["GED & Adult Education", "Youth & Family"] },
+  { label: "Transportation", color: "#ab4a83", glyph: "T",
+    cats: ["Transportation"] },
+  { label: "Churches & Volunteer Groups", color: "#156108", glyph: "C",
+    cats: ["Churches & Volunteer Groups"] }
+];
+// Gentle fallback so a future category never breaks the page.
+const OTHER_GROUP = { label: "More help", color: "#4a4a4a", glyph: "•", cats: [] };
+
+const CAT_GROUP = {};
+GROUPS.forEach(function (g) {
+  g.cats.forEach(function (c) { CAT_GROUP[c] = g; });
+});
+
+function groupForCat(c) { return CAT_GROUP[c] || OTHER_GROUP; }
+
+// Pin color = the entry's FIRST category's group.
+function groupFor(r) {
+  const cats = r.categories || [];
+  return cats.length ? groupForCat(cats[0]) : OTHER_GROUP;
+}
+
+/* ---------- search synonyms: plain words hit categories ---------- */
+
+const SYNONYMS = (function () {
+  const table = [
+    ["food meal meals hungry hunger pantry eat", ["Food"]],
+    ["shelter homeless housing rent evicted bed", ["Housing & Shelter"]],
+    ["doctor clinic dental medical health", ["Healthcare (free/low-cost)"]],
+    ["counseling therapy mental depression anxiety rehab drugs alcohol addiction recovery sober",
+      ["Counseling & Mental Health", "Addiction Recovery"]],
+    ["job work resume unemployment money bills financial assistance", ["Jobs & Workforce"]],
+    ["lawyer legal court", ["Legal Aid"]],
+    ["ged school class tutoring kids children childcare youth",
+      ["GED & Adult Education", "Youth & Family"]],
+    ["bus ride transport", ["Transportation"]],
+    ["church volunteer faith", ["Churches & Volunteer Groups"]]
+  ];
+  const map = {};
+  table.forEach(function (row) {
+    row[0].split(" ").forEach(function (w) {
+      map[w] = (map[w] || []).concat(row[1]);
+    });
+  });
+  return map;
+})();
 
 /* ---------- small helpers ---------- */
 
@@ -478,8 +695,7 @@ function val(field) {
 }
 
 function telHref(phone) {
-  const digits = phone.replace(/[^\d+]/g, "");
-  return "tel:" + digits;
+  return "tel:" + phone.replace(/[^\d+]/g, "");
 }
 
 function hasGeo(r) {
@@ -505,7 +721,6 @@ function suggestUrl(r) {
 }
 
 function hoursHtml(hours) {
-  // Hours may have per-day lines separated by newlines; keep them readable.
   return hours.split(/\n/).map(function (line) {
     return "<span>" + esc(line.trim()) + "</span>";
   }).join("");
@@ -521,9 +736,31 @@ function prettyDate(iso) {
 
 const data = Array.isArray(RESOURCES) ? RESOURCES : [];
 
+// Precomputed search haystack per entry: name, description, whatToBring,
+// warmNextStep, servesPopulation, address, and category names.
+const haystacks = {};
+data.forEach(function (r) {
+  haystacks[r.id] = [
+    r.name, r.description, r.whatToBring, r.warmNextStep,
+    (r.servesPopulation || []).join(" "),
+    val(r.contact && r.contact.address),
+    (r.categories || []).join(" ")
+  ].join(" ").toLowerCase();
+});
+
 /* ---------- filter state ---------- */
 
 const state = { query: "", cats: new Set(), pop: "" };
+
+function tokenMatches(r, token) {
+  if (haystacks[r.id].indexOf(token) !== -1) return true;
+  const synCats = SYNONYMS[token];
+  if (synCats) {
+    const cats = r.categories || [];
+    return synCats.some(function (c) { return cats.indexOf(c) !== -1; });
+  }
+  return false;
+}
 
 function matches(r) {
   if (state.cats.size > 0) {
@@ -536,18 +773,27 @@ function matches(r) {
     if (pops.indexOf(state.pop) === -1) return false;
   }
   if (state.query) {
-    const q = state.query.toLowerCase();
-    const hay = [
-      r.name, r.description, r.whatToBring, r.warmNextStep, r.busRoute,
-      (r.categories || []).join(" "),
-      (r.servesPopulation || []).join(" "),
-      val(r.contact && r.contact.address),
-      val(r.contact && r.contact.hours)
-    ].join(" ").toLowerCase();
-    if (hay.indexOf(q) === -1) return false;
+    const tokens = state.query.toLowerCase().split(/[^a-z0-9+$&']+/).filter(Boolean);
+    for (let i = 0; i < tokens.length; i++) {
+      if (!tokenMatches(r, tokens[i])) return false;
+    }
   }
   return true;
 }
+
+/* ---------- map key (identical colors/glyphs to the pins) ---------- */
+
+(function buildKey() {
+  const keyList = document.getElementById("key-list");
+  GROUPS.forEach(function (g) {
+    const li = document.createElement("li");
+    li.innerHTML =
+      '<span class="dtm-pin' + (g.inkGlyph ? " ink-glyph" : "") +
+      '" style="background:' + esc(g.color) + '" aria-hidden="true">' +
+      esc(g.glyph) + "</span><span>" + esc(g.label) + "</span>";
+    keyList.appendChild(li);
+  });
+})();
 
 /* ---------- build filter controls from the data ---------- */
 
@@ -570,10 +816,12 @@ const searchInput = document.getElementById("search");
   pops.sort();
 
   cats.forEach(function (c) {
+    const g = groupForCat(c);
     const b = document.createElement("button");
     b.type = "button";
     b.className = "chip";
-    b.textContent = c;
+    b.innerHTML = '<span class="chip-dot" style="background:' + esc(g.color) +
+      '" aria-hidden="true"></span>' + esc(c);
     b.setAttribute("aria-pressed", "false");
     b.addEventListener("click", function () {
       if (state.cats.has(c)) { state.cats.delete(c); b.setAttribute("aria-pressed", "false"); }
@@ -591,9 +839,14 @@ const searchInput = document.getElementById("search");
   });
 })();
 
+// Debounced search (~250ms): the map refocuses on matches as you type.
+let searchTimer = null;
 searchInput.addEventListener("input", function () {
-  state.query = searchInput.value.trim();
-  refresh();
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(function () {
+    state.query = searchInput.value.trim();
+    refresh();
+  }, 250);
 });
 popSelect.addEventListener("change", function () {
   state.pop = popSelect.value;
@@ -601,6 +854,7 @@ popSelect.addEventListener("change", function () {
 });
 
 function clearFilters() {
+  clearTimeout(searchTimer);
   state.query = "";
   state.pop = "";
   state.cats.clear();
@@ -614,13 +868,14 @@ function clearFilters() {
 document.getElementById("clear-filters").addEventListener("click", clearFilters);
 document.getElementById("empty-clear").addEventListener("click", clearFilters);
 
-/* ---------- list view (works even if the map never loads — UI-2) ---------- */
+/* ---------- list view (works even if the map never loads, UI-2) ---------- */
 
 const cardsEl = document.getElementById("cards");
 const emptyEl = document.getElementById("empty");
 const countEl = document.getElementById("result-count");
 
 function cardHtml(r) {
+  const g = groupFor(r);
   const phone = val(r.contact && r.contact.phone);
   const address = val(r.contact && r.contact.address);
   const hours = val(r.contact && r.contact.hours);
@@ -628,7 +883,9 @@ function cardHtml(r) {
   const dirs = directionsUrl(r);
 
   let h = "";
-  h += "<h3>" + esc(r.name) + "</h3>";
+  h += '<h3><span class="card-pin' + (g.inkGlyph ? " ink-glyph" : "") +
+    '" style="background:' + esc(g.color) +
+    '" aria-hidden="true">' + esc(g.glyph) + "</span>" + esc(r.name) + "</h3>";
 
   h += '<div class="tags">' +
     (r.categories || []).map(function (c) {
@@ -640,11 +897,11 @@ function cardHtml(r) {
     "</div>";
 
   if (r.verified === false) {
-    h += '<span class="badge-confirm">Please call to confirm — we haven&rsquo;t double-checked this one yet</span> ';
+    h += '<span class="badge-confirm">Please call to confirm</span> ';
   }
   if (!hasGeo(r)) {
     h += '<span class="offmap">Not shown on the map' +
-      (phone ? " — a phone call is the best first step" : "") + '</span>';
+      (phone ? ", a phone call is the best first step" : "") + "</span>";
   }
 
   if (r.description) h += '<p class="desc">' + esc(r.description) + "</p>";
@@ -684,7 +941,7 @@ function cardHtml(r) {
 
   if (r.verified !== false && r.lastVerified) {
     h += '<p class="verified-note">Details checked on ' + esc(prettyDate(r.lastVerified)) +
-      ". Things change — please call ahead before you go.</p>";
+      ". Things change, please call ahead before you go.</p>";
   }
   return h;
 }
@@ -696,6 +953,7 @@ function renderList(visible) {
     const art = document.createElement("article");
     art.className = "card";
     art.id = "card-" + r.id;
+    art.style.borderLeftColor = groupFor(r).color;
     art.innerHTML = cardHtml(r);
     li.appendChild(art);
     cardsEl.appendChild(li);
@@ -703,11 +961,11 @@ function renderList(visible) {
 
   emptyEl.style.display = visible.length === 0 ? "block" : "none";
   countEl.textContent = visible.length === data.length
-    ? "Showing all " + data.length + " resources"
-    : "Showing " + visible.length + " of " + data.length + " resources";
+    ? "Showing all " + data.length + " places"
+    : "Showing " + visible.length + " of " + data.length + " places";
 }
 
-// "Show on map" — delegate clicks from the list.
+// "Show on map": delegate clicks from the list.
 cardsEl.addEventListener("click", function (ev) {
   const btn = ev.target.closest("button.act-map");
   if (!btn || !mapReady) return;
@@ -715,11 +973,15 @@ cardsEl.addEventListener("click", function (ev) {
   const m = markersById[id];
   if (!m) return;
   document.getElementById("map").scrollIntoView({ behavior: "smooth", block: "center" });
-  map.setView(m.getLatLng(), 16);
-  setTimeout(function () { m.openPopup(); }, 350);
+  if (markerLayer && typeof markerLayer.zoomToShowLayer === "function") {
+    markerLayer.zoomToShowLayer(m, function () { m.openPopup(); });
+  } else {
+    map.setView(m.getLatLng(), 16);
+    setTimeout(function () { m.openPopup(); }, 350);
+  }
 });
 
-/* ---------- map (progressive enhancement — UI-2) ---------- */
+/* ---------- map (progressive enhancement, UI-2) ---------- */
 
 let map = null;
 let mapReady = false;
@@ -753,6 +1015,19 @@ function popupHtml(r) {
   return h;
 }
 
+function pinIcon(g) {
+  return L.divIcon({
+    className: "dtm-pin-wrap",
+    html: '<span class="dtm-pin' + (g.inkGlyph ? " ink-glyph" : "") +
+      '" style="background:' + esc(g.color) + '">' +
+      esc(g.glyph) + "</span>",
+    iconSize: [28, 28],
+    iconAnchor: [14, 14],
+    tooltipAnchor: [0, -16],
+    popupAnchor: [0, -16]
+  });
+}
+
 function initMap() {
   if (typeof L === "undefined") throw new Error("Leaflet unavailable");
 
@@ -766,13 +1041,29 @@ function initMap() {
 
   // Clustering is an enhancement, never a dependency (UI-2).
   markerLayer = (typeof L.markerClusterGroup === "function")
-    ? L.markerClusterGroup({ showCoverageOnHover: false, maxClusterRadius: 44 })
+    ? L.markerClusterGroup({
+        showCoverageOnHover: false,
+        maxClusterRadius: 44,
+        iconCreateFunction: function (cluster) {
+          const kids = cluster.getAllChildMarkers();
+          const anyMatch = kids.some(function (m) { return m.options.matched !== false; });
+          return L.divIcon({
+            className: "dtm-cluster" + (anyMatch ? "" : " dim"),
+            html: '<span class="cluster-inner">' + kids.length + "</span>",
+            iconSize: [36, 36]
+          });
+        }
+      })
     : L.layerGroup();
   markerLayer.addTo(map);
 
   data.forEach(function (r) {
     if (!hasGeo(r)) return; // still fully present in the list view
-    const m = L.marker([r.geo.lat, r.geo.lng], { title: r.name });
+    const m = L.marker([r.geo.lat, r.geo.lng], {
+      title: r.name,
+      icon: pinIcon(groupFor(r)),
+      matched: true
+    });
     // UI-1: hover = light tooltip (name + categories); click/tap = full popup.
     m.bindTooltip(
       "<strong>" + esc(r.name) + "</strong><br><span class=\"tip-cats\">" +
@@ -781,24 +1072,44 @@ function initMap() {
     );
     m.bindPopup(popupHtml(r), { maxWidth: 300 });
     markersById[r.id] = m;
+    markerLayer.addLayer(m);
   });
 
   mapReady = true;
 }
 
-function renderMarkers(visible) {
+// Matching markers stay at full opacity; the rest DIM rather than vanish.
+// Then the map refits to the matches (padded, maxZoom 15). Zero matches:
+// the list shows its friendly empty state and the map stays put.
+function updateMap(visible) {
   if (!mapReady) return;
-  markerLayer.clearLayers();
-  visible.forEach(function (r) {
-    const m = markersById[r.id];
-    if (m) markerLayer.addLayer(m);
+  const visibleIds = {};
+  visible.forEach(function (r) { visibleIds[r.id] = true; });
+
+  Object.keys(markersById).forEach(function (id) {
+    const m = markersById[id];
+    const on = !!visibleIds[id];
+    m.options.matched = on;
+    m.setOpacity(on ? 1 : 0.25);
+    const el = m.getElement && m.getElement();
+    if (el) el.classList.toggle("dim-pin", !on);
   });
+  if (typeof markerLayer.refreshClusters === "function") {
+    markerLayer.refreshClusters();
+  }
+
+  const pts = visible.filter(hasGeo).map(function (r) {
+    return [r.geo.lat, r.geo.lng];
+  });
+  if (pts.length > 0) {
+    map.fitBounds(L.latLngBounds(pts), { padding: [40, 40], maxZoom: 15 });
+  }
 }
 
 try {
   initMap();
 } catch (err) {
-  // The list below still fully works.
+  // The list above still fully works.
   document.getElementById("map").style.display = "none";
   document.getElementById("map-fallback").style.display = "block";
   document.getElementById("near-me").style.display = "none";
@@ -815,15 +1126,15 @@ document.getElementById("near-me").addEventListener("click", function () {
 
 let hereMarker = null;
 function onLocationFound(e) {
-  locateMsg.textContent = "Here you are — the closest help is nearby.";
+  locateMsg.textContent = "Here you are. The closest help is nearby.";
   if (hereMarker) map.removeLayer(hereMarker);
   hereMarker = L.circleMarker(e.latlng, {
-    radius: 9, color: "#1a6fb5", fillColor: "#1a6fb5", fillOpacity: 0.5
+    radius: 9, color: "#4178bc", fillColor: "#4178bc", fillOpacity: 0.5
   }).addTo(map).bindTooltip("You are here");
 }
 function onLocationError() {
   locateMsg.textContent =
-    "That's okay — we couldn't find your location. Browse the map or the list below instead.";
+    "That is okay, we could not find your location. Browse the map or the list above instead.";
 }
 if (mapReady) {
   map.on("locationfound", onLocationFound);
@@ -835,7 +1146,7 @@ if (mapReady) {
 function refresh() {
   const visible = data.filter(matches);
   renderList(visible);
-  renderMarkers(visible);
+  updateMap(visible);
 }
 
 refresh();

@@ -50,6 +50,33 @@
 - [x] README.md — architecture, enforcement model, HSDS crosswalk, build/verify usage, GitHub Pages steps, iframe embed snippet, DEPLOY-1 (publishing is a manual human step after phone verification).
 - [x] Docs committed; full commit log in session summary. PREFLIGHT_REPORT.md, QA_REPORT.md, PROGRESS.md all saved.
 
+## 2026-07-07 — SESSION 3: scope expansion + brand UI
+
+### Human decisions (recorded per AGENTS.md scope policy)
+- [x] SCOPE: Emory directed in-chat (2026-07-07, this session) that the map cover
+      Athens-Clarke AND Oconee County (incl. Watkinsville), plus government agencies
+      and UGA resources. This supersedes the Athens-Clarke-only scope. Distinct from
+      the reverted tampering incident: this time the human explicitly ordered it.
+      verify.py bbox widened to the union of both county bboxes (Oconee per Nominatim).
+- [x] UI: color-coded category pins with a key above the map (user-directed),
+      map moved to bottom half, search focuses/zooms to matches instead of hiding pins,
+      full DTM/ODB brand system applied (user-supplied brand spec + logo assets).
+
+### Work
+- [x] data-researcher expansion: +20 entries (gov, UGA, Oconee/Watkinsville, missing
+      Athens orgs) = 43 total, all verified. Notable: ASPIRE Clinic is now The Love and
+      Money Center (recorded under current name); ESP sourced via espyouandme.org
+      (primary domain unreachable); U-Lead phone/website empty (site behind bot
+      checkpoint; address via GAgives aggregator page).
+- [x] 8-color validated pin palette (min CVD ΔE 20.7) with glyph secondary encoding,
+      covering 11 categories via 3 groupings; computed with the dataviz validator.
+- [x] Logos processed per brand recipes (ODB white→alpha+crop, DTM red-extract).
+- [x] web-integrator + security-agent reviews: PASS all dimensions. Applied follow-ups:
+      scope decision recorded here (security MEDIUM), em dashes removed from
+      researcher-authored data fields (brand voice rule), pin glyph contrast fix for
+      the two light pins, popup tip repainted paper. Kept http:// allowed on website
+      links (blocks javascript:/data: schemes; one org's site is http-only).
+
 ## Needs human call-down
 
 - Phone-verify the dataset before publishing (DEPLOY-1: publishing is a manual human step; nothing is currently demoted to verified:false, but call-ahead confirmation is still the deploy gate).

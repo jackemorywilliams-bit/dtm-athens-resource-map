@@ -7,7 +7,7 @@
       "Food"
     ],
     "description": "An overnight emergency shelter with 35 beds, a hot dinner at 6:30 PM, breakfast, showers, and laundry. You must be 18 or older, and beds are reserved by phone each day you want to stay.",
-    "whatToBring": "Just yourself — you must be at least 18. Children cannot stay here.",
+    "whatToBring": "Just yourself, you must be at least 18. Children cannot stay here.",
     "warmNextStep": "Call 706-621-6611 and press option 2 at 4:00 PM to reserve a bed for tonight, then arrive from 6:00 PM.",
     "busRoute": "",
     "contact": {
@@ -16,7 +16,7 @@
         "source": "https://www.bvoa.org/emergency-shelter-program"
       },
       "address": {
-        "value": "95 North Avenue, Athens, Georgia 30601",
+        "value": "95 North Avenue\nAthens, Georgia 30601",
         "source": "https://www.bvoa.org/emergency-shelter-program"
       },
       "hours": {
@@ -47,7 +47,7 @@
       "Counseling & Mental Health"
     ],
     "description": "Help for anyone experiencing domestic violence: a 24-hour hotline, emergency shelter at a confidential location, crisis support, and a text line for teens (706-765-8019). All calls are confidential and no action is required when you call.",
-    "whatToBring": "Nothing. You can call just to talk — no commitment needed.",
+    "whatToBring": "Nothing. You can call just to talk, no commitment needed.",
     "warmNextStep": "Call the hotline at 706-543-3331 any time, day or night, and tell them what is happening. They will listen and help you figure out what's next.",
     "busRoute": "",
     "contact": {
@@ -87,7 +87,7 @@
       "Healthcare (free/low-cost)",
       "Counseling & Mental Health"
     ],
-    "description": "Free healthcare for adults who don't have health insurance, including primary care, women's health, urgent care, dental work like extractions and fillings, and counseling — both individual and group.",
+    "description": "Free healthcare for adults who don't have health insurance, including primary care, women's health, urgent care, dental work like extractions and fillings, and counseling, both individual and group.",
     "whatToBring": "",
     "warmNextStep": "Call 706-425-9445 and say you don't have insurance and would like to become a patient.",
     "busRoute": "",
@@ -126,7 +126,7 @@
     "categories": [
       "Jobs & Workforce"
     ],
-    "description": "A community action agency that partners with people to move forward through education and job training, and helps with household needs. Appointments only — in Athens-Clarke County the coordinator is available Tuesday, Wednesday, and Friday.",
+    "description": "A community action agency that partners with people to move forward through education and job training, and helps with household needs. Appointments only, in Athens-Clarke County the coordinator is available Tuesday, Wednesday, and Friday.",
     "whatToBring": "",
     "warmNextStep": "Call (706) 546-8293 and ask to set up an appointment with the Athens-Clarke County coordinator.",
     "busRoute": "",
@@ -169,7 +169,7 @@
     ],
     "description": "A church-based organization offering hunger relief, shelter, and family and social services. It also runs the Athens Center of Hope at 490 Hawthorne Ave.",
     "whatToBring": "",
-    "warmNextStep": "Call (706) 543-5350 and tell them what you need — food, shelter, or help for your family.",
+    "warmNextStep": "Call (706) 543-5350 and tell them what you need, food, shelter, or help for your family.",
     "busRoute": "",
     "contact": {
       "phone": {
@@ -261,12 +261,12 @@
         "source": "https://www.familypromiseathens.org/contact"
       },
       "hours": {
-        "value": "Mon 8am - 4:30pm, Tue 8am - 4:30pm, Wed 8am - 4:30pm, Thu 8am - 4:30pm, Fri 8am - 4:30pm",
+        "value": "Walk-In Hours are Wednesday and Thursday 10 am - 2 PM. All other days are by appointment only.",
         "source": "https://www.familypromiseathens.org/contact"
       },
       "website": {
         "value": "https://www.familypromiseathens.org/",
-        "source": "https://www.familypromiseathens.org/contact"
+        "source": "https://www.familypromiseathens.org/"
       }
     },
     "servesPopulation": [
@@ -327,7 +327,7 @@
       "Churches & Volunteer Groups"
     ],
     "description": "A Christ-centered day ministry offering emergency food, free showers and laundry, a clothes closet, help getting birth certificates and photo IDs, prescription assistance, work boots, and life-skills classes.",
-    "whatToBring": "Nothing required — if you need an ID or birth certificate, they can help you get one.",
+    "whatToBring": "Nothing required, if you need an ID or birth certificate, they can help you get one.",
     "warmNextStep": "Walk in at 745 Prince Avenue on a Monday, Tuesday, Wednesday, or Friday morning and tell them what you need.",
     "busRoute": "",
     "contact": {
@@ -405,8 +405,8 @@
     "categories": [
       "Food"
     ],
-    "description": "A community kitchen run by Downtown Ministries since 1989, serving breakfast and lunch on weekdays at First Baptist Church on Pulaski Street. A safe, judgment-free place for a healthy meal — takeaway lunch boxes are available for anyone, just show up.",
-    "whatToBring": "Nothing — just come as you are.",
+    "description": "A community kitchen run by Downtown Ministries since 1989, serving breakfast and lunch on weekdays at First Baptist Church on Pulaski Street. A safe, judgment-free place for a healthy meal, takeaway lunch boxes are available for anyone, just show up.",
+    "whatToBring": "Nothing, just come as you are.",
     "warmNextStep": "Show up at 355 Pulaski Street between 12:00 and 1:00 on a weekday and join the lunch line.",
     "busRoute": "",
     "contact": {
@@ -448,7 +448,7 @@
     ],
     "description": "The public safety-net provider for mental health, developmental disability, and addiction services in Athens and nine surrounding counties. Serves people with or without insurance, with crisis help, counseling, addiction treatment, and services for people experiencing homelessness. For a mental health crisis, the Georgia Crisis and Access Line is 1-800-715-4225, any time.",
     "whatToBring": "",
-    "warmNextStep": "Call 1 (855) 333-9544 and say you'd like to get connected to care. If you are in crisis right now, call 1-800-715-4225 instead — it's answered around the clock.",
+    "warmNextStep": "Call 1 (855) 333-9544 and say you'd like to get connected to care. If you are in crisis right now, call 1-800-715-4225 instead, it's answered around the clock.",
     "busRoute": "",
     "contact": {
       "phone": {
@@ -525,7 +525,7 @@
     "categories": [
       "Healthcare (free/low-cost)"
     ],
-    "description": "Free, comprehensive healthcare for people with low or no income and no health insurance — primary and urgent care, dental, vision, lab work, women's health, behavioral health, and prescription medications. Formerly known as the Athens Nurses Clinic.",
+    "description": "Free, comprehensive healthcare for people with low or no income and no health insurance, primary and urgent care, dental, vision, lab work, women's health, behavioral health, and prescription medications. Formerly known as the Athens Nurses Clinic.",
     "whatToBring": "",
     "warmNextStep": "Come by 240 North Avenue on a Monday or Wednesday morning, or call (706) 613-6976 to ask how to be seen.",
     "busRoute": "",
@@ -566,7 +566,7 @@
     ],
     "description": "A community health center offering family practice, pediatrics, dentistry, behavioral health, podiatry, a pharmacy, labs, and immunizations at several Athens locations, including 402 McKinley Dr and 675 College Ave.",
     "whatToBring": "",
-    "warmNextStep": "Call (706) 543-1145 and ask to make an appointment — mention if money is tight so they can talk you through options.",
+    "warmNextStep": "Call (706) 543-1145 and ask to make an appointment, mention if money is tight so they can talk you through options.",
     "busRoute": "",
     "contact": {
       "phone": {
@@ -603,7 +603,7 @@
     "categories": [
       "Legal Aid"
     ],
-    "description": "Free civil legal help — things like housing, benefits, and family law — for people with lower incomes and for anyone 60 or older. This is the Athens office of a statewide nonprofit law firm; it does not handle criminal cases.",
+    "description": "Free civil legal help, things like housing, benefits, and family law, for people with lower incomes and for anyone 60 or older. This is the Athens office of a statewide nonprofit law firm; it does not handle criminal cases.",
     "whatToBring": "",
     "warmNextStep": "Call the statewide intake line at 1-833-457-7529 and explain your legal problem, or call the Athens office at (706) 227-5362.",
     "busRoute": "",
@@ -645,7 +645,7 @@
     ],
     "description": "A health and resource center focused on suicide prevention, best known for supporting musicians but open as a safe space to seek help. Connects people to affordable, obstacle-free professional counseling and medical care, plus support groups and youth programs.",
     "whatToBring": "",
-    "warmNextStep": "Call (706) 227-1515 or walk into 396 Oconee Street and say you're looking for help — you don't have to be a musician to ask.",
+    "warmNextStep": "Call (706) 227-1515 or walk into 396 Oconee Street and say you're looking for help, you don't have to be a musician to ask.",
     "busRoute": "",
     "contact": {
       "phone": {
@@ -683,7 +683,7 @@
     "categories": [
       "GED & Adult Education"
     ],
-    "description": "Free classes to help you get ready for the GED test or HiSET exam — two paths to a high school equivalency diploma. Classes are offered in each county the college serves, including Clarke County in Athens.",
+    "description": "Free classes to help you get ready for the GED test or HiSET exam, two paths to a high school equivalency diploma. Classes are offered in each county the college serves, including Clarke County in Athens.",
     "whatToBring": "",
     "warmNextStep": "Call (706) 583-2551 and say you'd like to sign up for free GED classes.",
     "busRoute": "",
@@ -722,9 +722,9 @@
     "categories": [
       "Transportation"
     ],
-    "description": "The public bus system for Athens — and every ride is fare-free for everyone. Fixed routes run across the county, and The Lift offers door-to-door paratransit rides for ADA-eligible riders. You can track buses live with the myStop app.",
-    "whatToBring": "Nothing — rides are free, no ticket or pass needed.",
-    "warmNextStep": "Just board any Athens Transit bus — riding is free. Call 706-613-3430 if you need help figuring out which route to take.",
+    "description": "The public bus system for Athens, and every ride is fare-free for everyone. Fixed routes run across the county, and The Lift offers door-to-door paratransit rides for ADA-eligible riders. You can track buses live with the myStop app.",
+    "whatToBring": "Nothing, rides are free, no ticket or pass needed.",
+    "warmNextStep": "Just board any Athens Transit bus, riding is free. Call 706-613-3430 if you need help figuring out which route to take.",
     "busRoute": "",
     "contact": {
       "phone": {
@@ -761,8 +761,8 @@
     "categories": [
       "Addiction Recovery"
     ],
-    "description": "A peer-run recovery community organization — support from people who have walked the road of recovery themselves, trained as certified peer specialists, for anyone recovering from substance use or mental health challenges.",
-    "whatToBring": "Nothing — just yourself, wherever you are in your recovery.",
+    "description": "A peer-run recovery community organization, support from people who have walked the road of recovery themselves, trained as certified peer specialists, for anyone recovering from substance use or mental health challenges.",
+    "whatToBring": "Nothing, just yourself, wherever you are in your recovery.",
     "warmNextStep": "Call 706-850-8855 on a weekday and say you'd like to talk with a peer about recovery support.",
     "busRoute": "",
     "contact": {
@@ -801,8 +801,8 @@
     "categories": [
       "Food"
     ],
-    "description": "Provides a week's worth of groceries for Athens-Clarke County families and individuals facing an emergency. You'll need a referral from an approved agency — many churches and helping organizations in town can refer you.",
-    "whatToBring": "A referral from an approved agency — if you don't have one, call first and they can point you to an agency that refers.",
+    "description": "Provides a week's worth of groceries for Athens-Clarke County families and individuals facing an emergency. You'll need a referral from an approved agency, many churches and helping organizations in town can refer you.",
+    "whatToBring": "A referral from an approved agency, if you don't have one, call first and they can point you to an agency that refers.",
     "warmNextStep": "Call (706) 353-8182 on a weekday morning and ask how to get a referral for a week of food.",
     "busRoute": "",
     "contact": {
@@ -820,7 +820,7 @@
       },
       "website": {
         "value": "https://www.athensfoodbank.org/",
-        "source": "https://www.athensfoodbank.org/donations.html"
+        "source": "https://www.athensfoodbank.org/"
       }
     },
     "servesPopulation": [
@@ -840,7 +840,7 @@
     "categories": [
       "Jobs & Workforce"
     ],
-    "description": "The state career center for Athens and surrounding counties — help with job searching, unemployment claims, and connecting with employers.",
+    "description": "The state career center for Athens and surrounding counties, help with job searching, unemployment claims, and connecting with employers.",
     "whatToBring": "",
     "warmNextStep": "Walk into the career center at 150 Evelyn C. Neely Drive and ask a staff member to help you start a job search.",
     "busRoute": "",
@@ -908,6 +908,810 @@
       "lat": 33.9712615,
       "lng": -83.3613506,
       "source": "https://nominatim.openstreetmap.org/search?q=705+Fourth+Street,+Athens,+Georgia+30601&format=json"
+    },
+    "lastVerified": "2026-07-07",
+    "verified": true
+  },
+  {
+    "id": "clarke-county-health-department",
+    "name": "Clarke County Health Department",
+    "categories": [
+      "Healthcare (free/low-cost)"
+    ],
+    "description": "The public health department for Athens-Clarke County. Services include birth control and family planning, immunizations, WIC nutrition support for moms and young children, tuberculosis testing and treatment, HIV testing and prevention, testing and treatment for sexually transmitted infections, breast and cervical cancer screening, blood pressure checks, and birth and death certificates.",
+    "whatToBring": "",
+    "warmNextStep": "Call 706-389-6921 and tell them what you need, shots, testing, WIC, or a birth certificate, and they'll tell you what to do next.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "706-389-6921",
+        "source": "https://www.northeasthealthdistrict.org/locations/clarke-county/"
+      },
+      "address": {
+        "value": "345 North Harris Street Athens, Georgia 30601",
+        "source": "https://www.northeasthealthdistrict.org/locations/clarke-county/"
+      },
+      "hours": {
+        "value": "Monday: 8:00 am - 5:00 pm, Tuesday: 8:00 am - 7:00 pm, Wednesday: 8:00 am - 5:00 pm, Thursday: 8:00 am - 5:00 pm, Friday: 8:00 am - 2:00 pm",
+        "source": "https://www.northeasthealthdistrict.org/locations/clarke-county/"
+      },
+      "website": {
+        "value": "https://www.northeasthealthdistrict.org/locations/clarke-county/",
+        "source": "https://www.northeasthealthdistrict.org/locations/clarke-county/"
+      }
+    },
+    "servesPopulation": [
+      "Athens-Clarke County residents"
+    ],
+    "geo": {
+      "lat": 33.9580187,
+      "lng": -83.3882831,
+      "source": "https://nominatim.openstreetmap.org/search?q=345+North+Harris+Street,+Athens,+Georgia+30601&format=json"
+    },
+    "lastVerified": "2026-07-07",
+    "verified": true
+  },
+  {
+    "id": "oconee-county-health-department",
+    "name": "Oconee County Health Department",
+    "categories": [
+      "Healthcare (free/low-cost)"
+    ],
+    "description": "The public health department for Oconee County, in Watkinsville. Services include birth control and family planning, immunizations, WIC nutrition support for moms and young children, tuberculosis testing and treatment, HIV testing and prevention, testing and treatment for sexually transmitted infections, breast and cervical cancer screening, and blood pressure checks.",
+    "whatToBring": "",
+    "warmNextStep": "Call 706-769-3983 and tell them what you need, shots, testing, or WIC, and they'll tell you what to do next.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "706-769-3983",
+        "source": "https://www.northeasthealthdistrict.org/locations/oconee-county/"
+      },
+      "address": {
+        "value": "1060 Experiment Station Road, Watkinsville, Georgia 30677",
+        "source": "https://www.northeasthealthdistrict.org/locations/oconee-county/"
+      },
+      "hours": {
+        "value": "Monday: 8:00 am - 5:00 pm, Tuesday: 8:00 am - 7:00 pm, Wednesday: 8:00 am - 5:00 pm, Thursday: 8:00 am - 5:00 pm, Friday: 8:00 am - 2:00 pm",
+        "source": "https://www.northeasthealthdistrict.org/locations/oconee-county/"
+      },
+      "website": {
+        "value": "https://www.northeasthealthdistrict.org/locations/oconee-county/",
+        "source": "https://www.northeasthealthdistrict.org/locations/oconee-county/"
+      }
+    },
+    "servesPopulation": [
+      "Oconee County residents"
+    ],
+    "geo": {
+      "lat": 33.8664983,
+      "lng": -83.4136683,
+      "source": "https://nominatim.openstreetmap.org/search?q=1060+Experiment+Station+Road,+Watkinsville,+Georgia+30677&format=json"
+    },
+    "lastVerified": "2026-07-07",
+    "verified": true
+  },
+  {
+    "id": "clarke-county-dfcs",
+    "name": "Clarke County DFCS Office",
+    "categories": [
+      "Youth & Family"
+    ],
+    "description": "The Clarke County office of Georgia's Division of Family and Children Services (DFCS), the state agency for family and children's services. To report child abuse or neglect, the statewide CPS Central Intake Center is 1-855-422-4453; for questions about state benefits, the Customer Contact Center is 1-877-423-4746.",
+    "whatToBring": "",
+    "warmNextStep": "Call (706) 227-7021 on a weekday and tell them what your family needs help with, they can point you to the right program.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "(706) 227-7021",
+        "source": "https://dfcs.georgia.gov/locations/clarke-county"
+      },
+      "address": {
+        "value": "284 North Avenue Athens, GA 30601",
+        "source": "https://dfcs.georgia.gov/locations/clarke-county"
+      },
+      "hours": {
+        "value": "Monday - Friday: 09:00 a.m. - 04:00 p.m.",
+        "source": "https://dfcs.georgia.gov/locations/clarke-county"
+      },
+      "website": {
+        "value": "https://dfcs.georgia.gov/locations/clarke-county",
+        "source": "https://dfcs.georgia.gov/locations/clarke-county"
+      }
+    },
+    "servesPopulation": [
+      "Families and children in Clarke County"
+    ],
+    "geo": {
+      "lat": 33.9729154,
+      "lng": -83.3647266,
+      "source": "https://nominatim.openstreetmap.org/search?q=284+North+Avenue,+Athens,+Georgia+30601&format=json"
+    },
+    "lastVerified": "2026-07-07",
+    "verified": true
+  },
+  {
+    "id": "athens-housing-authority",
+    "name": "Athens Housing Authority",
+    "categories": [
+      "Housing & Shelter"
+    ],
+    "description": "The public housing agency for Athens. Provides affordable housing options including public housing communities, Section 8 rental assistance, and affordable homeownership programs, plus supportive services for residents. There is also a resident concerns hotline at 706-425-5411.",
+    "whatToBring": "",
+    "warmNextStep": "Call 706-425-5300 and ask how to apply for affordable housing or get on a waiting list.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "706.425.5300",
+        "source": "https://www.athenshousing.org/"
+      },
+      "address": {
+        "value": "300 S. Rocksprings St. Athens GA 30606",
+        "source": "https://www.athenshousing.org/"
+      },
+      "hours": {
+        "value": "",
+        "source": ""
+      },
+      "website": {
+        "value": "https://www.athenshousing.org/",
+        "source": "https://www.athenshousing.org/"
+      }
+    },
+    "servesPopulation": [
+      "Low- and moderate-income renters and homebuyers in Athens"
+    ],
+    "geo": {
+      "lat": 33.9504428,
+      "lng": -83.3931792,
+      "source": "https://nominatim.openstreetmap.org/search?q=300+South+Rocksprings+Street,+Athens,+Georgia+30606&format=json"
+    },
+    "lastVerified": "2026-07-07",
+    "verified": true
+  },
+  {
+    "id": "athens-clarke-county-library",
+    "name": "Athens-Clarke County Library",
+    "categories": [
+      "GED & Adult Education",
+      "Youth & Family"
+    ],
+    "description": "The public library on Baxter Street, free to everyone. Computers, printing and scanning, free WiFi, computer classes, children's and teen services, meeting rooms, passports, and even social worker assistance. A safe, welcoming place to sit, read, learn, or get online.",
+    "whatToBring": "Nothing, the library is free and open to all.",
+    "warmNextStep": "Walk in at 2025 Baxter Street and ask at the front desk, staff can help you get a library card, get online, or find the social worker.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "706-613-3650",
+        "source": "https://athenslibrary.org/location/athens-clarke/"
+      },
+      "address": {
+        "value": "2025 Baxter Street Athens GA 30606",
+        "source": "https://athenslibrary.org/location/athens-clarke/"
+      },
+      "hours": {
+        "value": "Monday 9:00 AM - 9:00 PM\nTuesday 9:00 AM - 9:00 PM\nWednesday 9:00 AM - 9:00 PM\nThursday 9:00 AM - 9:00 PM\nFriday 9:00 AM - 6:00 PM\nSaturday 9:00 AM - 6:00 PM\nSunday 2:00 PM - 6:00 PM",
+        "source": "https://athenslibrary.org/location/athens-clarke/"
+      },
+      "website": {
+        "value": "https://athenslibrary.org/location/athens-clarke/",
+        "source": "https://athenslibrary.org/location/athens-clarke/"
+      }
+    },
+    "servesPopulation": [
+      "Everyone"
+    ],
+    "geo": {
+      "lat": 33.9450384,
+      "lng": -83.403645,
+      "source": "https://nominatim.openstreetmap.org/search?q=2025+Baxter+Street,+Athens,+Georgia+30606&format=json"
+    },
+    "lastVerified": "2026-07-07",
+    "verified": true
+  },
+  {
+    "id": "oconee-county-senior-center",
+    "name": "Oconee County Senior Center",
+    "categories": [
+      "Food",
+      "Transportation"
+    ],
+    "description": "Oconee County's center for older adults, with meals served at the center and delivered to homes, rides to and from the center, exercise programs, card games, bingo, and other activities. Full membership (age 60+) includes meals and transportation; adults 55+ can join for activities.",
+    "whatToBring": "",
+    "warmNextStep": "Call 706-769-3979 and ask about becoming a member or getting meals delivered.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "706-769-3979",
+        "source": "https://www.oconeecountyga.gov/1234/Senior-Center"
+      },
+      "address": {
+        "value": "3500B Hog Mountain Road Watkinsville, GA 30677",
+        "source": "https://www.oconeecountyga.gov/1234/Senior-Center"
+      },
+      "hours": {
+        "value": "Monday through Friday, 8 am to 4 pm",
+        "source": "https://www.oconeecountyga.gov/1234/Senior-Center"
+      },
+      "website": {
+        "value": "https://www.oconeecountyga.gov/1234/Senior-Center",
+        "source": "https://www.oconeecountyga.gov/1234/Senior-Center"
+      }
+    },
+    "servesPopulation": [
+      "Adults 60 and older (full membership)",
+      "Adults 55 and older (activities)"
+    ],
+    "geo": {
+      "lat": 33.8732801,
+      "lng": -83.4416838,
+      "source": "https://nominatim.openstreetmap.org/search?q=Hog+Mountain+Road,+Oconee+County,+Georgia&format=json (street-level match)"
+    },
+    "lastVerified": "2026-07-07",
+    "verified": true
+  },
+  {
+    "id": "gvra-athens-vr-office",
+    "name": "Georgia Vocational Rehabilitation Agency - Athens VR Office",
+    "categories": [
+      "Jobs & Workforce"
+    ],
+    "description": "The state vocational rehabilitation office for the Athens area, helping people with disabilities prepare for, find, and keep a job.",
+    "whatToBring": "",
+    "warmNextStep": "Call (844) 367-4872 and say you have a disability and would like help finding work.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "(844) 367-4872",
+        "source": "https://gvs.georgia.gov/locations/athens-vr-office"
+      },
+      "address": {
+        "value": "125 Athens West Parkway Athens, GA 30606",
+        "source": "https://gvs.georgia.gov/locations/athens-vr-office"
+      },
+      "hours": {
+        "value": "Monday - Friday: 08:00 a.m. - 05:00 p.m.",
+        "source": "https://gvs.georgia.gov/locations/athens-vr-office"
+      },
+      "website": {
+        "value": "https://gvs.georgia.gov/locations/athens-vr-office",
+        "source": "https://gvs.georgia.gov/locations/athens-vr-office"
+      }
+    },
+    "servesPopulation": [
+      "People with disabilities who want to work"
+    ],
+    "geo": {
+      "lat": 33.9432796,
+      "lng": -83.4486588,
+      "source": "https://nominatim.openstreetmap.org/search?q=125+Athens+West+Parkway,+Athens,+Georgia+30606&format=json"
+    },
+    "lastVerified": "2026-07-07",
+    "verified": true
+  },
+  {
+    "id": "uga-extension-athens-clarke",
+    "name": "UGA Extension Athens-Clarke County",
+    "categories": [
+      "Youth & Family",
+      "GED & Adult Education"
+    ],
+    "description": "The University of Georgia's Extension office for Athens-Clarke County. Free and low-cost help with gardening and landscaping questions, soil and water testing, 4-H youth programs, family and consumer sciences classes, and SNAP-Ed nutrition education for families on a budget.",
+    "whatToBring": "",
+    "warmNextStep": "Call 706-613-3640 with your question, whether it's about your garden, your kids joining 4-H, or stretching your food budget.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "706-613-3640",
+        "source": "https://extension.uga.edu/county-offices/clarke.html"
+      },
+      "address": {
+        "value": "275 Cleveland Road | Bogart, GA 30622",
+        "source": "https://extension.uga.edu/county-offices/clarke.html"
+      },
+      "hours": {
+        "value": "Monday-Friday, 8am-12pm and 1pm-5pm",
+        "source": "https://extension.uga.edu/county-offices/clarke.html"
+      },
+      "website": {
+        "value": "https://extension.uga.edu/county-offices/clarke.html",
+        "source": "https://extension.uga.edu/county-offices/clarke.html"
+      }
+    },
+    "servesPopulation": [
+      "Athens-Clarke County residents and families",
+      "Youth (4-H)"
+    ],
+    "geo": {
+      "lat": 33.9597072,
+      "lng": -83.4889892,
+      "source": "https://nominatim.openstreetmap.org/search?q=Cleveland+Road,+Athens,+Georgia&format=json (street-level match)"
+    },
+    "lastVerified": "2026-07-07",
+    "verified": true
+  },
+  {
+    "id": "uga-extension-oconee",
+    "name": "UGA Extension Oconee County",
+    "categories": [
+      "Youth & Family",
+      "GED & Adult Education"
+    ],
+    "description": "The University of Georgia's Extension office for Oconee County, in Watkinsville. Research-based help with agriculture and natural resources (including testing services), 4-H youth development programs, and family and consumer sciences education.",
+    "whatToBring": "",
+    "warmNextStep": "Call 706-542-7078 with your question, about your garden, your farm, or getting your kids into 4-H.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "706-542-7078",
+        "source": "https://extension.uga.edu/county-offices/oconee.html"
+      },
+      "address": {
+        "value": "1420 Experiment Station Road | Watkinsville, GA 30677",
+        "source": "https://extension.uga.edu/county-offices/oconee.html"
+      },
+      "hours": {
+        "value": "8:00am to 12:00pm\nClosed for lunch, 12:00pm - 1:00pm\n1:00pm to 5:00pm",
+        "source": "https://extension.uga.edu/county-offices/oconee.html"
+      },
+      "website": {
+        "value": "https://extension.uga.edu/county-offices/oconee.html",
+        "source": "https://extension.uga.edu/county-offices/oconee.html"
+      }
+    },
+    "servesPopulation": [
+      "Oconee County residents and families",
+      "Youth (4-H)"
+    ],
+    "geo": {
+      "lat": 33.8702177,
+      "lng": -83.4222554,
+      "source": "https://nominatim.openstreetmap.org/search?q=1420+Experiment+Station+Road,+Watkinsville,+Georgia+30677&format=json (street-level match)"
+    },
+    "lastVerified": "2026-07-07",
+    "verified": true
+  },
+  {
+    "id": "love-and-money-center-uga",
+    "name": "The Love and Money Center at UGA",
+    "categories": [
+      "Counseling & Mental Health"
+    ],
+    "description": "A center at UGA's College of Family and Consumer Sciences offering individual therapy, couple and family therapy, and financial planning and coaching, because money stress and relationship stress often go hand in hand. Financial planning services are pro bono (free). Sessions are by appointment.",
+    "whatToBring": "",
+    "warmNextStep": "Call 706-542-4486 or email loveandmoney@uga.edu and ask to request an appointment.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "706-542-4486",
+        "source": "https://www.fcs.uga.edu/loveandmoneycenter/contact"
+      },
+      "address": {
+        "value": "202 Carlton Street, Athens, GA 30602",
+        "source": "https://www.fcs.uga.edu/loveandmoneycenter/contact"
+      },
+      "hours": {
+        "value": "Monday-Friday, 9:00 a.m. - 5:00 p.m.",
+        "source": "https://www.fcs.uga.edu/loveandmoneycenter/contact"
+      },
+      "website": {
+        "value": "https://www.fcs.uga.edu/loveandmoneycenter/contact",
+        "source": "https://www.fcs.uga.edu/loveandmoneycenter/contact"
+      }
+    },
+    "servesPopulation": [
+      "Individuals, couples, and families"
+    ],
+    "geo": {
+      "lat": 33.9435939,
+      "lng": -83.3767998,
+      "source": "https://nominatim.openstreetmap.org/search?q=202+Carlton+Street,+Athens,+Georgia+30602&format=json"
+    },
+    "lastVerified": "2026-07-07",
+    "verified": true
+  },
+  {
+    "id": "athens-community-council-on-aging",
+    "name": "Athens Community Council on Aging",
+    "categories": [
+      "Food",
+      "Transportation",
+      "Youth & Family"
+    ],
+    "description": "Support for older adults and the people who care for them: Meals on Wheels, the Center for Active Living, adult day health, transportation, Medicare counseling through Georgia SHIP, a dementia resource center, support groups, and a Grandparents Raising Grandchildren program.",
+    "whatToBring": "",
+    "warmNextStep": "Call (706) 549-4850 and tell them what you or the older adult in your life needs, meals, rides, or caregiver support.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "(706) 549-4850",
+        "source": "https://www.accaging.org/"
+      },
+      "address": {
+        "value": "135 Hoyt Street, Athens, GA 30601",
+        "source": "https://www.accaging.org/"
+      },
+      "hours": {
+        "value": "8:00 a.m. - 4:30 p.m. (M-Th) / 8:00 a.m. - 3:00 p.m. (F)",
+        "source": "https://www.accaging.org/"
+      },
+      "website": {
+        "value": "https://www.accaging.org/",
+        "source": "https://www.accaging.org/"
+      }
+    },
+    "servesPopulation": [
+      "Older adults",
+      "Caregivers",
+      "Grandparents raising grandchildren"
+    ],
+    "geo": {
+      "lat": 33.9641355,
+      "lng": -83.3791957,
+      "source": "https://nominatim.openstreetmap.org/search?q=135+Hoyt+Street,+Athens,+Georgia+30601&format=json"
+    },
+    "lastVerified": "2026-07-07",
+    "verified": true
+  },
+  {
+    "id": "books-for-keeps",
+    "name": "Books for Keeps",
+    "categories": [
+      "Youth & Family"
+    ],
+    "description": "A children's literacy nonprofit that gives books to young readers in Athens and offers literacy mentoring, built on the belief that literacy is a human right that belongs to all people.",
+    "whatToBring": "",
+    "warmNextStep": "Call 706-410-1912 or email info@booksforkeeps.org and ask how your child can get books.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "706-410-1912",
+        "source": "https://www.booksforkeeps.org/"
+      },
+      "address": {
+        "value": "",
+        "source": ""
+      },
+      "hours": {
+        "value": "",
+        "source": ""
+      },
+      "website": {
+        "value": "https://www.booksforkeeps.org/",
+        "source": "https://www.booksforkeeps.org/"
+      }
+    },
+    "servesPopulation": [
+      "Children and young readers"
+    ],
+    "geo": {
+      "lat": null,
+      "lng": null,
+      "source": ""
+    },
+    "lastVerified": "2026-07-07",
+    "verified": true
+  },
+  {
+    "id": "casa-de-amistad",
+    "name": "Casa de Amistad",
+    "categories": [
+      "GED & Adult Education"
+    ],
+    "description": "Free English classes for adults (ESL), a Spanish-language GED program so you can earn a high school equivalency in Spanish, and Spanish classes for the wider community, all in a welcoming, community-centered environment.",
+    "whatToBring": "",
+    "warmNextStep": "Call 706-621-5464 or email athensamistad@gmail.com and say you'd like to join a class, en español está bien.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "706-621-5464",
+        "source": "https://www.athensamistad.com/"
+      },
+      "address": {
+        "value": "",
+        "source": ""
+      },
+      "hours": {
+        "value": "",
+        "source": ""
+      },
+      "website": {
+        "value": "https://www.athensamistad.com/",
+        "source": "https://www.athensamistad.com/"
+      }
+    },
+    "servesPopulation": [
+      "Adult English learners",
+      "Spanish-speaking adults seeking a GED"
+    ],
+    "geo": {
+      "lat": null,
+      "lng": null,
+      "source": ""
+    },
+    "lastVerified": "2026-07-07",
+    "verified": true
+  },
+  {
+    "id": "live-forward",
+    "name": "Live Forward",
+    "categories": [
+      "Housing & Shelter",
+      "Healthcare (free/low-cost)"
+    ],
+    "description": "Housing help and supportive services for people living with or affected by HIV/AIDS in Northeast Georgia, plus an HIV outreach and prevention program. Their goal is stable housing, better health, and independence.",
+    "whatToBring": "",
+    "warmNextStep": "Call 706-549-3730 and say you'd like to talk with someone about housing or HIV support, it's confidential.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "706-549-3730",
+        "source": "https://www.liveforward.org/"
+      },
+      "address": {
+        "value": "2500 W Broad Street | Suite 300 | Athens, GA 30606",
+        "source": "https://www.liveforward.org/"
+      },
+      "hours": {
+        "value": "",
+        "source": ""
+      },
+      "website": {
+        "value": "https://www.liveforward.org/",
+        "source": "https://www.liveforward.org/"
+      }
+    },
+    "servesPopulation": [
+      "People living with or affected by HIV/AIDS"
+    ],
+    "geo": {
+      "lat": 33.9465847,
+      "lng": -83.4204891,
+      "source": "https://nominatim.openstreetmap.org/search?q=2500+West+Broad+Street,+Athens,+Georgia+30606&format=json"
+    },
+    "lastVerified": "2026-07-07",
+    "verified": true
+  },
+  {
+    "id": "extra-special-people",
+    "name": "Extra Special People (ESP)",
+    "categories": [
+      "Youth & Family"
+    ],
+    "description": "Year-round programs in Watkinsville for children and adults with developmental differences, afternoon programs, summer day camps, overnight camps, adaptive sports, and job training through the Java Joy café, plus events and support for the whole family.",
+    "whatToBring": "",
+    "warmNextStep": "Call (706) 769-9333 and ask how your child or family member can join a program.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "(706) 769-9333",
+        "source": "https://espyouandme.org/esp-athens/"
+      },
+      "address": {
+        "value": "189 VFW Drive Watkinsville, GA 30677",
+        "source": "https://espyouandme.org/esp-athens/"
+      },
+      "hours": {
+        "value": "",
+        "source": ""
+      },
+      "website": {
+        "value": "https://espyouandme.org/esp-athens/",
+        "source": "https://espyouandme.org/esp-athens/"
+      }
+    },
+    "servesPopulation": [
+      "Children and adults with developmental differences",
+      "Their families"
+    ],
+    "geo": {
+      "lat": 33.8668633,
+      "lng": -83.4193021,
+      "source": "https://nominatim.openstreetmap.org/search?q=189+VFW+Drive,+Watkinsville,+Georgia+30677&format=json"
+    },
+    "lastVerified": "2026-07-07",
+    "verified": true
+  },
+  {
+    "id": "athens-land-trust",
+    "name": "Athens Land Trust",
+    "categories": [
+      "Housing & Shelter",
+      "Youth & Family"
+    ],
+    "description": "Works on affordable homeownership with financial counseling, community gardens and locally grown produce through community agriculture, youth development programs, and land conservation in Athens.",
+    "whatToBring": "",
+    "warmNextStep": "Call (706) 613-0122 and ask about affordable homeownership or their community programs.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "(706) 613-0122",
+        "source": "https://athenslandtrust.org/contact/"
+      },
+      "address": {
+        "value": "685 N Pope Street, Athens, Georgia 30601",
+        "source": "https://athenslandtrust.org/contact/"
+      },
+      "hours": {
+        "value": "",
+        "source": ""
+      },
+      "website": {
+        "value": "https://athenslandtrust.org/",
+        "source": "https://athenslandtrust.org/contact/"
+      }
+    },
+    "servesPopulation": [
+      "Aspiring homeowners with modest incomes",
+      "Youth",
+      "Community gardeners and farmers"
+    ],
+    "geo": {
+      "lat": 33.9616143,
+      "lng": -83.3856095,
+      "source": "https://nominatim.openstreetmap.org/search?q=685+North+Pope+Street,+Athens,+Georgia+30601&format=json"
+    },
+    "lastVerified": "2026-07-07",
+    "verified": true
+  },
+  {
+    "id": "the-cottage-athens",
+    "name": "The Cottage: Sexual Assault Center & Children's Advocacy Center",
+    "categories": [
+      "Counseling & Mental Health",
+      "Youth & Family"
+    ],
+    "description": "Free, confidential, trauma-informed support for survivors of sexual assault and for children who have been abused, counseling, crisis intervention, advocacy, accompaniment to medical exams, forensic interviews for children, and caregiver support. The 24/7 crisis hotline is 1-877-363-1912.",
+    "whatToBring": "Nothing. Everything is free and confidential.",
+    "warmNextStep": "Call the 24/7 hotline at 1-877-363-1912 any time, someone will listen and walk you through your options. For non-crisis questions, call (706) 546-1133.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "(706) 546-1133",
+        "source": "https://thecottagega.org/"
+      },
+      "address": {
+        "value": "3019 Lexington Road Athens, GA 30605",
+        "source": "https://thecottagega.org/"
+      },
+      "hours": {
+        "value": "",
+        "source": ""
+      },
+      "website": {
+        "value": "https://thecottagega.org/",
+        "source": "https://thecottagega.org/"
+      }
+    },
+    "servesPopulation": [
+      "Survivors of sexual assault",
+      "Children who have experienced abuse",
+      "Caregivers"
+    ],
+    "geo": {
+      "lat": 33.9427949,
+      "lng": -83.3275099,
+      "source": "https://nominatim.openstreetmap.org/search?q=3019+Lexington+Road,+Athens,+Georgia+30605&format=json"
+    },
+    "lastVerified": "2026-07-07",
+    "verified": true
+  },
+  {
+    "id": "oconee-area-resource-council",
+    "name": "Oconee Area Resource Council (OARC)",
+    "categories": [
+      "Food",
+      "Youth & Family"
+    ],
+    "description": "A Watkinsville nonprofit connecting Oconee-area families to help: Food for Kids and Summer Food for Kids, the Oconee Mentor Program, Adopt a Family, Dolly Parton's Imagination Library free books for young children, and Support Our Seniors. Open to the public by appointment.",
+    "whatToBring": "",
+    "warmNextStep": "Call 706-769-4974 and tell them what your family needs, they'll set up a time to meet with you.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "706-769-4974",
+        "source": "https://www.oconeeconnection.org/contact/"
+      },
+      "address": {
+        "value": "1071 Jamestown Blvd, Building 600, Suite 601, Watkinsville, GA 30677",
+        "source": "https://www.oconeeconnection.org/contact/"
+      },
+      "hours": {
+        "value": "Open to public by appointment",
+        "source": "https://www.oconeeconnection.org/contact/"
+      },
+      "website": {
+        "value": "https://www.oconeeconnection.org/",
+        "source": "https://www.oconeeconnection.org/contact/"
+      }
+    },
+    "servesPopulation": [
+      "Oconee-area families and children",
+      "Seniors"
+    ],
+    "geo": {
+      "lat": 33.8642092,
+      "lng": -83.4487944,
+      "source": "https://nominatim.openstreetmap.org/search?q=Jamestown+Boulevard,+Oconee+County,+Georgia&format=json (street-level match)"
+    },
+    "lastVerified": "2026-07-07",
+    "verified": true
+  },
+  {
+    "id": "athens-free-clinic",
+    "name": "Athens Free Clinic",
+    "categories": [
+      "Healthcare (free/low-cost)"
+    ],
+    "description": "A free and low-cost primary care clinic run by AU/UGA Medical Partnership doctors, medical students, and residents, care for all ages and genders, for both new problems and ongoing conditions, plus screening and prevention. Focused on medically underserved communities in the Athens area.",
+    "whatToBring": "",
+    "warmNextStep": "Call 706-713-2208 and ask how to be seen at the Athens Free Clinic.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "706-713-2208",
+        "source": "https://medicalpartnership.usg.edu/education/athens-free-clinic/"
+      },
+      "address": {
+        "value": "Russell Hall 138\n1425 Prince Avenue\nAthens, GA 30602",
+        "source": "https://medicalpartnership.usg.edu/education/athens-free-clinic/"
+      },
+      "hours": {
+        "value": "",
+        "source": ""
+      },
+      "website": {
+        "value": "https://medicalpartnership.usg.edu/education/athens-free-clinic/",
+        "source": "https://medicalpartnership.usg.edu/education/athens-free-clinic/"
+      }
+    },
+    "servesPopulation": [
+      "Medically underserved and uninsured people in the Athens area"
+    ],
+    "geo": {
+      "lat": 33.9635208,
+      "lng": -83.4012642,
+      "source": "https://nominatim.openstreetmap.org/search?q=1425+Prince+Avenue,+Athens,+Georgia+30602&format=json"
+    },
+    "lastVerified": "2026-07-07",
+    "verified": true
+  },
+  {
+    "id": "u-lead-athens",
+    "name": "U-Lead Athens",
+    "categories": [
+      "Youth & Family",
+      "GED & Adult Education"
+    ],
+    "description": "A volunteer nonprofit that helps immigrant students and students from immigrant families, including undocumented and underdocumented students, get access to college.",
+    "whatToBring": "",
+    "warmNextStep": "Stop by 130 Hope Ave or reach out online and say you're a student who wants help getting to college.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "",
+        "source": ""
+      },
+      "address": {
+        "value": "130 Hope Ave ATHENS, GA 30606",
+        "source": "https://www.gagives.org/organization/U-Lead-Athens"
+      },
+      "hours": {
+        "value": "",
+        "source": ""
+      },
+      "website": {
+        "value": "",
+        "source": ""
+      }
+    },
+    "servesPopulation": [
+      "Immigrant students and students from immigrant families",
+      "Un(der)documented students"
+    ],
+    "geo": {
+      "lat": 33.9327584,
+      "lng": -83.3905783,
+      "source": "https://nominatim.openstreetmap.org/search?q=130+Hope+Avenue,+Athens,+Georgia+30606&format=json"
     },
     "lastVerified": "2026-07-07",
     "verified": true

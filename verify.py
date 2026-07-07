@@ -35,9 +35,11 @@ APPROVED_CATEGORIES = {
     "Youth & Family",
 }
 
-# Athens-Clarke County, GA bounding box (slightly padded).
-LAT_MIN, LAT_MAX = 33.80, 34.08
-LNG_MIN, LNG_MAX = -83.62, -83.18
+# Service area: Athens-Clarke County + Oconee County, GA (union of the two
+# county bounding boxes; Oconee bbox per Nominatim: 33.6983070..33.9657304,
+# -83.6471684..-83.2762105). Scope expanded to Oconee by human decision 2026-07-07.
+LAT_MIN, LAT_MAX = 33.698, 34.08
+LNG_MIN, LNG_MAX = -83.648, -83.18
 
 REQUIRED_FIELDS = [
     "id", "name", "categories", "description", "whatToBring", "warmNextStep",

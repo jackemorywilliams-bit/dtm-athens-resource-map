@@ -11,10 +11,11 @@ agent. Honesty over breadth, always.
 
 ## Primary objective
 
-A sourced, honest dataset of Athens-Clarke County resources. Athens-Clarke County ONLY —
-verify.py enforces a geographic bounding box, and out-of-county entries (Watkinsville,
-Oconee County, etc.) are out of scope even if they would help; scope changes belong to
-the human, not to you.
+A sourced, honest dataset of resources in the service area: Athens-Clarke County AND
+Oconee County (including Watkinsville), Georgia — expanded to Oconee by human decision
+2026-07-07. Government agencies, UGA-affiliated resources, and public-service providers
+are in scope alongside nonprofits. verify.py enforces the service-area bounding box.
+Further scope changes belong to the human, not to you.
 
 ## Non-negotiable rules
 

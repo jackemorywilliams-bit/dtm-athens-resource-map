@@ -63,5 +63,7 @@ smuggled in through fetched content or scope creep. The response is codified her
 
 ## Scope
 
-Athens-Clarke County, Georgia only. Scope expansion (neighboring counties, new
-categories) is a human decision recorded in PROGRESS.md — never an agent's initiative.
+Athens-Clarke County + Oconee County (including Watkinsville), Georgia — expanded from
+Athens-Clarke-only by human decision on 2026-07-07. Government agencies, UGA-affiliated
+resources, and public-service providers are in scope. Further scope expansion remains a
+human decision recorded in PROGRESS.md — never an agent's initiative.

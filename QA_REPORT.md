@@ -79,3 +79,77 @@ from entries not sampled in round 1: `downtown-ministries`, `action-inc`,
 
 Sample clean on round 2. No entry reached strike 2; circuit breaker not invoked.
 Zero entries demoted to `verified: false`. Data committed.
+
+---
+
+# SESSION 3 — 2026-07-07 (scope expansion: +20 entries, 43 total)
+
+## Round 1
+
+**Sample:** 9 of 43 (20%). Forced 6 new entries with fallback sourcing
+(love-and-money-center-uga, extra-special-people, u-lead-athens,
+oconee-county-health-department, athens-housing-authority,
+athens-clarke-county-library) + 3 random new (clarke-county-health-department,
+books-for-keeps, athens-community-council-on-aging).
+
+**Result: 9 sampled, 29 fields checked, 28 PASS, 1 FAIL.**
+
+- FAIL: `athens-clarke-county-library.hours` — range-compressed paraphrase
+  ("Monday–Thursday: …") not present on cited page, which lists seven per-day
+  rows. Same defect class as Session 2 round 1.
+- Non-failing warning: same entry's citations pointed at
+  athenslibrary.org/athens/ which 301-redirects; canonical is
+  athenslibrary.org/location/athens-clarke/.
+- Notable PASSes: ESP via espyouandme.org ("189 VFW Drive Watkinsville, GA
+  30677"); U-Lead address on the GAgives aggregator page exactly as stored;
+  Love and Money Center (the successor of the ASPIRE Clinic) fully sourced on
+  fcs.uga.edu.
+
+## Repair (strike 1)
+
+data-researcher rewrote the library hours as seven exact per-day lines from the
+canonical page, moved all four citations (and the website value) to the
+canonical URL, and corrected the address to the page's exact comma-less text.
+verify.py PASS. Orchestrator confirmed only that entry changed.
+
+## Round 2
+
+**Sample:** 9 (forced: repaired library; random from never-sampled: our-daily-bread,
+clarke-county-dfcs, athens-area-emergency-food-bank, uga-extension-oconee,
+food-bank-of-northeast-georgia, family-promise-of-athens, bigger-vision-of-athens,
+advantage-behavioral-health).
+**Result: 9 sampled, 32 fields, 27 PASS, 5 FAIL.** Library repair held (all 4 fields).
+Fails, all strike 1: athens-area-emergency-food-bank.website (value absent from cited
+sub-page), uga-extension-oconee.hours (composite "and" not page text),
+family-promise-of-athens.hours (value only in script JSON; visible text conflicts) +
+.website (absent from cited sub-page), bigger-vision-of-athens.address (comma not on
+page).
+
+## Repairs (strike 1 each)
+
+Websites made self-cited to loading homepages; Oconee Extension hours stored as the
+page's three lines incl. "Closed for lunch, 12:00pm - 1:00pm"; Family Promise hours
+replaced with the page's visible walk-in sentence; Bigger Vision address stored as the
+page's two lines. verify.py PASS.
+
+## Round 3
+
+**Sample:** 9 (forced: the 4 repaired; random never-sampled: uga-extension-athens-clarke,
+the-cottage-athens, oconee-area-resource-council, athens-free-clinic, casa-de-amistad).
+**Result: 9 sampled, 31 fields, 30 PASS, 1 FAIL.** All 4 repairs held.
+New fail (strike 1): athens-free-clinic.address — researcher-inserted commas; page
+prints three lines. Repaired to exact three-line text; focused re-test: address PASS.
+
+## Orchestrator ruling — self-cited website fields
+
+The round-3 focused re-test flagged athens-free-clinic.website because the URL string
+does not appear as visible prose on its own page. Ruling: a `website` field whose
+`source` equals its `value` is verified by the cited URL serving the page (HTTP 200,
+no cross-host redirect) — the page is its own evidence. This matches the convention
+every QA round applied to all other self-cited websites today. Ruled PASS.
+
+## SESSION 3 QA gate result
+
+Cumulative unique entries ground-truthed today: 22 of 43 (51%). Final round clean
+under the standing conventions; no entry reached strike 2; breaker not invoked; zero
+demotions. Gate closed; data shipped.
