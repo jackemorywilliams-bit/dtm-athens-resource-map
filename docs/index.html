@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DTM Athens Resource Map</title>
+<style>
+  /* PLACEHOLDER PAGE — the ui-developer agent replaces this file in Session 2.
+     The injection marker in the script below MUST be preserved in the source file. */
+  body { font-family: system-ui, sans-serif; margin: 2rem; color: #222; }
+  .note { background: #fff8e6; border: 1px solid #e6d9a8; padding: 1rem; border-radius: 8px; }
+  li { margin: .5rem 0; }
+</style>
+</head>
+<body>
+<h1>DTM Athens Resource Map</h1>
+<p class="note">Placeholder UI — scaffold only. The real map is built in Session 2.
+Things change — please call ahead before you go.</p>
+<ul id="list"></ul>
+<script>
+  // build.py replaces the marker below with the contents of resources.json.
+  const RESOURCES = [{"id": "SAMPLE_DELETE_ME", "name": "Sample Entry (delete me)", "categories": ["Food"], "description": "This is a placeholder entry so verify.py and build.py can run before real research begins. The data-researcher agent deletes it.", "whatToBring": "", "warmNextStep": "", "busRoute": "", "contact": {"phone": {"value": "", "source": ""}, "address": {"value": "", "source": ""}, "hours": {"value": "", "source": ""}, "website": {"value": "", "source": ""}}, "servesPopulation": [], "geo": {"lat": null, "lng": null, "source": ""}, "lastVerified": "2026-07-07", "verified": false}];
+  const list = document.getElementById("list");
+  (RESOURCES || []).forEach(function (r) {
+    const li = document.createElement("li");
+    li.textContent = r.name + " — " + (r.categories || []).join(", ");
+    list.appendChild(li);
+  });
+</script>
+</body>
+</html>

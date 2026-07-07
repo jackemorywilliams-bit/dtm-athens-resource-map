@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DTM Athens Resource Map</title>
+<style>
+  /* PLACEHOLDER PAGE — the ui-developer agent replaces this file in Session 2.
+     The injection marker in the script below MUST be preserved in the source file. */
+  body { font-family: system-ui, sans-serif; margin: 2rem; color: #222; }
+  .note { background: #fff8e6; border: 1px solid #e6d9a8; padding: 1rem; border-radius: 8px; }
+  li { margin: .5rem 0; }
+</style>
+</head>
+<body>
+<h1>DTM Athens Resource Map</h1>
+<p class="note">Placeholder UI — scaffold only. The real map is built in Session 2.
+Things change — please call ahead before you go.</p>
+<ul id="list"></ul>
+<script>
+  // build.py replaces the marker below with the contents of resources.json.
+  const RESOURCES = /*==INJECT_RESOURCES==*/null;
+  const list = document.getElementById("list");
+  (RESOURCES || []).forEach(function (r) {
+    const li = document.createElement("li");
+    li.textContent = r.name + " — " + (r.categories || []).join(", ");
+    list.appendChild(li);
+  });
+</script>
+</body>
+</html>
