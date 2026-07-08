@@ -1715,5 +1715,716 @@
     },
     "lastVerified": "2026-07-07",
     "verified": true
+  },
+  {
+    "id": "the-ark-united-ministry-outreach-center",
+    "name": "The Ark United Ministry Outreach Center",
+    "categories": [
+      "Housing & Shelter"
+    ],
+    "description": "Emergency financial help for low-income working families facing an unexpected crisis: rental assistance to prevent eviction, utility assistance to keep the water, heat, and electricity on, and financial education and lending through Common Wealth Athens. Serving Athens and surrounding counties since 1989.",
+    "whatToBring": "",
+    "warmNextStep": "Call 706-548-8155 on a weekday morning and tell them about the rent or bill you're worried about.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "706.548.8155",
+        "source": "https://www.athensark.org/"
+      },
+      "address": {
+        "value": "640A Barber St., Athens, GA 30601",
+        "source": "https://www.athensark.org/"
+      },
+      "hours": {
+        "value": "M-F: 9am-12:30pm",
+        "source": "https://www.athensark.org/"
+      },
+      "website": {
+        "value": "https://www.athensark.org/",
+        "source": "https://www.athensark.org/"
+      }
+    },
+    "servesPopulation": [
+      "Low-income working families in financial crisis"
+    ],
+    "geo": {
+      "lat": 33.9688278,
+      "lng": -83.3866034,
+      "source": "https://nominatim.openstreetmap.org/search?q=640+Barber+Street%2C+Athens%2C+Georgia+30601&format=json"
+    },
+    "lastVerified": "2026-07-08",
+    "verified": true
+  },
+  {
+    "id": "athens-aa-district-16b",
+    "name": "Athens A.A. (Alcoholics Anonymous District 16B)",
+    "categories": [
+      "Addiction Recovery"
+    ],
+    "description": "The local Alcoholics Anonymous community for Athens and surrounding areas. A hotline you can text or call connects you with someone who understands, and the website lists meetings across the area. There is also a Spanish-language line, texto o llamada, at (706) 351-2590.",
+    "whatToBring": "Nothing. Meetings are free and first names are enough.",
+    "warmNextStep": "Text or call the hotline at (706) 389-4164 and say you'd like help finding a meeting.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "(706) 389-4164",
+        "source": "https://www.athensaa.org/"
+      },
+      "address": {
+        "value": "",
+        "source": ""
+      },
+      "hours": {
+        "value": "",
+        "source": ""
+      },
+      "website": {
+        "value": "https://www.athensaa.org/",
+        "source": "https://www.athensaa.org/"
+      }
+    },
+    "servesPopulation": [
+      "Anyone who wants to stop drinking"
+    ],
+    "geo": {
+      "lat": null,
+      "lng": null,
+      "source": ""
+    },
+    "lastVerified": "2026-07-08",
+    "verified": true
+  },
+  {
+    "id": "acc-second-chance-desk",
+    "name": "ACC Second Chance Desk",
+    "categories": [
+      "Legal Aid"
+    ],
+    "description": "A free monthly help desk where an attorney reviews your criminal history and helps you restrict and seal eligible records from Athens-Clarke and Oconee County cases, what used to be called expungement. It's a partnership with the Georgia Justice Project, held at the Goodwill Career Center on Lexington Road. Pre-registration is required and opens on the first of the month before.",
+    "whatToBring": "",
+    "warmNextStep": "Call 404-600-1996 and ask to register for the next Second Chance Desk, it's free.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "404-600-1996",
+        "source": "https://www.accgov.com/8429/Second-Chance-Desk"
+      },
+      "address": {
+        "value": "4070 Lexington Road, Athens, GA 30605",
+        "source": "https://www.accgov.com/8429/Second-Chance-Desk"
+      },
+      "hours": {
+        "value": "third Thursday of every month from 9:00 AM - 1:00 PM",
+        "source": "https://www.accgov.com/8429/Second-Chance-Desk"
+      },
+      "website": {
+        "value": "https://www.accgov.com/8429/Second-Chance-Desk",
+        "source": "https://www.accgov.com/8429/Second-Chance-Desk"
+      }
+    },
+    "servesPopulation": [
+      "People with criminal records from Athens-Clarke or Oconee County cases"
+    ],
+    "geo": {
+      "lat": 33.9370235,
+      "lng": -83.32313,
+      "source": "https://nominatim.openstreetmap.org/search?q=4070+Lexington+Road%2C+Athens%2C+Georgia+30605&format=json"
+    },
+    "lastVerified": "2026-07-08",
+    "verified": true
+  },
+  {
+    "id": "goodwill-east-athens-career-center",
+    "name": "Goodwill of North Georgia - East Athens Career Center",
+    "categories": [
+      "Jobs & Workforce"
+    ],
+    "description": "A free career center inside the East Athens Goodwill. Use their computers, browse local job listings, get help writing your résumé and cover letter, meet with a career coach, and join workshops, classes, and job fairs, whether it's your first job, your next job, or a better job.",
+    "whatToBring": "",
+    "warmNextStep": "Walk in at 4070 Lexington Road on a weekday and tell the career center staff you're looking for work.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "706-395-1560",
+        "source": "https://goodwillng.org/gw-locations/east-athens-store-donation-career-center-30605/"
+      },
+      "address": {
+        "value": "4070 Lexington Road, Athens, Georgia 30605",
+        "source": "https://goodwillng.org/gw-locations/east-athens-store-donation-career-center-30605/"
+      },
+      "hours": {
+        "value": "Mon-Fri: 9am - 5pm\nSat: Closed\nSun: Closed",
+        "source": "https://goodwillng.org/gw-locations/east-athens-store-donation-career-center-30605/"
+      },
+      "website": {
+        "value": "https://goodwillng.org/gw-locations/east-athens-store-donation-career-center-30605/",
+        "source": "https://goodwillng.org/gw-locations/east-athens-store-donation-career-center-30605/"
+      }
+    },
+    "servesPopulation": [
+      "Job seekers"
+    ],
+    "geo": {
+      "lat": 33.9370235,
+      "lng": -83.32313,
+      "source": "https://nominatim.openstreetmap.org/search?q=4070+Lexington+Road%2C+Athens%2C+Georgia+30605&format=json"
+    },
+    "lastVerified": "2026-07-08",
+    "verified": true
+  },
+  {
+    "id": "worksource-northeast-georgia",
+    "name": "WorkSource Northeast Georgia",
+    "categories": [
+      "Jobs & Workforce",
+      "GED & Adult Education"
+    ],
+    "description": "Federally funded job training help (through the Workforce Innovation and Opportunity Act) for a 12-county region that includes Clarke and Oconee. Programs include tuition assistance for training, youth programs with tutoring and summer job opportunities, GED and occupational skills training through partner providers, and extra support for veterans, single parents, SNAP recipients, and others working through barriers. Note: the phone number is shown here exactly as printed on their website.",
+    "whatToBring": "",
+    "warmNextStep": "Call the workforce line at the number shown and ask whether you qualify for free job training.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "(706t) 369-5703",
+        "source": "https://negrc.org/workforce-development/"
+      },
+      "address": {
+        "value": "305 Research Drive, Athens, GA 30605",
+        "source": "https://negrc.org/workforce-development/"
+      },
+      "hours": {
+        "value": "",
+        "source": ""
+      },
+      "website": {
+        "value": "https://negrc.org/workforce-development/",
+        "source": "https://negrc.org/workforce-development/"
+      }
+    },
+    "servesPopulation": [
+      "Job seekers in Clarke, Oconee, and 10 surrounding counties",
+      "Youth"
+    ],
+    "geo": {
+      "lat": 33.929922,
+      "lng": -83.3494279,
+      "source": "https://nominatim.openstreetmap.org/search?q=305+Research+Drive%2C+Athens%2C+Georgia+30605&format=json"
+    },
+    "lastVerified": "2026-07-08",
+    "verified": true
+  },
+  {
+    "id": "celebrate-recovery-cornerstone-church",
+    "name": "Celebrate Recovery at Cornerstone Church",
+    "categories": [
+      "Addiction Recovery",
+      "Churches & Volunteer Groups"
+    ],
+    "description": "A Christ-centered 12-step recovery group for any hurt, habit, or hang-up, alcohol, drugs, depression, broken relationships, and more. Meets every Monday night from 6:30-8:30 pm with worship, teaching, and testimonies, then smaller men's and women's share groups, with café time to socialize until 9.",
+    "whatToBring": "Nothing, just come as you are.",
+    "warmNextStep": "Show up on a Monday at 6:30 pm at 4680 Lexington Rd, you can just sit and listen, no pressure to share.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "(706) 549-0000",
+        "source": "https://www.cornerstoneathens.cc/celebrate-recovery"
+      },
+      "address": {
+        "value": "4680 Lexington Rd Athens, GA 30605",
+        "source": "https://www.cornerstoneathens.cc/celebrate-recovery"
+      },
+      "hours": {
+        "value": "Mon @6:30pm",
+        "source": "https://www.cornerstoneathens.cc/celebrate-recovery"
+      },
+      "website": {
+        "value": "https://www.cornerstoneathens.cc/celebrate-recovery",
+        "source": "https://www.cornerstoneathens.cc/celebrate-recovery"
+      }
+    },
+    "servesPopulation": [
+      "Anyone dealing with a hurt, habit, or addiction"
+    ],
+    "geo": {
+      "lat": 33.9297672,
+      "lng": -83.3032955,
+      "source": "https://nominatim.openstreetmap.org/search?q=4680+Lexington+Road%2C+Athens%2C+Georgia+30605&format=json"
+    },
+    "lastVerified": "2026-07-08",
+    "verified": true
+  },
+  {
+    "id": "celebrate-recovery-living-hope-church",
+    "name": "Celebrate Recovery Athens at Living Hope Church",
+    "categories": [
+      "Addiction Recovery",
+      "Churches & Volunteer Groups"
+    ],
+    "description": "A Christ-centered recovery group meeting every Friday evening at Living Hope Church, dinner at 5:30 PM and the program at 6:30 PM. The church also runs Fresh Wind Recovery, a three-month residential ministry for men who are ready to seek healing from substance abuse.",
+    "whatToBring": "Nothing, dinner is part of the evening.",
+    "warmNextStep": "Come to 2150 Lexington Rd on a Friday at 5:30 PM for dinner, or call 706-208-1003 with questions.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "706-208-1003",
+        "source": "https://www.livinghopeathens.org/addiction"
+      },
+      "address": {
+        "value": "2150 Lexington Rd., Athens, GA 30605",
+        "source": "https://www.livinghopeathens.org/addiction"
+      },
+      "hours": {
+        "value": "5:30 PM - Dinner; 6:30 PM - Program",
+        "source": "https://www.livinghopeathens.org/addiction"
+      },
+      "website": {
+        "value": "https://www.livinghopeathens.org/addiction",
+        "source": "https://www.livinghopeathens.org/addiction"
+      }
+    },
+    "servesPopulation": [
+      "Anyone dealing with a hurt, habit, or addiction",
+      "Men seeking residential recovery (Fresh Wind)"
+    ],
+    "geo": {
+      "lat": 33.944647,
+      "lng": -83.343122,
+      "source": "https://nominatim.openstreetmap.org/search?q=2150+Lexington+Road%2C+Athens%2C+Georgia+30605&format=json"
+    },
+    "lastVerified": "2026-07-08",
+    "verified": true
+  },
+  {
+    "id": "athens-area-commencement-center",
+    "name": "Athens Area Commencement Center",
+    "categories": [
+      "Addiction Recovery"
+    ],
+    "description": "Outpatient alcohol and drug addiction treatment tailored to the individual, offered in Athens since 1978, so you can work on getting sober without leaving your family or job behind. An aftercare program keeps supporting you once treatment is complete, and assessments to get started are free.",
+    "whatToBring": "",
+    "warmNextStep": "Call (706) 546-7355 and ask for a free assessment.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "(706) 546-7355",
+        "source": "https://www.thecommencementcenter.com/contact/"
+      },
+      "address": {
+        "value": "1175 Mitchell Bridge Rd\nAthens, GA 30606-6411",
+        "source": "https://www.thecommencementcenter.com/contact/"
+      },
+      "hours": {
+        "value": "Monday through Thursday:\n9:00AM to 5:00 PM\nFriday:\n9:00AM to 4:00PM\nSaturday:\n9:00AM to 12:00PM\nSunday: Closed",
+        "source": "https://www.thecommencementcenter.com/contact/"
+      },
+      "website": {
+        "value": "https://www.thecommencementcenter.com/",
+        "source": "https://www.thecommencementcenter.com/"
+      }
+    },
+    "servesPopulation": [
+      "People seeking treatment for alcohol or drug addiction"
+    ],
+    "geo": {
+      "lat": 33.9418575,
+      "lng": -83.4516801,
+      "source": "https://nominatim.openstreetmap.org/search?q=1175+Mitchell+Bridge+Road%2C+Athens%2C+Georgia+30606&format=json"
+    },
+    "lastVerified": "2026-07-08",
+    "verified": true
+  },
+  {
+    "id": "uga-campus-transit",
+    "name": "UGA Campus Transit",
+    "categories": [
+      "Transportation"
+    ],
+    "description": "The University of Georgia's campus bus system, fare free and open to the public, you don't need any UGA connection to ride. Buses serve campus and connect with the wider community, you can track them live at routes.uga.edu, and paratransit service is available for riders with mobility impairments.",
+    "whatToBring": "Nothing, rides are free for everyone.",
+    "warmNextStep": "Just board any UGA bus, riding is free. Call 706-369-6221 if you have questions about routes.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "706-369‑6221",
+        "source": "https://tps.uga.edu/transit/"
+      },
+      "address": {
+        "value": "80 Carlton Street\nAthens, Georgia 30602",
+        "source": "https://tps.uga.edu/transit/"
+      },
+      "hours": {
+        "value": "",
+        "source": ""
+      },
+      "website": {
+        "value": "https://tps.uga.edu/transit/",
+        "source": "https://tps.uga.edu/transit/"
+      }
+    },
+    "servesPopulation": [
+      "Everyone — fare free and open to the public"
+    ],
+    "geo": {
+      "lat": 33.9391042,
+      "lng": -83.3708767,
+      "source": "https://nominatim.openstreetmap.org/search?q=80+Carlton+Street%2C+Athens%2C+Georgia+30602&format=json"
+    },
+    "lastVerified": "2026-07-08",
+    "verified": true
+  },
+  {
+    "id": "hope-haven-of-northeast-georgia",
+    "name": "Hope Haven of Northeast Georgia",
+    "categories": [
+      "Jobs & Workforce"
+    ],
+    "description": "Prepares, empowers, and connects adults with developmental disabilities. Supported Employment helps you discover the kind of work you'd like, learn the skills you need, and find the right place to work, and there are home services and a Community Access program that builds confidence and independence.",
+    "whatToBring": "",
+    "warmNextStep": "Call 706-548-4361 on a weekday and ask how to get started with their employment support.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "706-548-4361",
+        "source": "https://hopehaven.net/contact/"
+      },
+      "address": {
+        "value": "795 Newton Bridge Rd, Athens, GA 30607",
+        "source": "https://hopehaven.net/contact/"
+      },
+      "hours": {
+        "value": "Monday – Friday, 8:00 am – 4:00 pm",
+        "source": "https://hopehaven.net/contact/"
+      },
+      "website": {
+        "value": "https://hopehaven.net/",
+        "source": "https://hopehaven.net/"
+      }
+    },
+    "servesPopulation": [
+      "Adults with developmental disabilities and their families"
+    ],
+    "geo": {
+      "lat": 33.9964246,
+      "lng": -83.4016819,
+      "source": "https://nominatim.openstreetmap.org/search?q=795+Newton+Bridge+Road%2C+Athens%2C+Georgia+30607&format=json"
+    },
+    "lastVerified": "2026-07-08",
+    "verified": true
+  },
+  {
+    "id": "athens-first-united-methodist-church",
+    "name": "Athens First United Methodist Church",
+    "categories": [
+      "Churches & Volunteer Groups"
+    ],
+    "description": "A downtown Athens church with Sunday worship at 9:30 and 11:00 a.m. and a Wednesday night dinner. The church office can connect you with its ministries and ways to get involved.",
+    "whatToBring": "",
+    "warmNextStep": "Call the church office at (706) 543-1442 during office hours and tell them what you're looking for.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "(706) 543- 1442",
+        "source": "https://athensfirstumc.org/"
+      },
+      "address": {
+        "value": "327 N Lumpkin St, Athens, GA 30601",
+        "source": "https://athensfirstumc.org/"
+      },
+      "hours": {
+        "value": "Monday-Thursday | 9:00 a.m. - 5:00 p.m.\nFriday | 9:00 a.m. - 1:00 p.m.",
+        "source": "https://athensfirstumc.org/"
+      },
+      "website": {
+        "value": "https://athensfirstumc.org/",
+        "source": "https://athensfirstumc.org/"
+      }
+    },
+    "servesPopulation": [
+      "Everyone"
+    ],
+    "geo": {
+      "lat": 33.9592439,
+      "lng": -83.3778724,
+      "source": "https://nominatim.openstreetmap.org/search?q=327+North+Lumpkin+Street%2C+Athens%2C+Georgia+30601&format=json"
+    },
+    "lastVerified": "2026-07-08",
+    "verified": true
+  },
+  {
+    "id": "emmanuel-episcopal-church",
+    "name": "Emmanuel Episcopal Church",
+    "categories": [
+      "Churches & Volunteer Groups"
+    ],
+    "description": "An Episcopal parish on Prince Avenue whose outreach supports neighbors facing poverty, hunger, homelessness, illness, abuse, and oppression, through grants to local nonprofits, volunteer teams who cook for the Our Daily Bread community kitchen, and the Emmanuel Thrift House next door, open Wednesday through Friday 10am to 4pm and Saturday 10am to 2pm, whose profits are reinvested in the community.",
+    "whatToBring": "",
+    "warmNextStep": "Call the parish office at 706-543-1294 and ask about the Thrift House or how to volunteer.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "706-543-1294",
+        "source": "https://www.emmanuelathens.org/"
+      },
+      "address": {
+        "value": "498 Prince Avenue\nAthens, Georgia 30601",
+        "source": "https://www.emmanuelathens.org/"
+      },
+      "hours": {
+        "value": "",
+        "source": ""
+      },
+      "website": {
+        "value": "https://www.emmanuelathens.org/",
+        "source": "https://www.emmanuelathens.org/"
+      }
+    },
+    "servesPopulation": [
+      "Everyone"
+    ],
+    "geo": {
+      "lat": 33.9614234,
+      "lng": -83.385316,
+      "source": "https://nominatim.openstreetmap.org/search?q=498+Prince+Avenue%2C+Athens%2C+Georgia+30601&format=json"
+    },
+    "lastVerified": "2026-07-08",
+    "verified": true
+  },
+  {
+    "id": "timothy-baptist-church-food-pantry",
+    "name": "Timothy Baptist Church Food Pantry",
+    "categories": [
+      "Food",
+      "Churches & Volunteer Groups"
+    ],
+    "description": "A drive-thru food pantry at Timothy Baptist Church's Agape Fellowship Hall, with nutritious food, fresh produce, groceries, and essential household items for individuals and families across the Athens area. Volunteers also offer prayer, encouragement, and referrals to other community resources, all with dignity and compassion.",
+    "whatToBring": "",
+    "warmNextStep": "Drive to the Agape Fellowship Hall at 380 Timothy Road on a 2nd or 4th Tuesday between 12:30 and 3:30, or call (706) 549-1435 with questions.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "(706) 549-1435",
+        "source": "https://timothybaptist.org/food-pantry/"
+      },
+      "address": {
+        "value": "380 Timothy Road, Athens, GA 30606",
+        "source": "https://timothybaptist.org/food-pantry/"
+      },
+      "hours": {
+        "value": "2nd and 4th Tues of each month; 12:30-3:30pm",
+        "source": "https://timothybaptist.org/food-pantry/"
+      },
+      "website": {
+        "value": "https://timothybaptist.org/food-pantry/",
+        "source": "https://timothybaptist.org/food-pantry/"
+      }
+    },
+    "servesPopulation": [
+      "Individuals and families experiencing food insecurity"
+    ],
+    "geo": {
+      "lat": 33.9197744,
+      "lng": -83.4039258,
+      "source": "https://nominatim.openstreetmap.org/search?q=380+Timothy+Road%2C+Athens%2C+Georgia+30606&format=json"
+    },
+    "lastVerified": "2026-07-08",
+    "verified": true
+  },
+  {
+    "id": "family-counseling-services-of-athens",
+    "name": "Family Counseling Services of Athens",
+    "categories": [
+      "Counseling & Mental Health"
+    ],
+    "description": "A nonprofit counseling center whose mission is accessible, affordable, and compassionate counseling and education services, a welcoming space where individuals and families in Athens and surrounding communities can feel seen, heard, and supported.",
+    "whatToBring": "",
+    "warmNextStep": "Call (706) 549-7755 and say you'd like to set up counseling, and mention if money is tight so they can talk through affordable options.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "(706) 549-7755",
+        "source": "https://www.fcsathens.com/contact"
+      },
+      "address": {
+        "value": "1435 Oglethorpe Avenue\nAthens, GA 30606",
+        "source": "https://www.fcsathens.com/contact"
+      },
+      "hours": {
+        "value": "",
+        "source": ""
+      },
+      "website": {
+        "value": "https://www.fcsathens.com/",
+        "source": "https://www.fcsathens.com/"
+      }
+    },
+    "servesPopulation": [
+      "Individuals and families"
+    ],
+    "geo": {
+      "lat": 33.9625565,
+      "lng": -83.4261556,
+      "source": "https://nominatim.openstreetmap.org/search?q=1435+Oglethorpe+Avenue%2C+Athens%2C+Georgia+30606&format=json"
+    },
+    "lastVerified": "2026-07-08",
+    "verified": true
+  },
+  {
+    "id": "campus-kitchen-at-uga",
+    "name": "Campus Kitchen at UGA",
+    "categories": [
+      "Food"
+    ],
+    "description": "UGA student volunteers rescue unused food from grocery stores and farms and turn it into from-scratch meals and grocery bags delivered to older adults, their families, and aging service providers in Athens, over 700 meals each month, with community dinners and senior gardens that also help ease isolation.",
+    "whatToBring": "",
+    "warmNextStep": "Call 706-542-8924 and ask how an older adult in your life can get meal and grocery deliveries.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "706-542-8924",
+        "source": "https://servicelearning.uga.edu/community-engagement/campus-kitchen/"
+      },
+      "address": {
+        "value": "1242 1/2 S. Lumpkin St. | University of Georgia | Athens, GA, 30602-3552",
+        "source": "https://servicelearning.uga.edu/community-engagement/campus-kitchen/"
+      },
+      "hours": {
+        "value": "",
+        "source": ""
+      },
+      "website": {
+        "value": "https://servicelearning.uga.edu/community-engagement/campus-kitchen/",
+        "source": "https://servicelearning.uga.edu/community-engagement/campus-kitchen/"
+      }
+    },
+    "servesPopulation": [
+      "Older adults and their families"
+    ],
+    "geo": {
+      "lat": 33.9453836,
+      "lng": -83.3810621,
+      "source": "https://nominatim.openstreetmap.org/search?q=1242+South+Lumpkin+Street%2C+Athens%2C+Georgia+30602&format=json"
+    },
+    "lastVerified": "2026-07-08",
+    "verified": true
+  },
+  {
+    "id": "athens-public-defender-western-circuit",
+    "name": "Athens Public Defender (Western Circuit Public Defender)",
+    "categories": [
+      "Legal Aid"
+    ],
+    "description": "Free criminal defense lawyers for people who cannot afford an attorney, in the red brick townhouses one block diagonally from the Athens-Clarke County Courthouse. No appointment is necessary during weekday interview hours, and a handicap accessible entrance faces Dougherty Street.",
+    "whatToBring": "",
+    "warmNextStep": "Walk into Suite 220 at 440 College Ave on a weekday between 9:00 am and 3:30 pm and say you need a lawyer, no appointment needed.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "706-369-6440",
+        "source": "https://www.athenspublicdefender.com/contact-us"
+      },
+      "address": {
+        "value": "440 College Ave, Suite 220\nAthens, GA 30601",
+        "source": "https://www.athenspublicdefender.com/contact-us"
+      },
+      "hours": {
+        "value": "9:00 am - 3:30 pm, Monday - Friday",
+        "source": "https://www.athenspublicdefender.com/contact-us"
+      },
+      "website": {
+        "value": "https://www.athenspublicdefender.com/",
+        "source": "https://www.athenspublicdefender.com/"
+      }
+    },
+    "servesPopulation": [
+      "People facing criminal charges who cannot afford an attorney"
+    ],
+    "geo": {
+      "lat": 33.9605757,
+      "lng": -83.3761374,
+      "source": "https://nominatim.openstreetmap.org/search?q=440+College+Avenue%2C+Athens%2C+Georgia+30601&format=json"
+    },
+    "lastVerified": "2026-07-08",
+    "verified": true
+  },
+  {
+    "id": "athens-oconee-casa",
+    "name": "Athens-Oconee CASA",
+    "categories": [
+      "Youth & Family"
+    ],
+    "description": "Recruits and supports volunteer Court Appointed Special Advocates, caring adults who stand up for children going through the juvenile court system. You can request a CASA for a child or apply to become a volunteer advocate yourself.",
+    "whatToBring": "",
+    "warmNextStep": "Call 706-613-1922 and ask about requesting a CASA for a child, or about becoming a volunteer.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "706.613.1922",
+        "source": "https://www.athensoconeecasa.org/"
+      },
+      "address": {
+        "value": "693 North Pope Street\nAthens, GA 30601",
+        "source": "https://www.athensoconeecasa.org/"
+      },
+      "hours": {
+        "value": "Staff working hours: Mon - Fri 9:00 a.m. - 5:00 p.m.\nBuilding hours: Mon and Wed only 10:00 a.m. - 4:00 p.m.",
+        "source": "https://www.athensoconeecasa.org/"
+      },
+      "website": {
+        "value": "https://www.athensoconeecasa.org/",
+        "source": "https://www.athensoconeecasa.org/"
+      }
+    },
+    "servesPopulation": [
+      "Children in juvenile court",
+      "Volunteer advocates"
+    ],
+    "geo": {
+      "lat": 33.9616796,
+      "lng": -83.3855887,
+      "source": "https://nominatim.openstreetmap.org/search?q=693+North+Pope+Street%2C+Athens%2C+Georgia+30601&format=json"
+    },
+    "lastVerified": "2026-07-08",
+    "verified": true
+  },
+  {
+    "id": "acceptance-recovery-center",
+    "name": "Acceptance Recovery Center",
+    "categories": [
+      "Addiction Recovery",
+      "Housing & Shelter"
+    ],
+    "description": "A nonprofit recovery residence in Athens, led by the queer community and open to everyone, that leads people displaced by addiction into long-term recovery through care, support, and education. The Foundation Program blends evidence-based therapies with multiple pathways to recovery, an Alumni Care Transition Program supports graduates, and gender-expansive services make it one of the few affirming centers in the state.",
+    "whatToBring": "",
+    "warmNextStep": "Call 706-308-8860 and say you're looking for a recovery residence.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "706-308-8860",
+        "source": "https://arc-ga.org/"
+      },
+      "address": {
+        "value": "P.O. Box 6693\nAthens, GA 30604",
+        "source": "https://arc-ga.org/"
+      },
+      "hours": {
+        "value": "",
+        "source": ""
+      },
+      "website": {
+        "value": "https://arc-ga.org/",
+        "source": "https://arc-ga.org/"
+      }
+    },
+    "servesPopulation": [
+      "People seeking long-term recovery from addiction",
+      "LGBTQ+ individuals"
+    ],
+    "geo": {
+      "lat": null,
+      "lng": null,
+      "source": ""
+    },
+    "lastVerified": "2026-07-08",
+    "verified": true
   }
 ]

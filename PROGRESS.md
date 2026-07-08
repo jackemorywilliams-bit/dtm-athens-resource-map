@@ -77,7 +77,33 @@
       the two light pins, popup tip repainted paper. Kept http:// allowed on website
       links (blocks javascript:/data: schemes; one org's site is http-only).
 
+## 2026-07-08 — SESSION 4: UI polish + deep research pass 2
+
+- [x] UI (user-directed): map key moved directly above the map; Jobs/Legal recolored
+      #f89604 → #14cad8 (re-validated: CVD min ΔE 20.7, normal-vision distance from
+      Food 55.9); letter glyphs replaced with distinct inline SVG silhouettes per
+      category across pins/key/cards; Google-style gated results (list hidden until
+      search/filter; map shows all pins when idle). Deployed.
+- [x] Deep research pass 2: +18 entries = 61 total, all verified. Category gaps
+      filled: Addiction Recovery 2→7, Legal Aid 1→3, Jobs 3→6, Churches 3→8,
+      Transportation 3→4. Skipped as unsourceable: Athens Access to Justice
+      (bot-blocked), Dignidad Inmigrante (site down), Samaritan Center (closed 2019),
+      Athens Immigrant Rights (email only), Athens Area Diaper Bank (no direct
+      contact), Watkinsville First Baptist benevolence (marked closed). Caught two
+      Athens-OHIO look-alike sites and used the correct Georgia orgs.
+- [x] QA round: 13 sampled (9 forced new), 45 fields, 43 PASS / 2 FAIL (one entry's
+      cited contact page 404'd → re-cited to live homepage footer, focused re-test
+      3/3 PASS). Stale transit citation moved to canonical URL. Breaker not invoked.
+
 ## Needs human call-down
 
-- Phone-verify the dataset before publishing (DEPLOY-1: publishing is a manual human step; nothing is currently demoted to verified:false, but call-ahead confirmation is still the deploy gate).
-- Optional: decide whether verify.py's geographic bounding box should be tightened using a real Athens-Clarke boundary source.
+- Phone-verify the dataset before wider promotion (all 61 entries carry web-sourced
+  values; call-ahead confirmation remains the human quality bar).
+- Georgia Options (706-546-0009, 860 Whitehall Rd) grounds fully but fits no approved
+  category (in-home support for adults with developmental disabilities). Human call:
+  add a category or skip.
+- WorkSource NEGA's own site prints its phone with a typo "(706t) 369-5703" — stored
+  verbatim per PROV-1; the tel: link dials the correct digits. Consider calling to
+  confirm the number and asking them to fix their site.
+- Optional: verify.py bbox is the ACC+Oconee union rectangle; corners include slivers
+  of neighboring counties.

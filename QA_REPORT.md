@@ -148,6 +148,34 @@ does not appear as visible prose on its own page. Ruling: a `website` field whos
 no cross-host redirect) — the page is its own evidence. This matches the convention
 every QA round applied to all other self-cited websites today. Ruled PASS.
 
+---
+
+# SESSION 4 — 2026-07-08 (deep pass 2: +18 entries, 61 total)
+
+## Round 1
+
+**Sample:** 13 of 61 (20%). Forced 9 new entries with unusual sourcing (WorkSource
+NEGA's on-page typo "(706t) 369-5703" stored verbatim and confirmed on page; Athens
+First UMC's odd "(706) 543- 1442" spacing confirmed; UGA Campus Transit's U+2011
+non-breaking hyphen matched byte-for-byte; Campus Kitchen's pipe-separated address
+confirmed literal) + 4 random new.
+
+**Result: 13 sampled, 45 fields checked, 43 PASS, 2 FAIL.**
+- FAIL x2 (one entry, strike 1): `acceptance-recovery-center` phone + address cited
+  to arc-ga.org/contact/ which now returns 404.
+- Non-failing warning: `uga-campus-transit` citations redirect to canonical
+  tps.uga.edu/transit/.
+
+## Repair + focused re-test
+
+Both ARC values found as visible footer text on the live arc-ga.org homepage and
+re-cited there (values unchanged); transit citations moved to the canonical URL with
+values confirmed. Focused re-test: 3/3 PASS.
+
+## SESSION 4 QA gate result
+
+Gate closed clean; no entry reached strike 2; breaker not invoked; zero demotions.
+
 ## SESSION 3 QA gate result
 
 Cumulative unique entries ground-truthed today: 22 of 43 (51%). Final round clean
