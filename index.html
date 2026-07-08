@@ -216,9 +216,14 @@
   }
   button.linkish:hover { color: var(--accent-deep); }
 
-  /* ---------- Map key ---------- */
-  .key { margin-bottom: 1.1rem; }
-  .key .eyebrow { display: block; margin-bottom: .5rem; }
+  /* ---------- Map key (header strip of the map band, directly above the map) ---------- */
+  .key {
+    background: var(--accent-soft);
+    border-bottom: 1px solid var(--rule-soft);
+    padding: .7rem 1rem .8rem;
+  }
+  .key-inner { max-width: 70rem; margin: 0 auto; }
+  .key .eyebrow { display: block; margin-bottom: .45rem; }
   ul.key-list {
     list-style: none;
     margin: 0;
@@ -246,6 +251,16 @@
     box-shadow: 0 1px 3px rgba(28,28,28,.35);
   }
   .key .dtm-pin { width: 24px; height: 24px; font-size: 13px; flex: 0 0 auto; box-shadow: none; }
+  /* One shared SVG silhouette per group, drawn in the pin's currentColor. */
+  .dtm-pin svg, .card-pin svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+    display: block;
+    flex: 0 0 auto;
+  }
+  .key .dtm-pin svg { width: 14px; height: 14px; }
+  .card-pin svg { width: 13px; height: 13px; }
   /* Dark glyph on the two light pin colors for WCAG contrast
      (map pins + key swatches + card dots). */
   .dtm-pin.ink-glyph, .card-pin.ink-glyph { color: var(--ink); }
@@ -549,29 +564,35 @@
     </div>
   </section>
 
-  <!-- 3. Color-coded map key -->
-  <section class="key" aria-label="Map key">
-    <span class="eyebrow">Map key</span>
-    <ul class="key-list" id="key-list"></ul>
-  </section>
-
-  <!-- 4. Results list -->
+  <!-- 3. Results list -->
   <section class="list-panel" aria-label="List of resources">
     <h2 id="list-heading">Places that can help</h2>
     <div class="cards-scroll">
       <ul class="cards" id="cards"></ul>
+      <div class="empty" id="gate-prompt">
+        <p><strong>Every place is already pinned on the map below.</strong></p>
+        <p>Start typing, or choose a category above, and the places that can
+          help will appear right here.</p>
+      </div>
       <div class="empty" id="empty">
         <p><strong>Nothing matched those filters, but help is still here.</strong></p>
         <p>Try clearing a filter or two, or search for something simpler like
           &ldquo;food&rdquo; or &ldquo;shelter&rdquo;.</p>
-        <button type="button" class="linkish" id="empty-clear">Show everything</button>
+        <button type="button" class="linkish" id="empty-clear">Start over</button>
       </div>
     </div>
   </section>
 </main>
 
-<!-- 5. Map: bottom half of the viewport, full width -->
+<!-- 4. Map: bottom half of the viewport, full width -->
 <section class="map-band" aria-label="Map of resources">
+  <!-- Color-coded map key: the map band's header strip -->
+  <section class="key" aria-label="Map key">
+    <div class="key-inner">
+      <span class="eyebrow">Map key</span>
+      <ul class="key-list" id="key-list"></ul>
+    </div>
+  </section>
   <div class="map-toolbar">
     <button type="button" class="near-me" id="near-me">Near me</button>
     <span id="locate-msg" role="status" aria-live="polite"></span>
@@ -583,7 +604,7 @@
   </div>
 </section>
 
-<!-- 6. Brand footer -->
+<!-- 5. Brand footer -->
 <div class="pre-footer">
   <p class="disclaimer">Things change, please call ahead before you go.</p>
   <p>Map data &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>.
@@ -618,29 +639,46 @@ function initApp() {
 const DTM_EMAIL = "admin@downtownministries.org";
 const ATHENS_CENTER = [33.957, -83.376];
 
-/* ---------- category color groups (validated palette; glyph is the
-   color-blind-safe secondary encoding) ---------- */
+/* ---------- category color groups (validated palette; the per-group icon
+   silhouette is the color-blind-safe secondary encoding). Each `icon` is a
+   24x24 SVG path drawn in currentColor — one shared template per group,
+   reused by map pins, key swatches, and card dots. ---------- */
 
 const GROUPS = [
-  { label: "Food", color: "#e77f3b", glyph: "F", inkGlyph: true,
+  { label: "Food", color: "#e77f3b", inkGlyph: true,
+    icon: "M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z",
     cats: ["Food"] },
-  { label: "Housing & Shelter", color: "#4178bc", glyph: "H",
+  { label: "Housing & Shelter", color: "#4178bc",
+    icon: "M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z",
     cats: ["Housing & Shelter"] },
-  { label: "Healthcare (free/low-cost)", color: "#e0344c", glyph: "+",
+  { label: "Healthcare (free/low-cost)", color: "#e0344c",
+    icon: "M10 3h4v7h7v4h-7v7h-4v-7H3v-4h7V3z",
     cats: ["Healthcare (free/low-cost)"] },
-  { label: "Mental Health & Recovery", color: "#239f6b", glyph: "R",
+  { label: "Mental Health & Recovery", color: "#239f6b",
+    icon: "M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z",
     cats: ["Counseling & Mental Health", "Addiction Recovery"] },
-  { label: "Jobs, Legal & Financial Help", color: "#f89604", glyph: "$", inkGlyph: true,
+  { label: "Jobs, Legal & Financial Help", color: "#14cad8", inkGlyph: true,
+    icon: "M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z",
     cats: ["Jobs & Workforce", "Legal Aid"] },
-  { label: "Education, Youth & Family", color: "#4a3aa7", glyph: "E",
+  { label: "Education, Youth & Family", color: "#4a3aa7",
+    icon: "M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z",
     cats: ["GED & Adult Education", "Youth & Family"] },
-  { label: "Transportation", color: "#ab4a83", glyph: "T",
+  { label: "Transportation", color: "#ab4a83",
+    icon: "M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55 1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z",
     cats: ["Transportation"] },
-  { label: "Churches & Volunteer Groups", color: "#156108", glyph: "C",
+  { label: "Churches & Volunteer Groups", color: "#156108",
+    icon: "M18 12.22V9l-5-2.5V5h2V3h-2V1h-2v2H9v2h2v1.5L6 9v3.22L2 14v8h8v-3c0-1.1.9-2 2-2s2 .9 2 2v3h8v-8l-4-1.78z",
     cats: ["Churches & Volunteer Groups"] }
 ];
 // Gentle fallback so a future category never breaks the page.
-const OTHER_GROUP = { label: "More help", color: "#4a4a4a", glyph: "•", cats: [] };
+const OTHER_GROUP = { label: "More help", color: "#4a4a4a",
+  icon: "M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10z", cats: [] };
+
+// The one shared icon template (path data is our own constant, no escaping needed).
+function iconSvg(g) {
+  return '<svg viewBox="0 0 24 24" focusable="false" aria-hidden="true"><path d="' +
+    g.icon + '"/></svg>';
+}
 
 const CAT_GROUP = {};
 GROUPS.forEach(function (g) {
@@ -790,7 +828,7 @@ function matches(r) {
     li.innerHTML =
       '<span class="dtm-pin' + (g.inkGlyph ? " ink-glyph" : "") +
       '" style="background:' + esc(g.color) + '" aria-hidden="true">' +
-      esc(g.glyph) + "</span><span>" + esc(g.label) + "</span>";
+      iconSvg(g) + "</span><span>" + esc(g.label) + "</span>";
     keyList.appendChild(li);
   });
 })();
@@ -872,7 +910,14 @@ document.getElementById("empty-clear").addEventListener("click", clearFilters);
 
 const cardsEl = document.getElementById("cards");
 const emptyEl = document.getElementById("empty");
+const gateEl = document.getElementById("gate-prompt");
 const countEl = document.getElementById("result-count");
+
+// Google-style gate: the list stays quiet until someone types, taps a
+// category chip, or picks a population. The map always shows every pin.
+function filtersActive() {
+  return state.query !== "" || state.pop !== "" || state.cats.size > 0;
+}
 
 function cardHtml(r) {
   const g = groupFor(r);
@@ -885,7 +930,7 @@ function cardHtml(r) {
   let h = "";
   h += '<h3><span class="card-pin' + (g.inkGlyph ? " ink-glyph" : "") +
     '" style="background:' + esc(g.color) +
-    '" aria-hidden="true">' + esc(g.glyph) + "</span>" + esc(r.name) + "</h3>";
+    '" aria-hidden="true">' + iconSvg(g) + "</span>" + esc(r.name) + "</h3>";
 
   h += '<div class="tags">' +
     (r.categories || []).map(function (c) {
@@ -959,10 +1004,20 @@ function renderList(visible) {
     cardsEl.appendChild(li);
   });
 
+  gateEl.style.display = "none";
   emptyEl.style.display = visible.length === 0 ? "block" : "none";
+  // The live count only speaks in the active state.
   countEl.textContent = visible.length === data.length
     ? "Showing all " + data.length + " places"
     : "Showing " + visible.length + " of " + data.length + " places";
+}
+
+// The quiet, pre-search state: a gentle prompt instead of the full list.
+function renderGate() {
+  cardsEl.innerHTML = "";
+  emptyEl.style.display = "none";
+  gateEl.style.display = "block";
+  countEl.textContent = "";
 }
 
 // "Show on map": delegate clicks from the list.
@@ -1019,8 +1074,8 @@ function pinIcon(g) {
   return L.divIcon({
     className: "dtm-pin-wrap",
     html: '<span class="dtm-pin' + (g.inkGlyph ? " ink-glyph" : "") +
-      '" style="background:' + esc(g.color) + '">' +
-      esc(g.glyph) + "</span>",
+      '" style="background:' + esc(g.color) + '" aria-hidden="true">' +
+      iconSvg(g) + "</span>",
     iconSize: [28, 28],
     iconAnchor: [14, 14],
     tooltipAnchor: [0, -16],
@@ -1106,6 +1161,22 @@ function updateMap(visible) {
   }
 }
 
+// Un-searched state: every pin at full opacity so the breadth of help shows,
+// and no refit — the map keeps its calm Athens-wide view.
+function resetMap() {
+  if (!mapReady) return;
+  Object.keys(markersById).forEach(function (id) {
+    const m = markersById[id];
+    m.options.matched = true;
+    m.setOpacity(1);
+    const el = m.getElement && m.getElement();
+    if (el) el.classList.remove("dim-pin");
+  });
+  if (typeof markerLayer.refreshClusters === "function") {
+    markerLayer.refreshClusters();
+  }
+}
+
 try {
   initMap();
 } catch (err) {
@@ -1144,6 +1215,11 @@ if (mapReady) {
 /* ---------- tie it together ---------- */
 
 function refresh() {
+  if (!filtersActive()) {
+    renderGate();
+    resetMap();
+    return;
+  }
   const visible = data.filter(matches);
   renderList(visible);
   updateMap(visible);
