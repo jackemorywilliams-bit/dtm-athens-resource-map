@@ -233,6 +233,12 @@
     gap: .5rem 1.2rem;
   }
   ul.key-list li { display: flex; align-items: center; gap: .45rem; font-size: .95rem; }
+  .key-note {
+    margin: .5rem 0 0;
+    font-size: .85rem;
+    font-style: italic;
+    color: var(--ink-soft);
+  }
 
   /* Shared pin look: map markers, key swatches, card dots */
   .dtm-pin {
@@ -606,6 +612,7 @@
     <div class="key-inner">
       <span class="eyebrow">Map key</span>
       <ul class="key-list" id="key-list"></ul>
+      <p class="key-note" id="key-note"></p>
     </div>
   </section>
   <div class="map-toolbar">
@@ -850,6 +857,19 @@ function matches(r) {
       iconSvg(g) + "</span><span>" + esc(g.label) + "</span>";
     keyList.appendChild(li);
   });
+
+  // A gentle heads-up that a few places are list-only (no published address).
+  // Counts come from the data at runtime, never hardcoded.
+  const total = data.length;
+  const pinned = data.filter(hasGeo).length;
+  const offMap = total - pinned;
+  let note = "Showing " + pinned + " of " + total + " places on the map.";
+  if (offMap > 0) {
+    note += " " + offMap + " more " + (offMap === 1 ? "keeps its" : "keep their") +
+      " location private or " + (offMap === 1 ? "is" : "are") +
+      " phone-first, you will find " + (offMap === 1 ? "it" : "them") + " in the list.";
+  }
+  document.getElementById("key-note").textContent = note;
 })();
 
 /* ---------- build filter controls from the data ---------- */
