@@ -44,9 +44,16 @@ The trustworthiness of this map is mechanical, not aspirational:
 ## Running the tooling
 
 ```bash
-python3 verify.py   # exit 0 = data passes the wall; prints category counts
-python3 build.py    # inlines data, writes docs/index.html; fails loudly on bad JSON
+python3 verify.py        # exit 0 = data passes the wall; prints category counts
+python3 build.py         # inlines data, writes docs/index.html; fails loudly on bad JSON
+python3 qa_directory.py  # regenerates the full source directory in QA_REPORT.md
 ```
+
+`QA_REPORT.md` is both the QA process log (every sampled round, failure, and
+repair) and an auto-generated **source directory**: every entry, every populated
+field, the exact URL it is cited to, and which ground-truth QA rounds have
+checked it. Re-run `qa_directory.py` after any data change; QA sample history
+lives in `qa_history.json`.
 
 Both are Python 3 stdlib only. To preview: `open docs/index.html` (it works
 straight from `file://`).

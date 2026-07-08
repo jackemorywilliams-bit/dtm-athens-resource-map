@@ -1,0 +1,13 @@
+{
+  "_comment": "Ground-truth QA sample history. Each round lists the entry ids whose sourced fields were fetched and checked against their cited pages. Regenerate the directory in QA_REPORT.md with: python3 qa_directory.py",
+  "rounds": [
+    {"label": "S2-R1 2026-07-07", "ids": ["bigger-vision-of-athens", "athens-wellness-clinic", "our-daily-bread-community-kitchen", "athens-tech-adult-education", "boys-girls-clubs-of-athens"]},
+    {"label": "S2-R2 2026-07-07", "ids": ["our-daily-bread-community-kitchen", "athens-tech-adult-education", "downtown-ministries", "action-inc", "family-promise-of-athens"]},
+    {"label": "S3-R1 2026-07-07", "ids": ["love-and-money-center-uga", "extra-special-people", "u-lead-athens", "oconee-county-health-department", "athens-housing-authority", "athens-clarke-county-library", "clarke-county-health-department", "books-for-keeps", "athens-community-council-on-aging"]},
+    {"label": "S3-R2 2026-07-07", "ids": ["athens-clarke-county-library", "our-daily-bread-community-kitchen", "clarke-county-dfcs", "athens-area-emergency-food-bank", "uga-extension-oconee", "food-bank-of-northeast-georgia", "family-promise-of-athens", "bigger-vision-of-athens", "advantage-behavioral-health"]},
+    {"label": "S3-R3 2026-07-07", "ids": ["bigger-vision-of-athens", "family-promise-of-athens", "athens-area-emergency-food-bank", "uga-extension-oconee", "uga-extension-athens-clarke", "the-cottage-athens", "oconee-area-resource-council", "athens-free-clinic", "casa-de-amistad"]},
+    {"label": "S3-focused 2026-07-07", "ids": ["athens-free-clinic"]},
+    {"label": "S4-R1 2026-07-08", "ids": ["worksource-northeast-georgia", "athens-first-united-methodist-church", "uga-campus-transit", "campus-kitchen-at-uga", "athens-aa-district-16b", "celebrate-recovery-cornerstone-church", "the-ark-united-ministry-outreach-center", "acc-second-chance-desk", "acceptance-recovery-center", "goodwill-east-athens-career-center", "family-counseling-services-of-athens", "celebrate-recovery-living-hope-church", "athens-oconee-casa"]},
+    {"label": "S4-focused 2026-07-08", "ids": ["acceptance-recovery-center"]}
+  ]
+}
