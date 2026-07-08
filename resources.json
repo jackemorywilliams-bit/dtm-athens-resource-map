@@ -866,11 +866,11 @@
       "Job seekers in Clarke and surrounding counties"
     ],
     "geo": {
-      "lat": null,
-      "lng": null,
-      "source": ""
+      "lat": 33.9706624,
+      "lng": -83.3659354,
+      "source": "https://nominatim.openstreetmap.org/search?q=Georgia+Department+of+Labor%2C+Athens%2C+Georgia&format=json&limit=5"
     },
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-08",
     "verified": true
   },
   {

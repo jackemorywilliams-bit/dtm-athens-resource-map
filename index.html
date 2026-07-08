@@ -433,6 +433,21 @@
   }
 
   .leaflet-container { font-family: var(--font-serif); }
+  /* "Reset view" control: brand-styled, sits just below the zoom buttons. */
+  .dtm-reset-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+    background: var(--accent);
+    color: #fff;
+  }
+  .dtm-reset-btn:hover { background: var(--accent-deep); }
+  .dtm-reset-btn svg { width: 18px; height: 18px; fill: currentColor; display: block; }
   .dtm-pin-wrap { background: none; border: 0; }
   .dtm-cluster {
     background: none;
@@ -638,6 +653,10 @@ function initApp() {
 
 const DTM_EMAIL = "admin@downtownministries.org";
 const ATHENS_CENTER = [33.957, -83.376];
+const HOME_ZOOM = 13;
+// Service-area rectangle (Clarke + Oconee, padded): the map can never wander
+// past this, so nobody ends up lost at world zoom with no way back.
+const SERVICE_AREA = [[33.55, -83.85], [34.25, -82.95]];
 
 /* ---------- category color groups (validated palette; the per-group icon
    silhouette is the color-blind-safe secondary encoding). Each `icon` is a
@@ -1086,7 +1105,16 @@ function pinIcon(g) {
 function initMap() {
   if (typeof L === "undefined") throw new Error("Leaflet unavailable");
 
-  map = L.map("map", { center: ATHENS_CENTER, zoom: 13, scrollWheelZoom: false });
+  map = L.map("map", {
+    center: ATHENS_CENTER,
+    zoom: HOME_ZOOM,
+    scrollWheelZoom: false,
+    // Guardrails: zooming out stops while both counties still fit, and
+    // panning is held (viscosity 1) inside the service area.
+    minZoom: 9,
+    maxBounds: SERVICE_AREA,
+    maxBoundsViscosity: 1.0
+  });
 
   // ATTR-1: OSM attribution is a license requirement.
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -1129,6 +1157,30 @@ function initMap() {
     markersById[r.id] = m;
     markerLayer.addLayer(m);
   });
+
+  // One-tap way home if anyone gets disoriented: a small brand-styled
+  // control just below the zoom buttons that returns to the Athens view.
+  const ResetView = L.Control.extend({
+    options: { position: "topleft" },
+    onAdd: function (m) {
+      const wrap = L.DomUtil.create("div", "leaflet-bar dtm-reset");
+      const btn = L.DomUtil.create("button", "dtm-reset-btn", wrap);
+      btn.type = "button";
+      btn.title = "Back to Athens";
+      btn.setAttribute("aria-label", "Reset map view to Athens");
+      btn.innerHTML = '<svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">' +
+        '<path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>';
+      L.DomEvent.disableClickPropagation(wrap);
+      L.DomEvent.on(btn, "click", function () {
+        m.setView(ATHENS_CENTER, HOME_ZOOM);
+      });
+      return wrap;
+    }
+  });
+  map.addControl(new ResetView());
+
+  // Guard against any container-sizing race on slower loads.
+  requestAnimationFrame(function () { map.invalidateSize(); });
 
   mapReady = true;
 }
@@ -1192,16 +1244,33 @@ const locateMsg = document.getElementById("locate-msg");
 document.getElementById("near-me").addEventListener("click", function () {
   if (!mapReady) return;
   locateMsg.textContent = "Looking for you…";
-  map.locate({ setView: true, maxZoom: 15 });
+  // setView stays false: Leaflet's own locate-setView fits the accuracy
+  // circle, and a coarse (IP-based) fix would fling the map toward world
+  // zoom. onLocationFound decides the view instead.
+  map.locate({ setView: false });
 });
 
 let hereMarker = null;
 function onLocationFound(e) {
+  // A coarse fix (e.g. IP-based, accuracy in the tens of km or worse) or a
+  // location outside the service area used to fling the map to world zoom.
+  // In that case, settle gently on the Athens view instead of pretending
+  // we found the person.
+  const coarse = typeof e.accuracy === "number" && e.accuracy > 30000;
+  const inArea = L.latLngBounds(SERVICE_AREA).contains(e.latlng);
+  if (coarse || !inArea) {
+    locateMsg.textContent =
+      "We could not pin you down nearby, so here is the Athens view — every place is on the map.";
+    if (hereMarker) { map.removeLayer(hereMarker); hereMarker = null; }
+    map.setView(ATHENS_CENTER, HOME_ZOOM);
+    return;
+  }
   locateMsg.textContent = "Here you are. The closest help is nearby.";
   if (hereMarker) map.removeLayer(hereMarker);
   hereMarker = L.circleMarker(e.latlng, {
     radius: 9, color: "#4178bc", fillColor: "#4178bc", fillOpacity: 0.5
   }).addTo(map).bindTooltip("You are here");
+  map.fitBounds(e.bounds, { maxZoom: 15 });
 }
 function onLocationError() {
   locateMsg.textContent =
