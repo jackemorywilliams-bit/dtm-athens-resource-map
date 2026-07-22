@@ -94,15 +94,15 @@
     "contact": {
       "phone": {
         "value": "706-425-9445",
-        "source": "https://www.mercyhealthcenter.net/"
+        "source": "https://www.mercyhealthcenter.net/medical"
       },
       "address": {
-        "value": "700 Oglethorpe Ave, Suite C7 Athens, GA 30606",
-        "source": "https://www.mercyhealthcenter.net/"
+        "value": "700 Oglethorpe Avenue Suite C7 | Athens, GA 30606",
+        "source": "https://www.mercyhealthcenter.net/medical"
       },
       "hours": {
-        "value": "Monday–Thursday 8:30am–4:30pm, Friday 8:30am–3:00pm, Closed Saturday and Sunday",
-        "source": "https://www.mercyhealthcenter.net/"
+        "value": "Monday through Thursday from 8:30 am - 4:30 pm and Friday from 8:30 am - 3:00 pm",
+        "source": "https://www.mercyhealthcenter.net/medical"
       },
       "website": {
         "value": "https://www.mercyhealthcenter.net/",
@@ -117,7 +117,7 @@
       "lng": -83.412292,
       "source": "https://nominatim.openstreetmap.org/search?q=700+Oglethorpe+Avenue,+Athens,+Georgia+30606&format=json"
     },
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-22",
     "verified": true
   },
   {
@@ -493,19 +493,19 @@
     "contact": {
       "phone": {
         "value": "706-208-1001",
-        "source": "https://athenshabitat.com/"
+        "source": "https://www.athenshabitat.com/"
       },
       "address": {
         "value": "532 Barber Street",
-        "source": "https://athenshabitat.com/"
+        "source": "https://www.athenshabitat.com/"
       },
       "hours": {
         "value": "",
         "source": ""
       },
       "website": {
-        "value": "https://athenshabitat.com/",
-        "source": "https://athenshabitat.com/"
+        "value": "https://www.athenshabitat.com/",
+        "source": "https://www.athenshabitat.com/"
       }
     },
     "servesPopulation": [
@@ -516,7 +516,7 @@
       "lng": -83.3860616,
       "source": "https://nominatim.openstreetmap.org/search?q=532+Barber+Street,+Athens,+Georgia&format=json"
     },
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-22",
     "verified": true
   },
   {
@@ -571,11 +571,11 @@
     "contact": {
       "phone": {
         "value": "(706) 543-1145",
-        "source": "https://www.anhc.clinic/contact"
+        "source": "https://www.anhc.clinic/contact/"
       },
       "address": {
         "value": "402 McKinley Dr, Athens GA, 30601",
-        "source": "https://www.anhc.clinic/contact"
+        "source": "https://www.anhc.clinic/contact/"
       },
       "hours": {
         "value": "",
@@ -583,7 +583,7 @@
       },
       "website": {
         "value": "https://www.anhc.clinic/",
-        "source": "https://www.anhc.clinic/contact"
+        "source": "https://www.anhc.clinic/"
       }
     },
     "servesPopulation": [
@@ -594,7 +594,7 @@
       "lng": -83.3552586,
       "source": "https://nominatim.openstreetmap.org/search?q=402+McKinley+Drive,+Athens,+Georgia+30601&format=json"
     },
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-22",
     "verified": true
   },
   {
@@ -613,7 +613,7 @@
         "source": "https://www.glsp.org/need-help/"
       },
       "address": {
-        "value": "1865 West Broad St., Suite B, Athens, GA 30606",
+        "value": "1865 West Broad St., Suite B\nAthens, GA 30606",
         "source": "https://www.glsp.org/need-help/"
       },
       "hours": {
@@ -634,7 +634,7 @@
       "lng": -83.3998232,
       "source": "https://nominatim.openstreetmap.org/search?q=1865+West+Broad+Street,+Athens,+Georgia+30606&format=json"
     },
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-22",
     "verified": true
   },
   {
@@ -732,7 +732,7 @@
         "source": "https://www.accgov.com/transit"
       },
       "address": {
-        "value": "775 East Broad Street, Hickory Street Connector, Athens, GA 30601",
+        "value": "775 East Broad Street\nHickory Street Connector\nAthens, GA 30601",
         "source": "https://www.accgov.com/transit"
       },
       "hours": {
@@ -752,7 +752,7 @@
       "lng": -83.3706081,
       "source": "https://nominatim.openstreetmap.org/search?q=775+East+Broad+Street,+Athens,+Georgia+30601&format=json"
     },
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-22",
     "verified": true
   },
   {
@@ -780,7 +780,7 @@
       },
       "website": {
         "value": "https://www.peoplelivinginrecovery.com",
-        "source": "https://www.peoplelivinginrecovery.com/contact-us"
+        "source": "https://www.peoplelivinginrecovery.com"
       }
     },
     "servesPopulation": [
@@ -792,7 +792,7 @@
       "lng": -83.4176609,
       "source": "https://nominatim.openstreetmap.org/search?q=115+Sycamore+Drive,+Athens,+Georgia+30606&format=json"
     },
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-22",
     "verified": true
   },
   {
@@ -850,7 +850,7 @@
         "source": ""
       },
       "address": {
-        "value": "150 Evelyn C. Neely Drive Athens, GA 30601",
+        "value": "150 Evelyn C. Neely Drive\nAthens, GA 30601",
         "source": "https://dol.georgia.gov/locations/athens"
       },
       "hours": {
@@ -870,7 +870,7 @@
       "lng": -83.3659354,
       "source": "https://nominatim.openstreetmap.org/search?q=Georgia+Department+of+Labor%2C+Athens%2C+Georgia&format=json&limit=5"
     },
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-22",
     "verified": true
   },
   {
@@ -1165,7 +1165,7 @@
         "source": "https://gvs.georgia.gov/locations/athens-vr-office"
       },
       "address": {
-        "value": "125 Athens West Parkway Athens, GA 30606",
+        "value": "125 Athens West Parkway\nAthens, GA 30606",
         "source": "https://gvs.georgia.gov/locations/athens-vr-office"
       },
       "hours": {
@@ -1185,7 +1185,7 @@
       "lng": -83.4486588,
       "source": "https://nominatim.openstreetmap.org/search?q=125+Athens+West+Parkway,+Athens,+Georgia+30606&format=json"
     },
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-22",
     "verified": true
   },
   {
@@ -1445,19 +1445,19 @@
     "contact": {
       "phone": {
         "value": "706-549-3730",
-        "source": "https://www.liveforward.org/"
+        "source": "https://liveforward.org/"
       },
       "address": {
         "value": "2500 W Broad Street | Suite 300 | Athens, GA 30606",
-        "source": "https://www.liveforward.org/"
+        "source": "https://liveforward.org/"
       },
       "hours": {
         "value": "",
         "source": ""
       },
       "website": {
-        "value": "https://www.liveforward.org/",
-        "source": "https://www.liveforward.org/"
+        "value": "https://liveforward.org/",
+        "source": "https://liveforward.org/"
       }
     },
     "servesPopulation": [
@@ -1468,7 +1468,7 @@
       "lng": -83.4204891,
       "source": "https://nominatim.openstreetmap.org/search?q=2500+West+Broad+Street,+Athens,+Georgia+30606&format=json"
     },
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-22",
     "verified": true
   },
   {
@@ -1528,7 +1528,7 @@
         "source": "https://athenslandtrust.org/contact/"
       },
       "address": {
-        "value": "685 N Pope Street, Athens, Georgia 30601",
+        "value": "685 N Pope Street\nAthens, Georgia 30601",
         "source": "https://athenslandtrust.org/contact/"
       },
       "hours": {
@@ -1537,7 +1537,7 @@
       },
       "website": {
         "value": "https://athenslandtrust.org/",
-        "source": "https://athenslandtrust.org/contact/"
+        "source": "https://athenslandtrust.org/"
       }
     },
     "servesPopulation": [
@@ -1550,7 +1550,7 @@
       "lng": -83.3856095,
       "source": "https://nominatim.openstreetmap.org/search?q=685+North+Pope+Street,+Athens,+Georgia+30601&format=json"
     },
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-22",
     "verified": true
   },
   {
@@ -2007,19 +2007,19 @@
     "contact": {
       "phone": {
         "value": "(706) 546-7355",
-        "source": "https://www.thecommencementcenter.com/contact/"
+        "source": "https://thecommencementcenter.com/contact/"
       },
       "address": {
-        "value": "1175 Mitchell Bridge Rd\nAthens, GA 30606-6411",
-        "source": "https://www.thecommencementcenter.com/contact/"
+        "value": "1175 Mitchell Bridge Rd\nAthens, GA 30606",
+        "source": "https://thecommencementcenter.com/contact/"
       },
       "hours": {
-        "value": "Monday through Thursday:\n9:00AM to 5:00 PM\nFriday:\n9:00AM to 4:00PM\nSaturday:\n9:00AM to 12:00PM\nSunday: Closed",
-        "source": "https://www.thecommencementcenter.com/contact/"
+        "value": "Monday through Thursday:\n9:00AM to 5:00 PM\nFriday:\n9:00AM to 4:00PM\nSaturday:\n9:00AM to 12:00PM\nSunday\nClosed",
+        "source": "https://thecommencementcenter.com/contact/"
       },
       "website": {
-        "value": "https://www.thecommencementcenter.com/",
-        "source": "https://www.thecommencementcenter.com/"
+        "value": "https://thecommencementcenter.com/",
+        "source": "https://thecommencementcenter.com/"
       }
     },
     "servesPopulation": [
@@ -2030,7 +2030,7 @@
       "lng": -83.4516801,
       "source": "https://nominatim.openstreetmap.org/search?q=1175+Mitchell+Bridge+Road%2C+Athens%2C+Georgia+30606&format=json"
     },
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-22",
     "verified": true
   },
   {
@@ -2085,15 +2085,15 @@
     "contact": {
       "phone": {
         "value": "706-548-4361",
-        "source": "https://hopehaven.net/contact/"
+        "source": "https://hopehaven.net/contact-us/"
       },
       "address": {
         "value": "795 Newton Bridge Rd, Athens, GA 30607",
-        "source": "https://hopehaven.net/contact/"
+        "source": "https://hopehaven.net/contact-us/"
       },
       "hours": {
         "value": "Monday – Friday, 8:00 am – 4:00 pm",
-        "source": "https://hopehaven.net/contact/"
+        "source": "https://hopehaven.net/contact-us/"
       },
       "website": {
         "value": "https://hopehaven.net/",
@@ -2108,7 +2108,7 @@
       "lng": -83.4016819,
       "source": "https://nominatim.openstreetmap.org/search?q=795+Newton+Bridge+Road%2C+Athens%2C+Georgia+30607&format=json"
     },
-    "lastVerified": "2026-07-08",
+    "lastVerified": "2026-07-22",
     "verified": true
   },
   {

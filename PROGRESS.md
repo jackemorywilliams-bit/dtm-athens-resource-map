@@ -95,6 +95,20 @@
       cited contact page 404'd → re-cited to live homepage footer, focused re-test
       3/3 PASS). Stale transit citation moved to canonical URL. Breaker not invoked.
 
+## 2026-07-22 — SESSION 5: full ground-truth coverage
+
+- [x] Full-coverage QA sweep of the 21 never-sampled entries (two parallel
+      testers): 70 fields, 59 PASS / 11 FAIL — all mechanical citation defects
+      (flattened line breaks, websites cited to sub-pages, one site gone
+      client-rendered), zero factual errors. Project Safe confidentiality
+      re-confirmed clean.
+- [x] Batch repair + re-tests: all 12 flagged entries now PASS; Mercy Health
+      Center re-cited to its server-rendered /medical page after its homepage
+      became client-rendered. lastVerified refreshed on all touched entries.
+- [x] 100% ground-truth coverage: every entry's sourced fields have been
+      fetched and checked against their cited pages. qa_history.json records
+      all 11 rounds; QA_REPORT.md directory regenerated (61/61 sampled).
+
 ## Needs human call-down
 
 - Phone-verify the dataset before wider promotion (all 61 entries carry web-sourced

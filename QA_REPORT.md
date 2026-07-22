@@ -176,6 +176,40 @@ values confirmed. Focused re-test: 3/3 PASS.
 
 Gate closed clean; no entry reached strike 2; breaker not invoked; zero demotions.
 
+---
+
+# SESSION 5 — 2026-07-22 (full-coverage sweep: every entry ground-truthed)
+
+## Sweep (orchestrator-directed fixed samples, two parallel testers)
+
+The 21 entries never sampled in prior rounds were swept in full: part A (11
+entries, 35 fields — 26 PASS / 9 FAIL) and part B (10 entries, 35 fields —
+33 PASS / 2 FAIL). Project Safe's confidentiality check: clean (no address,
+no coordinates, none anywhere in the entry).
+
+All 11 failures were mechanical citation defects, none factual: seven stored
+addresses/hours flattened page line breaks into commas or spaces the page never
+prints (plus one zip+4 suffix not visible on the page); three website values
+were cited to sub-pages where the URL never appears as readable text; Mercy
+Health Center's homepage had become fully client-rendered, leaving its values
+visible only in script JSON. Five non-failing stale-redirect warnings.
+
+## Batch repair + re-test
+
+data-researcher re-fetched every flagged page: addresses/hours stored as exact
+newline-separated page lines, websites self-cited to loading homepages, all
+stale citations moved to canonical URLs. Re-test of the 12 repaired entries:
+37/40 PASS — the three remaining fails were all Mercy Health Center
+(client-rendered homepage). Strike-1 repair re-cited Mercy to its
+server-rendered /medical page with values stored exactly as printed; focused
+re-test: 4/4 PASS.
+
+## SESSION 5 QA gate result
+
+**Ground-truth coverage is now 100%: all 61 entries have had every populated
+sourced field fetched and checked against its cited page at least once.**
+No entry reached strike 2; breaker not invoked; zero demotions.
+
 ## SESSION 3 QA gate result
 
 Cumulative unique entries ground-truthed today: 22 of 43 (51%). Final round clean
@@ -188,7 +222,7 @@ demotions. Gate closed; data shipped.
 
 ## Source directory (auto-generated)
 
-All 61 entries with every populated value's exact source. 40 of 61 entries (65%) have additionally had their sourced fields fetched and checked against the cited pages by the report-only QA agent (rounds in the right column; details in the session logs above). Every entry, sampled or not, passes verify.py's structural wall on every build.
+All 61 entries with every populated value's exact source. 61 of 61 entries (100%) have additionally had their sourced fields fetched and checked against the cited pages by the report-only QA agent (rounds in the right column; details in the session logs above). Every entry, sampled or not, passes verify.py's structural wall on every build.
 
 | Entry | Field | Cited source | Last verified | QA rounds |
 |---|---|---|---|---|
@@ -209,21 +243,21 @@ All 61 entries with every populated value's exact source. 40 of 61 entries (65%)
 |  | website | [https://advantagebhs.org/](https://advantagebhs.org/) |  |  |
 | **Athens A.A. (Alcoholics Anonymous District 16B)** (`athens-aa-district-16b`) | phone | [https://www.athensaa.org/](https://www.athensaa.org/) | 2026-07-08 | S4-R1 2026-07-08 |
 |  | website | [https://www.athensaa.org/](https://www.athensaa.org/) |  |  |
-| **Athens Area Commencement Center** (`athens-area-commencement-center`) | phone | [https://www.thecommencementcenter.com/contact/](https://www.thecommencementcenter.com/contact/) | 2026-07-08 | — |
-|  | address | [https://www.thecommencementcenter.com/contact/](https://www.thecommencementcenter.com/contact/) |  |  |
-|  | hours | [https://www.thecommencementcenter.com/contact/](https://www.thecommencementcenter.com/contact/) |  |  |
-|  | website | [https://www.thecommencementcenter.com/](https://www.thecommencementcenter.com/) |  |  |
+| **Athens Area Commencement Center** (`athens-area-commencement-center`) | phone | [https://thecommencementcenter.com/contact/](https://thecommencementcenter.com/contact/) | 2026-07-22 | S5-sweepA 2026-07-22; S5-retest 2026-07-22 |
+|  | address | [https://thecommencementcenter.com/contact/](https://thecommencementcenter.com/contact/) |  |  |
+|  | hours | [https://thecommencementcenter.com/contact/](https://thecommencementcenter.com/contact/) |  |  |
+|  | website | [https://thecommencementcenter.com/](https://thecommencementcenter.com/) |  |  |
 |  | geo | [https://nominatim.openstreetmap.org/search?q=1175+Mitchell+Bridge+Road%2C+Athens%2C+Georgia+30606&format=json](https://nominatim.openstreetmap.org/search?q=1175+Mitchell+Bridge+Road%2C+Athens%2C+Georgia+30606&format=json) |  |  |
 | **Athens Area Emergency Food Bank** (`athens-area-emergency-food-bank`) | phone | [https://www.athensfoodbank.org/donations.html](https://www.athensfoodbank.org/donations.html) | 2026-07-07 | S3-R2 2026-07-07; S3-R3 2026-07-07 |
 |  | address | [https://www.athensfoodbank.org/donations.html](https://www.athensfoodbank.org/donations.html) |  |  |
 |  | hours | [https://www.athensfoodbank.org/donations.html](https://www.athensfoodbank.org/donations.html) |  |  |
 |  | website | [https://www.athensfoodbank.org/](https://www.athensfoodbank.org/) |  |  |
 |  | geo | [https://nominatim.openstreetmap.org/search?q=640+Barber+Street,+Athens,+Georgia+30601&format=json](https://nominatim.openstreetmap.org/search?q=640+Barber+Street,+Athens,+Georgia+30601&format=json) |  |  |
-| **Athens Area Habitat for Humanity** (`athens-area-habitat`) | phone | [https://athenshabitat.com/](https://athenshabitat.com/) | 2026-07-07 | — |
-|  | address | [https://athenshabitat.com/](https://athenshabitat.com/) |  |  |
-|  | website | [https://athenshabitat.com/](https://athenshabitat.com/) |  |  |
+| **Athens Area Habitat for Humanity** (`athens-area-habitat`) | phone | [https://www.athenshabitat.com/](https://www.athenshabitat.com/) | 2026-07-22 | S5-sweepA 2026-07-22; S5-retest 2026-07-22 |
+|  | address | [https://www.athenshabitat.com/](https://www.athenshabitat.com/) |  |  |
+|  | website | [https://www.athenshabitat.com/](https://www.athenshabitat.com/) |  |  |
 |  | geo | [https://nominatim.openstreetmap.org/search?q=532+Barber+Street,+Athens,+Georgia&format=json](https://nominatim.openstreetmap.org/search?q=532+Barber+Street,+Athens,+Georgia&format=json) |  |  |
-| **Athens Area Homeless Shelter** (`athens-area-homeless-shelter`) | phone | [https://www.helpathenshomeless.org/](https://www.helpathenshomeless.org/) | 2026-07-07 | — |
+| **Athens Area Homeless Shelter** (`athens-area-homeless-shelter`) | phone | [https://www.helpathenshomeless.org/](https://www.helpathenshomeless.org/) | 2026-07-07 | S5-sweepA 2026-07-22 |
 |  | address | [https://www.helpathenshomeless.org/](https://www.helpathenshomeless.org/) |  |  |
 |  | website | [https://www.helpathenshomeless.org/](https://www.helpathenshomeless.org/) |  |  |
 |  | geo | [https://nominatim.openstreetmap.org/search?q=205+Bray+Street,+Athens,+Georgia+30601&format=json](https://nominatim.openstreetmap.org/search?q=205+Bray+Street,+Athens,+Georgia+30601&format=json) |  |  |
@@ -232,7 +266,7 @@ All 61 entries with every populated value's exact source. 40 of 61 entries (65%)
 |  | hours | [https://athenslibrary.org/location/athens-clarke/](https://athenslibrary.org/location/athens-clarke/) |  |  |
 |  | website | [https://athenslibrary.org/location/athens-clarke/](https://athenslibrary.org/location/athens-clarke/) |  |  |
 |  | geo | [https://nominatim.openstreetmap.org/search?q=2025+Baxter+Street,+Athens,+Georgia+30606&format=json](https://nominatim.openstreetmap.org/search?q=2025+Baxter+Street,+Athens,+Georgia+30606&format=json) |  |  |
-| **Athens-Clarke County Transit** (`athens-clarke-county-transit`) | phone | [https://www.accgov.com/transit](https://www.accgov.com/transit) | 2026-07-07 | — |
+| **Athens-Clarke County Transit** (`athens-clarke-county-transit`) | phone | [https://www.accgov.com/transit](https://www.accgov.com/transit) | 2026-07-22 | S5-sweepA 2026-07-22; S5-retest 2026-07-22 |
 |  | address | [https://www.accgov.com/transit](https://www.accgov.com/transit) |  |  |
 |  | website | [https://www.accgov.com/transit](https://www.accgov.com/transit) |  |  |
 |  | geo | [https://nominatim.openstreetmap.org/search?q=775+East+Broad+Street,+Athens,+Georgia+30601&format=json](https://nominatim.openstreetmap.org/search?q=775+East+Broad+Street,+Athens,+Georgia+30601&format=json) |  |  |
@@ -254,20 +288,20 @@ All 61 entries with every populated value's exact source. 40 of 61 entries (65%)
 |  | address | [https://www.athenshousing.org/](https://www.athenshousing.org/) |  |  |
 |  | website | [https://www.athenshousing.org/](https://www.athenshousing.org/) |  |  |
 |  | geo | [https://nominatim.openstreetmap.org/search?q=300+South+Rocksprings+Street,+Athens,+Georgia+30606&format=json](https://nominatim.openstreetmap.org/search?q=300+South+Rocksprings+Street,+Athens,+Georgia+30606&format=json) |  |  |
-| **Athens Land Trust** (`athens-land-trust`) | phone | [https://athenslandtrust.org/contact/](https://athenslandtrust.org/contact/) | 2026-07-07 | — |
+| **Athens Land Trust** (`athens-land-trust`) | phone | [https://athenslandtrust.org/contact/](https://athenslandtrust.org/contact/) | 2026-07-22 | S5-sweepA 2026-07-22; S5-retest 2026-07-22 |
 |  | address | [https://athenslandtrust.org/contact/](https://athenslandtrust.org/contact/) |  |  |
-|  | website | [https://athenslandtrust.org/contact/](https://athenslandtrust.org/contact/) |  |  |
+|  | website | [https://athenslandtrust.org/](https://athenslandtrust.org/) |  |  |
 |  | geo | [https://nominatim.openstreetmap.org/search?q=685+North+Pope+Street,+Athens,+Georgia+30601&format=json](https://nominatim.openstreetmap.org/search?q=685+North+Pope+Street,+Athens,+Georgia+30601&format=json) |  |  |
-| **Athens Neighborhood Health Center** (`athens-neighborhood-health-center`) | phone | [https://www.anhc.clinic/contact](https://www.anhc.clinic/contact) | 2026-07-07 | — |
-|  | address | [https://www.anhc.clinic/contact](https://www.anhc.clinic/contact) |  |  |
-|  | website | [https://www.anhc.clinic/contact](https://www.anhc.clinic/contact) |  |  |
+| **Athens Neighborhood Health Center** (`athens-neighborhood-health-center`) | phone | [https://www.anhc.clinic/contact/](https://www.anhc.clinic/contact/) | 2026-07-22 | S5-sweepA 2026-07-22; S5-retest 2026-07-22 |
+|  | address | [https://www.anhc.clinic/contact/](https://www.anhc.clinic/contact/) |  |  |
+|  | website | [https://www.anhc.clinic/](https://www.anhc.clinic/) |  |  |
 |  | geo | [https://nominatim.openstreetmap.org/search?q=402+McKinley+Drive,+Athens,+Georgia+30601&format=json](https://nominatim.openstreetmap.org/search?q=402+McKinley+Drive,+Athens,+Georgia+30601&format=json) |  |  |
 | **Athens-Oconee CASA** (`athens-oconee-casa`) | phone | [https://www.athensoconeecasa.org/](https://www.athensoconeecasa.org/) | 2026-07-08 | S4-R1 2026-07-08 |
 |  | address | [https://www.athensoconeecasa.org/](https://www.athensoconeecasa.org/) |  |  |
 |  | hours | [https://www.athensoconeecasa.org/](https://www.athensoconeecasa.org/) |  |  |
 |  | website | [https://www.athensoconeecasa.org/](https://www.athensoconeecasa.org/) |  |  |
 |  | geo | [https://nominatim.openstreetmap.org/search?q=693+North+Pope+Street%2C+Athens%2C+Georgia+30601&format=json](https://nominatim.openstreetmap.org/search?q=693+North+Pope+Street%2C+Athens%2C+Georgia+30601&format=json) |  |  |
-| **Athens Public Defender (Western Circuit Public Defender)** (`athens-public-defender-western-circuit`) | phone | [https://www.athenspublicdefender.com/contact-us](https://www.athenspublicdefender.com/contact-us) | 2026-07-08 | — |
+| **Athens Public Defender (Western Circuit Public Defender)** (`athens-public-defender-western-circuit`) | phone | [https://www.athenspublicdefender.com/contact-us](https://www.athenspublicdefender.com/contact-us) | 2026-07-08 | S5-sweepA 2026-07-22 |
 |  | address | [https://www.athenspublicdefender.com/contact-us](https://www.athenspublicdefender.com/contact-us) |  |  |
 |  | hours | [https://www.athenspublicdefender.com/contact-us](https://www.athenspublicdefender.com/contact-us) |  |  |
 |  | website | [https://www.athenspublicdefender.com/](https://www.athenspublicdefender.com/) |  |  |
@@ -321,7 +355,7 @@ All 61 entries with every populated value's exact source. 40 of 61 entries (65%)
 |  | address | [https://downtownministries.org/contact/](https://downtownministries.org/contact/) |  |  |
 |  | website | [https://downtownministries.org/contact/](https://downtownministries.org/contact/) |  |  |
 |  | geo | [https://nominatim.openstreetmap.org/search?q=250+North+Milledge+Avenue,+Athens,+Georgia+30601&format=json](https://nominatim.openstreetmap.org/search?q=250+North+Milledge+Avenue,+Athens,+Georgia+30601&format=json) |  |  |
-| **Emmanuel Episcopal Church** (`emmanuel-episcopal-church`) | phone | [https://www.emmanuelathens.org/](https://www.emmanuelathens.org/) | 2026-07-08 | — |
+| **Emmanuel Episcopal Church** (`emmanuel-episcopal-church`) | phone | [https://www.emmanuelathens.org/](https://www.emmanuelathens.org/) | 2026-07-08 | S5-sweepA 2026-07-22 |
 |  | address | [https://www.emmanuelathens.org/](https://www.emmanuelathens.org/) |  |  |
 |  | website | [https://www.emmanuelathens.org/](https://www.emmanuelathens.org/) |  |  |
 |  | geo | [https://nominatim.openstreetmap.org/search?q=498+Prince+Avenue%2C+Athens%2C+Georgia+30601&format=json](https://nominatim.openstreetmap.org/search?q=498+Prince+Avenue%2C+Athens%2C+Georgia+30601&format=json) |  |  |
@@ -342,10 +376,10 @@ All 61 entries with every populated value's exact source. 40 of 61 entries (65%)
 |  | address | [https://foodbanknega.org/](https://foodbanknega.org/) |  |  |
 |  | website | [https://foodbanknega.org/](https://foodbanknega.org/) |  |  |
 |  | geo | [https://nominatim.openstreetmap.org/search?q=890+Newton+Bridge+Road,+Athens,+Georgia+30607&format=json](https://nominatim.openstreetmap.org/search?q=890+Newton+Bridge+Road,+Athens,+Georgia+30607&format=json) |  |  |
-| **Georgia Department of Labor - Athens Career Center** (`gdol-athens-career-center`) | address | [https://dol.georgia.gov/locations/athens](https://dol.georgia.gov/locations/athens) | 2026-07-08 | — |
+| **Georgia Department of Labor - Athens Career Center** (`gdol-athens-career-center`) | address | [https://dol.georgia.gov/locations/athens](https://dol.georgia.gov/locations/athens) | 2026-07-22 | S5-sweepA 2026-07-22; S5-retest 2026-07-22 |
 |  | website | [https://dol.georgia.gov/locations/athens](https://dol.georgia.gov/locations/athens) |  |  |
 |  | geo | [https://nominatim.openstreetmap.org/search?q=Georgia+Department+of+Labor%2C+Athens%2C+Georgia&format=json&limit=5](https://nominatim.openstreetmap.org/search?q=Georgia+Department+of+Labor%2C+Athens%2C+Georgia&format=json&limit=5) |  |  |
-| **Georgia Legal Services Program - Athens Regional Office** (`georgia-legal-services-athens`) | phone | [https://www.glsp.org/need-help/](https://www.glsp.org/need-help/) | 2026-07-07 | — |
+| **Georgia Legal Services Program - Athens Regional Office** (`georgia-legal-services-athens`) | phone | [https://www.glsp.org/need-help/](https://www.glsp.org/need-help/) | 2026-07-22 | S5-sweepA 2026-07-22; S5-retest 2026-07-22 |
 |  | address | [https://www.glsp.org/need-help/](https://www.glsp.org/need-help/) |  |  |
 |  | website | [https://www.glsp.org/need-help/](https://www.glsp.org/need-help/) |  |  |
 |  | geo | [https://nominatim.openstreetmap.org/search?q=1865+West+Broad+Street,+Athens,+Georgia+30606&format=json](https://nominatim.openstreetmap.org/search?q=1865+West+Broad+Street,+Athens,+Georgia+30606&format=json) |  |  |
@@ -354,31 +388,31 @@ All 61 entries with every populated value's exact source. 40 of 61 entries (65%)
 |  | hours | [https://goodwillng.org/gw-locations/east-athens-store-donation-career-center-30605/](https://goodwillng.org/gw-locations/east-athens-store-donation-career-center-30605/) |  |  |
 |  | website | [https://goodwillng.org/gw-locations/east-athens-store-donation-career-center-30605/](https://goodwillng.org/gw-locations/east-athens-store-donation-career-center-30605/) |  |  |
 |  | geo | [https://nominatim.openstreetmap.org/search?q=4070+Lexington+Road%2C+Athens%2C+Georgia+30605&format=json](https://nominatim.openstreetmap.org/search?q=4070+Lexington+Road%2C+Athens%2C+Georgia+30605&format=json) |  |  |
-| **Georgia Vocational Rehabilitation Agency - Athens VR Office** (`gvra-athens-vr-office`) | phone | [https://gvs.georgia.gov/locations/athens-vr-office](https://gvs.georgia.gov/locations/athens-vr-office) | 2026-07-07 | — |
+| **Georgia Vocational Rehabilitation Agency - Athens VR Office** (`gvra-athens-vr-office`) | phone | [https://gvs.georgia.gov/locations/athens-vr-office](https://gvs.georgia.gov/locations/athens-vr-office) | 2026-07-22 | S5-sweepA 2026-07-22; S5-retest 2026-07-22 |
 |  | address | [https://gvs.georgia.gov/locations/athens-vr-office](https://gvs.georgia.gov/locations/athens-vr-office) |  |  |
 |  | hours | [https://gvs.georgia.gov/locations/athens-vr-office](https://gvs.georgia.gov/locations/athens-vr-office) |  |  |
 |  | website | [https://gvs.georgia.gov/locations/athens-vr-office](https://gvs.georgia.gov/locations/athens-vr-office) |  |  |
 |  | geo | [https://nominatim.openstreetmap.org/search?q=125+Athens+West+Parkway,+Athens,+Georgia+30606&format=json](https://nominatim.openstreetmap.org/search?q=125+Athens+West+Parkway,+Athens,+Georgia+30606&format=json) |  |  |
-| **Hope Haven of Northeast Georgia** (`hope-haven-of-northeast-georgia`) | phone | [https://hopehaven.net/contact/](https://hopehaven.net/contact/) | 2026-07-08 | — |
-|  | address | [https://hopehaven.net/contact/](https://hopehaven.net/contact/) |  |  |
-|  | hours | [https://hopehaven.net/contact/](https://hopehaven.net/contact/) |  |  |
+| **Hope Haven of Northeast Georgia** (`hope-haven-of-northeast-georgia`) | phone | [https://hopehaven.net/contact-us/](https://hopehaven.net/contact-us/) | 2026-07-22 | S5-sweepB 2026-07-22; S5-retest 2026-07-22 |
+|  | address | [https://hopehaven.net/contact-us/](https://hopehaven.net/contact-us/) |  |  |
+|  | hours | [https://hopehaven.net/contact-us/](https://hopehaven.net/contact-us/) |  |  |
 |  | website | [https://hopehaven.net/](https://hopehaven.net/) |  |  |
 |  | geo | [https://nominatim.openstreetmap.org/search?q=795+Newton+Bridge+Road%2C+Athens%2C+Georgia+30607&format=json](https://nominatim.openstreetmap.org/search?q=795+Newton+Bridge+Road%2C+Athens%2C+Georgia+30607&format=json) |  |  |
-| **Live Forward** (`live-forward`) | phone | [https://www.liveforward.org/](https://www.liveforward.org/) | 2026-07-07 | — |
-|  | address | [https://www.liveforward.org/](https://www.liveforward.org/) |  |  |
-|  | website | [https://www.liveforward.org/](https://www.liveforward.org/) |  |  |
+| **Live Forward** (`live-forward`) | phone | [https://liveforward.org/](https://liveforward.org/) | 2026-07-22 | S5-sweepB 2026-07-22; S5-retest 2026-07-22 |
+|  | address | [https://liveforward.org/](https://liveforward.org/) |  |  |
+|  | website | [https://liveforward.org/](https://liveforward.org/) |  |  |
 |  | geo | [https://nominatim.openstreetmap.org/search?q=2500+West+Broad+Street,+Athens,+Georgia+30606&format=json](https://nominatim.openstreetmap.org/search?q=2500+West+Broad+Street,+Athens,+Georgia+30606&format=json) |  |  |
 | **The Love and Money Center at UGA** (`love-and-money-center-uga`) | phone | [https://www.fcs.uga.edu/loveandmoneycenter/contact](https://www.fcs.uga.edu/loveandmoneycenter/contact) | 2026-07-07 | S3-R1 2026-07-07 |
 |  | address | [https://www.fcs.uga.edu/loveandmoneycenter/contact](https://www.fcs.uga.edu/loveandmoneycenter/contact) |  |  |
 |  | hours | [https://www.fcs.uga.edu/loveandmoneycenter/contact](https://www.fcs.uga.edu/loveandmoneycenter/contact) |  |  |
 |  | website | [https://www.fcs.uga.edu/loveandmoneycenter/contact](https://www.fcs.uga.edu/loveandmoneycenter/contact) |  |  |
 |  | geo | [https://nominatim.openstreetmap.org/search?q=202+Carlton+Street,+Athens,+Georgia+30602&format=json](https://nominatim.openstreetmap.org/search?q=202+Carlton+Street,+Athens,+Georgia+30602&format=json) |  |  |
-| **Mercy Health Center** (`mercy-health-center`) | phone | [https://www.mercyhealthcenter.net/](https://www.mercyhealthcenter.net/) | 2026-07-07 | — |
-|  | address | [https://www.mercyhealthcenter.net/](https://www.mercyhealthcenter.net/) |  |  |
-|  | hours | [https://www.mercyhealthcenter.net/](https://www.mercyhealthcenter.net/) |  |  |
+| **Mercy Health Center** (`mercy-health-center`) | phone | [https://www.mercyhealthcenter.net/medical](https://www.mercyhealthcenter.net/medical) | 2026-07-22 | S5-sweepB 2026-07-22; S5-retest 2026-07-22 |
+|  | address | [https://www.mercyhealthcenter.net/medical](https://www.mercyhealthcenter.net/medical) |  |  |
+|  | hours | [https://www.mercyhealthcenter.net/medical](https://www.mercyhealthcenter.net/medical) |  |  |
 |  | website | [https://www.mercyhealthcenter.net/](https://www.mercyhealthcenter.net/) |  |  |
 |  | geo | [https://nominatim.openstreetmap.org/search?q=700+Oglethorpe+Avenue,+Athens,+Georgia+30606&format=json](https://nominatim.openstreetmap.org/search?q=700+Oglethorpe+Avenue,+Athens,+Georgia+30606&format=json) |  |  |
-| **Nuçi's Space** (`nucis-space`) | phone | [https://www.nuci.org/](https://www.nuci.org/) | 2026-07-07 | — |
+| **Nuçi's Space** (`nucis-space`) | phone | [https://www.nuci.org/](https://www.nuci.org/) | 2026-07-07 | S5-sweepB 2026-07-22 |
 |  | address | [https://www.nuci.org/](https://www.nuci.org/) |  |  |
 |  | website | [https://www.nuci.org/](https://www.nuci.org/) |  |  |
 |  | geo | [https://nominatim.openstreetmap.org/search?q=396+Oconee+Street,+Athens,+Georgia+30601&format=json](https://nominatim.openstreetmap.org/search?q=396+Oconee+Street,+Athens,+Georgia+30601&format=json) |  |  |
@@ -392,7 +426,7 @@ All 61 entries with every populated value's exact source. 40 of 61 entries (65%)
 |  | hours | [https://www.northeasthealthdistrict.org/locations/oconee-county/](https://www.northeasthealthdistrict.org/locations/oconee-county/) |  |  |
 |  | website | [https://www.northeasthealthdistrict.org/locations/oconee-county/](https://www.northeasthealthdistrict.org/locations/oconee-county/) |  |  |
 |  | geo | [https://nominatim.openstreetmap.org/search?q=1060+Experiment+Station+Road,+Watkinsville,+Georgia+30677&format=json](https://nominatim.openstreetmap.org/search?q=1060+Experiment+Station+Road,+Watkinsville,+Georgia+30677&format=json) |  |  |
-| **Oconee County Senior Center** (`oconee-county-senior-center`) | phone | [https://www.oconeecountyga.gov/1234/Senior-Center](https://www.oconeecountyga.gov/1234/Senior-Center) | 2026-07-07 | — |
+| **Oconee County Senior Center** (`oconee-county-senior-center`) | phone | [https://www.oconeecountyga.gov/1234/Senior-Center](https://www.oconeecountyga.gov/1234/Senior-Center) | 2026-07-07 | S5-sweepB 2026-07-22 |
 |  | address | [https://www.oconeecountyga.gov/1234/Senior-Center](https://www.oconeecountyga.gov/1234/Senior-Center) |  |  |
 |  | hours | [https://www.oconeecountyga.gov/1234/Senior-Center](https://www.oconeecountyga.gov/1234/Senior-Center) |  |  |
 |  | website | [https://www.oconeecountyga.gov/1234/Senior-Center](https://www.oconeecountyga.gov/1234/Senior-Center) |  |  |
@@ -402,18 +436,18 @@ All 61 entries with every populated value's exact source. 40 of 61 entries (65%)
 |  | hours | [https://athenshc.org/resources-navigator/blog-post-title-four-s88y2-jh2rl-7jwwa-zcbf3](https://athenshc.org/resources-navigator/blog-post-title-four-s88y2-jh2rl-7jwwa-zcbf3) |  |  |
 |  | website | [https://downtownministries.org/our-daily-bread/](https://downtownministries.org/our-daily-bread/) |  |  |
 |  | geo | [https://nominatim.openstreetmap.org/search?q=355+Pulaski+Street,+Athens,+Georgia+30601&format=json](https://nominatim.openstreetmap.org/search?q=355+Pulaski+Street,+Athens,+Georgia+30601&format=json) |  |  |
-| **People Living in Recovery** (`people-living-in-recovery`) | phone | [https://www.peoplelivinginrecovery.com/contact-us](https://www.peoplelivinginrecovery.com/contact-us) | 2026-07-07 | — |
+| **People Living in Recovery** (`people-living-in-recovery`) | phone | [https://www.peoplelivinginrecovery.com/contact-us](https://www.peoplelivinginrecovery.com/contact-us) | 2026-07-22 | S5-sweepB 2026-07-22; S5-retest 2026-07-22 |
 |  | address | [https://www.peoplelivinginrecovery.com/contact-us](https://www.peoplelivinginrecovery.com/contact-us) |  |  |
 |  | hours | [https://www.peoplelivinginrecovery.com/contact-us](https://www.peoplelivinginrecovery.com/contact-us) |  |  |
-|  | website | [https://www.peoplelivinginrecovery.com/contact-us](https://www.peoplelivinginrecovery.com/contact-us) |  |  |
+|  | website | [https://www.peoplelivinginrecovery.com](https://www.peoplelivinginrecovery.com) |  |  |
 |  | geo | [https://nominatim.openstreetmap.org/search?q=115+Sycamore+Drive,+Athens,+Georgia+30606&format=json](https://nominatim.openstreetmap.org/search?q=115+Sycamore+Drive,+Athens,+Georgia+30606&format=json) |  |  |
-| **Project Safe** (`project-safe`) | phone | [https://project-safe.org/](https://project-safe.org/) | 2026-07-07 | — |
+| **Project Safe** (`project-safe`) | phone | [https://project-safe.org/](https://project-safe.org/) | 2026-07-07 | S5-sweepB 2026-07-22 |
 |  | website | [https://project-safe.org/](https://project-safe.org/) |  |  |
-| **The Salvation Army of Athens** (`salvation-army-athens`) | phone | [https://southernusa.salvationarmy.org/athens/](https://southernusa.salvationarmy.org/athens/) | 2026-07-07 | — |
+| **The Salvation Army of Athens** (`salvation-army-athens`) | phone | [https://southernusa.salvationarmy.org/athens/](https://southernusa.salvationarmy.org/athens/) | 2026-07-07 | S5-sweepB 2026-07-22 |
 |  | address | [https://southernusa.salvationarmy.org/athens/](https://southernusa.salvationarmy.org/athens/) |  |  |
 |  | website | [https://southernusa.salvationarmy.org/athens/](https://southernusa.salvationarmy.org/athens/) |  |  |
 |  | geo | [https://nominatim.openstreetmap.org/search?q=784+North+Chase+Street,+Athens,+Georgia+30601&format=json](https://nominatim.openstreetmap.org/search?q=784+North+Chase+Street,+Athens,+Georgia+30601&format=json) |  |  |
-| **The Sparrow's Nest** (`sparrows-nest`) | phone | [https://www.sparrowsnestathens.org/](https://www.sparrowsnestathens.org/) | 2026-07-07 | — |
+| **The Sparrow's Nest** (`sparrows-nest`) | phone | [https://www.sparrowsnestathens.org/](https://www.sparrowsnestathens.org/) | 2026-07-07 | S5-sweepB 2026-07-22 |
 |  | address | [https://www.sparrowsnestathens.org/](https://www.sparrowsnestathens.org/) |  |  |
 |  | hours | [https://www.sparrowsnestathens.org/](https://www.sparrowsnestathens.org/) |  |  |
 |  | website | [https://www.sparrowsnestathens.org/](https://www.sparrowsnestathens.org/) |  |  |
@@ -427,7 +461,7 @@ All 61 entries with every populated value's exact source. 40 of 61 entries (65%)
 |  | address | [https://thecottagega.org/](https://thecottagega.org/) |  |  |
 |  | website | [https://thecottagega.org/](https://thecottagega.org/) |  |  |
 |  | geo | [https://nominatim.openstreetmap.org/search?q=3019+Lexington+Road,+Athens,+Georgia+30605&format=json](https://nominatim.openstreetmap.org/search?q=3019+Lexington+Road,+Athens,+Georgia+30605&format=json) |  |  |
-| **Timothy Baptist Church Food Pantry** (`timothy-baptist-church-food-pantry`) | phone | [https://timothybaptist.org/food-pantry/](https://timothybaptist.org/food-pantry/) | 2026-07-08 | — |
+| **Timothy Baptist Church Food Pantry** (`timothy-baptist-church-food-pantry`) | phone | [https://timothybaptist.org/food-pantry/](https://timothybaptist.org/food-pantry/) | 2026-07-08 | S5-sweepB 2026-07-22 |
 |  | address | [https://timothybaptist.org/food-pantry/](https://timothybaptist.org/food-pantry/) |  |  |
 |  | hours | [https://timothybaptist.org/food-pantry/](https://timothybaptist.org/food-pantry/) |  |  |
 |  | website | [https://timothybaptist.org/food-pantry/](https://timothybaptist.org/food-pantry/) |  |  |
