@@ -133,6 +133,23 @@
       all the known flattened-line-break class; batch repair + canonical-URL
       moves; re-test 25/25 PASS. Ground-truth coverage remains 100% (76/76).
 
+## 2026-07-22 — SESSION 6b: verified status, DTM Partners, ODB hours
+
+- [x] Human verification recorded: Emory reviewed the repository contents; README
+      status updated to LIVE / verified (2026-07-22).
+- [x] New approved category "DTM Partners" (verify.py, human-directed): an
+      affiliation tag from DTM's own partnership records. Tagged Food Bank of NE
+      Georgia; added Innovative Start Organization and UGA SPIA (web-grounded
+      contact values; partnership facts in editorial voice). Not added: No More
+      Under (pending partnership), UGA Nonprofit Program (no longer solid), FWS
+      (a program, not an org), UGA ILA (site behind a bot wall - see call-down).
+      UI: DTM-bird pin/key/chip treatment (shape+brand encoding, no new palette
+      color), "partner/dtm" search synonyms.
+- [x] ODB hours corrected per DTM's own flyer (breakfast Tue-Thu 8-9am, lunch
+      M-F 12-1pm): the AHC navigator citation claiming M-F breakfast was removed,
+      correct schedule carried in the description in DTM's editorial voice.
+      QA on all four touched entries: 11/11 PASS + intentional blank confirmed.
+
 ## Needs human call-down
 
 - Phone-verify the dataset before wider promotion (all 61 entries carry web-sourced
@@ -150,6 +167,15 @@
 - Advantage Homeless Day Service Center: the org's own pages state conflicting hours
   (10:00-4:30 on /athens-clarke-county/ vs 8:30-5:00 on /homeless-services/) — we
   cite the former; confirm by phone.
+- Publish the ODB meal schedule on downtownministries.org/our-daily-bread/ so the
+  hours field can be properly cited (currently no live web page shows the correct
+  Tue-Thu breakfast / M-F lunch times).
+- Confirm with staff that innovativestart.org (phone (480) 253-9644, Phoenix
+  mailbox) is DTM's ISO partner - the site never mentions Athens; identity match
+  is strong but unconfirmed.
+- UGA ILA could not be added: terry.uga.edu is behind a Cloudflare bot wall, so
+  no page could be fetched to source contact values. If DTM wants ILA listed,
+  provide a citable page or accept an entry with no contact values.
 - ACC-Gov /11710 page errors worth reporting to ACC: Athens Land Trust listed with
   the Wellness Clinic's phone; athenshc.org mislabeled "Athens Health Center";
   several stale org phones/addresses vs the orgs' own sites.

@@ -190,7 +190,9 @@
     width: .8em;
     height: .8em;
     border-radius: 50%;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border: 1px solid var(--ink);
     flex: 0 0 auto;
   }
@@ -267,6 +269,15 @@
   }
   .key .dtm-pin svg { width: 14px; height: 14px; }
   .card-pin svg { width: 13px; height: 13px; }
+  /* DTM Partner pins: shape+brand encoding (paper circle, ink outline, bird
+     mark at ~70%) instead of a ninth palette color. Decorative, like the SVGs. */
+  .dtm-pin img, .card-pin img, .chip-dot img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+    display: block;
+    flex: 0 0 auto;
+  }
   /* Dark glyph on the two light pin colors for WCAG contrast
      (map pins + key swatches + card dots). */
   .dtm-pin.ink-glyph, .card-pin.ink-glyph { color: var(--ink); }
@@ -694,7 +705,12 @@ const GROUPS = [
     cats: ["Transportation"] },
   { label: "Churches & Volunteer Groups", color: "#156108",
     icon: "M18 12.22V9l-5-2.5V5h2V3h-2V1h-2v2H9v2h2v1.5L6 9v3.22L2 14v8h8v-3c0-1.1.9-2 2-2s2 .9 2 2v3h8v-8l-4-1.78z",
-    cats: ["Churches & Volunteer Groups"] }
+    cats: ["Churches & Volunteer Groups"] },
+  // Shape+brand encoding, not a ninth palette color: paper circle, the shared
+  // 2px ink outline, and the DTM bird mark inside. `edge` keeps the card's
+  // left border visible (paper-on-paper would vanish).
+  { label: "DTM Partner", color: "var(--paper)", edge: "#1c1c1c", bird: true,
+    cats: ["DTM Partners"] }
 ];
 // Gentle fallback so a future category never breaks the page.
 const OTHER_GROUP = { label: "More help", color: "#4a4a4a",
@@ -704,6 +720,12 @@ const OTHER_GROUP = { label: "More help", color: "#4a4a4a",
 function iconSvg(g) {
   return '<svg viewBox="0 0 24 24" focusable="false" aria-hidden="true"><path d="' +
     g.icon + '"/></svg>';
+}
+
+// Decorative brand mark for DTM Partner pins (same path from / and /docs).
+const BIRD_IMG = '<img src="brand/dtm-bird.png" alt="" aria-hidden="true">';
+function glyphHtml(g) {
+  return g.bird ? BIRD_IMG : iconSvg(g);
 }
 
 const CAT_GROUP = {};
@@ -733,7 +755,8 @@ const SYNONYMS = (function () {
     ["ged school class tutoring kids children childcare youth",
       ["GED & Adult Education", "Youth & Family"]],
     ["bus ride transport", ["Transportation"]],
-    ["church volunteer faith", ["Churches & Volunteer Groups"]]
+    ["church volunteer faith", ["Churches & Volunteer Groups"]],
+    ["partner partners dtm", ["DTM Partners"]]
   ];
   const map = {};
   table.forEach(function (row) {
@@ -854,7 +877,7 @@ function matches(r) {
     li.innerHTML =
       '<span class="dtm-pin' + (g.inkGlyph ? " ink-glyph" : "") +
       '" style="background:' + esc(g.color) + '" aria-hidden="true">' +
-      iconSvg(g) + "</span><span>" + esc(g.label) + "</span>";
+      glyphHtml(g) + "</span><span>" + esc(g.label) + "</span>";
     keyList.appendChild(li);
   });
 
@@ -898,7 +921,7 @@ const searchInput = document.getElementById("search");
     b.type = "button";
     b.className = "chip";
     b.innerHTML = '<span class="chip-dot" style="background:' + esc(g.color) +
-      '" aria-hidden="true"></span>' + esc(c);
+      '" aria-hidden="true">' + (g.bird ? BIRD_IMG : "") + "</span>" + esc(c);
     b.setAttribute("aria-pressed", "false");
     b.addEventListener("click", function () {
       if (state.cats.has(c)) { state.cats.delete(c); b.setAttribute("aria-pressed", "false"); }
@@ -969,7 +992,7 @@ function cardHtml(r) {
   let h = "";
   h += '<h3><span class="card-pin' + (g.inkGlyph ? " ink-glyph" : "") +
     '" style="background:' + esc(g.color) +
-    '" aria-hidden="true">' + iconSvg(g) + "</span>" + esc(r.name) + "</h3>";
+    '" aria-hidden="true">' + glyphHtml(g) + "</span>" + esc(r.name) + "</h3>";
 
   h += '<div class="tags">' +
     (r.categories || []).map(function (c) {
@@ -1037,7 +1060,8 @@ function renderList(visible) {
     const art = document.createElement("article");
     art.className = "card";
     art.id = "card-" + r.id;
-    art.style.borderLeftColor = groupFor(r).color;
+    const g = groupFor(r);
+    art.style.borderLeftColor = g.edge || g.color;
     art.innerHTML = cardHtml(r);
     li.appendChild(art);
     cardsEl.appendChild(li);
@@ -1114,7 +1138,7 @@ function pinIcon(g) {
     className: "dtm-pin-wrap",
     html: '<span class="dtm-pin' + (g.inkGlyph ? " ink-glyph" : "") +
       '" style="background:' + esc(g.color) + '" aria-hidden="true">' +
-      iconSvg(g) + "</span>",
+      glyphHtml(g) + "</span>",
     iconSize: [28, 28],
     iconAnchor: [14, 14],
     tooltipAnchor: [0, -16],

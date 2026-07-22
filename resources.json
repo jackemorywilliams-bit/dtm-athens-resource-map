@@ -284,9 +284,10 @@
     "id": "food-bank-of-northeast-georgia",
     "name": "Food Bank of Northeast Georgia",
     "categories": [
-      "Food"
+      "Food",
+      "DTM Partners"
     ],
-    "description": "Connects neighbors with nourishing food across Northeast Georgia through partner pantries, mobile pantries, farmers markets, and help signing up for SNAP food benefits.",
+    "description": "Connects neighbors with nourishing food across Northeast Georgia through partner pantries, mobile pantries, farmers markets, and help signing up for SNAP food benefits. Downtown Ministries shops here to stock Downtown Academy and Our Daily Bread with good food.",
     "whatToBring": "",
     "warmNextStep": "Call 706-354-8191 and ask where the nearest food pantry or mobile pantry is this week.",
     "busRoute": "",
@@ -316,7 +317,7 @@
       "lng": -83.3993915,
       "source": "https://nominatim.openstreetmap.org/search?q=890+Newton+Bridge+Road,+Athens,+Georgia+30607&format=json"
     },
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-22",
     "verified": true
   },
   {
@@ -405,9 +406,9 @@
     "categories": [
       "Food"
     ],
-    "description": "A community kitchen run by Downtown Ministries since 1989, serving breakfast and lunch on weekdays at First Baptist Church on Pulaski Street. A safe, judgment-free place for a healthy meal, takeaway lunch boxes are available for anyone, just show up.",
+    "description": "A community kitchen run by Downtown Ministries since 1989, serving meals at First Baptist Church on Pulaski Street. Breakfast is served Tuesday through Thursday 8-9am and lunch Monday through Friday 12-1pm, per Downtown Ministries. A safe, judgment-free place for a healthy meal, takeaway lunch boxes are available for anyone, just show up.",
     "whatToBring": "Nothing, just come as you are.",
-    "warmNextStep": "Show up at 355 Pulaski Street between 12:00 and 1:00 on a weekday and join the lunch line.",
+    "warmNextStep": "Show up at 355 Pulaski Street for lunch any weekday between 12:00 and 1:00 — or breakfast Tuesday through Thursday between 8:00 and 9:00 — and join the line.",
     "busRoute": "",
     "contact": {
       "phone": {
@@ -419,8 +420,8 @@
         "source": "https://athenshc.org/resources-navigator/blog-post-title-four-s88y2-jh2rl-7jwwa-zcbf3"
       },
       "hours": {
-        "value": "Mon: 8:00am-9:00am, 12:00pm-1:00pm\nTues: 8:00am-9:00am, 12:00pm-1:00pm\nWed: 8:00am-9:00am, 12:00pm-1:00pm\nThurs: 8:00am-9:00am, 12:00pm-1:00pm\nFri: 8:00am-9:00am, 12:00pm-1:00pm",
-        "source": "https://athenshc.org/resources-navigator/blog-post-title-four-s88y2-jh2rl-7jwwa-zcbf3"
+        "value": "",
+        "source": ""
       },
       "website": {
         "value": "https://downtownministries.org/our-daily-bread/",
@@ -436,7 +437,7 @@
       "lng": -83.3813822,
       "source": "https://nominatim.openstreetmap.org/search?q=355+Pulaski+Street,+Athens,+Georgia+30601&format=json"
     },
-    "lastVerified": "2026-07-07",
+    "lastVerified": "2026-07-22",
     "verified": true
   },
   {
@@ -3019,6 +3020,85 @@
       "lat": 33.9626096,
       "lng": -83.390126,
       "source": "https://nominatim.openstreetmap.org/search?q=740+Prince+Avenue,+Athens,+Georgia+30606&format=json"
+    },
+    "lastVerified": "2026-07-22",
+    "verified": true
+  },
+  {
+    "id": "innovative-start-organization",
+    "name": "Innovative Start Organization (ISO)",
+    "categories": [
+      "DTM Partners"
+    ],
+    "description": "A nonprofit that teaches financial literacy to kids and young adults through hands-on, real-life learning programs. ISO partners with Downtown Ministries to bring money-skills education to Downtown Academy students and their families. This is an organizational partner, not a walk-in service.",
+    "whatToBring": "",
+    "warmNextStep": "If your student could use help learning about money, call Downtown Ministries at 706-559-4426 and ask about Downtown Academy programs.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "(480) 253-9644",
+        "source": "https://www.innovativestart.org/contact-us"
+      },
+      "address": {
+        "value": "",
+        "source": ""
+      },
+      "hours": {
+        "value": "",
+        "source": ""
+      },
+      "website": {
+        "value": "https://www.innovativestart.org",
+        "source": "https://www.innovativestart.org"
+      }
+    },
+    "servesPopulation": [
+      "Downtown Academy students and families (through the DTM partnership)"
+    ],
+    "geo": {
+      "lat": null,
+      "lng": null,
+      "source": ""
+    },
+    "lastVerified": "2026-07-22",
+    "verified": true
+  },
+  {
+    "id": "uga-school-of-public-and-international-affairs",
+    "name": "UGA School of Public and International Affairs (SPIA)",
+    "categories": [
+      "DTM Partners"
+    ],
+    "description": "The University of Georgia's school for public service, and Downtown Ministries' main pipeline for interns — SPIA funds Experiential Learning positions that put caring UGA students to work alongside DTM kids and families. This is an organizational partner, not a walk-in service.",
+    "whatToBring": "",
+    "warmNextStep": "UGA students who want to intern with Downtown Ministries can call DTM at 706-559-4426 and ask about SPIA internships.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "706-542-4114 (Academic Advisement)",
+        "source": "https://spia.uga.edu/"
+      },
+      "address": {
+        "value": "204 Candler Hall\nAthens, GA 30602",
+        "source": "https://spia.uga.edu/"
+      },
+      "hours": {
+        "value": "",
+        "source": ""
+      },
+      "website": {
+        "value": "https://spia.uga.edu/",
+        "source": "https://spia.uga.edu/"
+      }
+    },
+    "servesPopulation": [
+      "UGA students seeking public-service experience",
+      "Downtown Ministries programs, through interns"
+    ],
+    "geo": {
+      "lat": 33.95608,
+      "lng": -83.3761439,
+      "source": "https://nominatim.openstreetmap.org/search?q=Candler+Hall,+Athens,+GA&format=json"
     },
     "lastVerified": "2026-07-22",
     "verified": true

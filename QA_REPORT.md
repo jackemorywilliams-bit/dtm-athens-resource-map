@@ -222,7 +222,7 @@ demotions. Gate closed; data shipped.
 
 ## Source directory (auto-generated)
 
-All 76 entries with every populated value's exact source. 76 of 76 entries (100%) have additionally had their sourced fields fetched and checked against the cited pages by the report-only QA agent (rounds in the right column; details in the session logs above). Every entry, sampled or not, passes verify.py's structural wall on every build.
+All 78 entries with every populated value's exact source. 78 of 78 entries (100%) have additionally had their sourced fields fetched and checked against the cited pages by the report-only QA agent (rounds in the right column; details in the session logs above). Every entry, sampled or not, passes verify.py's structural wall on every build.
 
 | Entry | Field | Cited source | Last verified | QA rounds |
 |---|---|---|---|---|
@@ -412,7 +412,7 @@ All 76 entries with every populated value's exact source. 76 of 76 entries (100%
 |  | hours | [https://www.familypromiseathens.org/contact](https://www.familypromiseathens.org/contact) |  |  |
 |  | website | [https://www.familypromiseathens.org/](https://www.familypromiseathens.org/) |  |  |
 |  | geo | [https://nominatim.openstreetmap.org/search?q=205+Bray+Street,+Athens,+Georgia+30601&format=json](https://nominatim.openstreetmap.org/search?q=205+Bray+Street,+Athens,+Georgia+30601&format=json) |  |  |
-| **Food Bank of Northeast Georgia** (`food-bank-of-northeast-georgia`) | phone | [https://foodbanknega.org/](https://foodbanknega.org/) | 2026-07-07 | S3-R2 2026-07-07 |
+| **Food Bank of Northeast Georgia** (`food-bank-of-northeast-georgia`) | phone | [https://foodbanknega.org/](https://foodbanknega.org/) | 2026-07-22 | S3-R2 2026-07-07; S6-partners 2026-07-22 |
 |  | address | [https://foodbanknega.org/](https://foodbanknega.org/) |  |  |
 |  | website | [https://foodbanknega.org/](https://foodbanknega.org/) |  |  |
 |  | geo | [https://nominatim.openstreetmap.org/search?q=890+Newton+Bridge+Road,+Athens,+Georgia+30607&format=json](https://nominatim.openstreetmap.org/search?q=890+Newton+Bridge+Road,+Athens,+Georgia+30607&format=json) |  |  |
@@ -447,6 +447,8 @@ All 76 entries with every populated value's exact source. 76 of 76 entries (100%
 |  | hours | [https://hopehaven.net/contact-us/](https://hopehaven.net/contact-us/) |  |  |
 |  | website | [https://hopehaven.net/](https://hopehaven.net/) |  |  |
 |  | geo | [https://nominatim.openstreetmap.org/search?q=795+Newton+Bridge+Road%2C+Athens%2C+Georgia+30607&format=json](https://nominatim.openstreetmap.org/search?q=795+Newton+Bridge+Road%2C+Athens%2C+Georgia+30607&format=json) |  |  |
+| **Innovative Start Organization (ISO)** (`innovative-start-organization`) | phone | [https://www.innovativestart.org/contact-us](https://www.innovativestart.org/contact-us) | 2026-07-22 | S6-partners 2026-07-22 |
+|  | website | [https://www.innovativestart.org](https://www.innovativestart.org) |  |  |
 | **Live Forward** (`live-forward`) | phone | [https://liveforward.org/](https://liveforward.org/) | 2026-07-22 | S5-sweepB 2026-07-22; S5-retest 2026-07-22 |
 |  | address | [https://liveforward.org/](https://liveforward.org/) |  |  |
 |  | website | [https://liveforward.org/](https://liveforward.org/) |  |  |
@@ -480,9 +482,8 @@ All 76 entries with every populated value's exact source. 76 of 76 entries (100%
 |  | hours | [https://www.oconeecountyga.gov/1234/Senior-Center](https://www.oconeecountyga.gov/1234/Senior-Center) |  |  |
 |  | website | [https://www.oconeecountyga.gov/1234/Senior-Center](https://www.oconeecountyga.gov/1234/Senior-Center) |  |  |
 |  | geo | [https://nominatim.openstreetmap.org/search?q=Hog+Mountain+Road,+Oconee+County,+Georgia&format=json (street-level match)](https://nominatim.openstreetmap.org/search?q=Hog+Mountain+Road,+Oconee+County,+Georgia&format=json (street-level match)) |  |  |
-| **Our Daily Bread Community Kitchen** (`our-daily-bread-community-kitchen`) | phone | [https://athenshc.org/resources-navigator/blog-post-title-four-s88y2-jh2rl-7jwwa-zcbf3](https://athenshc.org/resources-navigator/blog-post-title-four-s88y2-jh2rl-7jwwa-zcbf3) | 2026-07-07 | S2-R1 2026-07-07; S2-R2 2026-07-07; S3-R2 2026-07-07 |
+| **Our Daily Bread Community Kitchen** (`our-daily-bread-community-kitchen`) | phone | [https://athenshc.org/resources-navigator/blog-post-title-four-s88y2-jh2rl-7jwwa-zcbf3](https://athenshc.org/resources-navigator/blog-post-title-four-s88y2-jh2rl-7jwwa-zcbf3) | 2026-07-22 | S2-R1 2026-07-07; S2-R2 2026-07-07; S3-R2 2026-07-07; S6-partners 2026-07-22 |
 |  | address | [https://athenshc.org/resources-navigator/blog-post-title-four-s88y2-jh2rl-7jwwa-zcbf3](https://athenshc.org/resources-navigator/blog-post-title-four-s88y2-jh2rl-7jwwa-zcbf3) |  |  |
-|  | hours | [https://athenshc.org/resources-navigator/blog-post-title-four-s88y2-jh2rl-7jwwa-zcbf3](https://athenshc.org/resources-navigator/blog-post-title-four-s88y2-jh2rl-7jwwa-zcbf3) |  |  |
 |  | website | [https://downtownministries.org/our-daily-bread/](https://downtownministries.org/our-daily-bread/) |  |  |
 |  | geo | [https://nominatim.openstreetmap.org/search?q=355+Pulaski+Street,+Athens,+Georgia+30601&format=json](https://nominatim.openstreetmap.org/search?q=355+Pulaski+Street,+Athens,+Georgia+30601&format=json) |  |  |
 | **People Living in Recovery** (`people-living-in-recovery`) | phone | [https://www.peoplelivinginrecovery.com/contact-us](https://www.peoplelivinginrecovery.com/contact-us) | 2026-07-22 | S5-sweepB 2026-07-22; S5-retest 2026-07-22 |
@@ -535,6 +536,10 @@ All 76 entries with every populated value's exact source. 76 of 76 entries (100%
 |  | hours | [https://extension.uga.edu/county-offices/oconee.html](https://extension.uga.edu/county-offices/oconee.html) |  |  |
 |  | website | [https://extension.uga.edu/county-offices/oconee.html](https://extension.uga.edu/county-offices/oconee.html) |  |  |
 |  | geo | [https://nominatim.openstreetmap.org/search?q=1420+Experiment+Station+Road,+Watkinsville,+Georgia+30677&format=json (street-level match)](https://nominatim.openstreetmap.org/search?q=1420+Experiment+Station+Road,+Watkinsville,+Georgia+30677&format=json (street-level match)) |  |  |
+| **UGA School of Public and International Affairs (SPIA)** (`uga-school-of-public-and-international-affairs`) | phone | [https://spia.uga.edu/](https://spia.uga.edu/) | 2026-07-22 | S6-partners 2026-07-22 |
+|  | address | [https://spia.uga.edu/](https://spia.uga.edu/) |  |  |
+|  | website | [https://spia.uga.edu/](https://spia.uga.edu/) |  |  |
+|  | geo | [https://nominatim.openstreetmap.org/search?q=Candler+Hall,+Athens,+GA&format=json](https://nominatim.openstreetmap.org/search?q=Candler+Hall,+Athens,+GA&format=json) |  |  |
 | **WorkSource Northeast Georgia** (`worksource-northeast-georgia`) | phone | [https://negrc.org/workforce-development/](https://negrc.org/workforce-development/) | 2026-07-08 | S4-R1 2026-07-08 |
 |  | address | [https://negrc.org/workforce-development/](https://negrc.org/workforce-development/) |  |  |
 |  | website | [https://negrc.org/workforce-development/](https://negrc.org/workforce-development/) |  |  |

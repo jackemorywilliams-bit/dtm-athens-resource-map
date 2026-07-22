@@ -4,8 +4,11 @@ A warm, welcoming, interactive map of verified community resources in
 Athens-Clarke County, Georgia — built for Downtown Ministries (DTM), for someone
 who needs help today, probably on a phone, possibly in a hard moment.
 
-**Live page:** `docs/index.html` (GitHub Pages, once enabled — see below).
-**Status: BUILD COMPLETE — AWAITING HUMAN VERIFICATION BEFORE DEPLOY.**
+**Live page:** https://jackemorywilliams-bit.github.io/dtm-athens-resource-map/
+**Status: LIVE — repository contents reviewed and verified by DTM (Emory Williams, 2026-07-22).**
+Every entry's sourced fields have been machine-checked against their cited pages
+(100% ground-truth coverage; see `QA_REPORT.md`); items still needing a human
+phone call are tracked in `PROGRESS.md` → "Needs human call-down".
 
 ## Architecture
 

@@ -33,6 +33,10 @@ APPROVED_CATEGORIES = {
     "Legal Aid",
     "Churches & Volunteer Groups",
     "Youth & Family",
+    # Added 2026-07-22 by human direction: organizational partners of DTM,
+    # shown as an affiliation tag alongside (never instead of) service categories
+    # where the org also provides a direct service.
+    "DTM Partners",
 }
 
 # Service area: Athens-Clarke County + Oconee County, GA (union of the two
