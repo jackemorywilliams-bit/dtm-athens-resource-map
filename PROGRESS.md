@@ -109,6 +109,30 @@
       fetched and checked against their cited pages. qa_history.json records
       all 11 rounds; QA_REPORT.md directory regenerated (61/61 sampled).
 
+## 2026-07-22 — SESSION 6: council directory sweep (ACC-Gov + UGA OSL)
+
+- [x] Council convened: two report-only scouts swept ACC-Gov's community resources
+      pages (3 pages; 1 more was a 404) and UGA Office of Service-Learning's food
+      database. Key finding: the UGA GivePulse database is LOGIN-WALLED (and
+      client-rendered even in 2021 archives) — it can never serve as a citation;
+      inventoried via archives + announcement articles instead. ACC-Gov's own pages
+      contain provable errors (same phone listed for two orgs; athenshc.org
+      mislabeled) — used for discovery only, never as preferred sources.
+- [x] Orchestrator arbitration: 13 approved + 5 tentative candidates from 18
+      surfaced; rejected 211 (no category fit), Athens Homeless Coalition
+      (coordinator, not direct service), diaper bank (no direct distribution),
+      a for-profit bank, and all GivePulse-only items.
+- [x] data-researcher: +15 fully-sourced entries (76 total, all verified),
+      including the two distinct Advantage BHS sites ACC lists (walk-in Homeless
+      Day Service Center; 24/7 Pavilion crisis center). Skipped as unsourceable:
+      FARM Rx (program pages 404 — appears discontinued/rebranded), Athens
+      Community Fridges (no first-party page), Terrapin mobile pantry (no live
+      standing schedule). Category deviations grounded in page text (EADC:
+      Food not Housing; HSCI: dropped Jobs) — flagged and accepted.
+- [x] QA gate: full check of all 15 new entries (45 fields) — 38 PASS / 7 FAIL,
+      all the known flattened-line-break class; batch repair + canonical-URL
+      moves; re-test 25/25 PASS. Ground-truth coverage remains 100% (76/76).
+
 ## Needs human call-down
 
 - Phone-verify the dataset before wider promotion (all 61 entries carry web-sourced
@@ -121,3 +145,11 @@
   confirm the number and asking them to fix their site.
 - Optional: verify.py bbox is the ACC+Oconee union rectangle; corners include slivers
   of neighboring counties.
+- HER Health (herhealthga.com): no page states free/low-cost pricing; confirm cost
+  profile by phone before relying on its Healthcare (free/low-cost) tag.
+- Advantage Homeless Day Service Center: the org's own pages state conflicting hours
+  (10:00-4:30 on /athens-clarke-county/ vs 8:30-5:00 on /homeless-services/) — we
+  cite the former; confirm by phone.
+- ACC-Gov /11710 page errors worth reporting to ACC: Athens Land Trust listed with
+  the Wellness Clinic's phone; athenshc.org mislabeled "Athens Health Center";
+  several stale org phones/addresses vs the orgs' own sites.

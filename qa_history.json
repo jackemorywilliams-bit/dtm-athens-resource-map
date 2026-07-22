@@ -140,6 +140,44 @@
         "hope-haven-of-northeast-georgia",
         "live-forward"
       ]
+    },
+    {
+      "label": "S6-newA 2026-07-22",
+      "ids": [
+        "chess-and-community",
+        "divas-who-win-freedom-center",
+        "east-athens-development-corporation",
+        "family-connection-cis-of-athens",
+        "hands-on-historic-athens",
+        "ywco-athens",
+        "acc-high-school-completion-initiative",
+        "advantage-homeless-day-service-center"
+      ]
+    },
+    {
+      "label": "S6-newB 2026-07-22",
+      "ids": [
+        "advantage-pavilion-for-behavioral-health",
+        "city-of-refuge-athens",
+        "teen-matters-athens",
+        "athens-farmers-market-double-snap",
+        "east-georgia-cancer-coalition",
+        "georgia-conflict-center",
+        "her-health-athens"
+      ]
+    },
+    {
+      "label": "S6-retest 2026-07-22",
+      "ids": [
+        "chess-and-community",
+        "east-athens-development-corporation",
+        "ywco-athens",
+        "acc-high-school-completion-initiative",
+        "teen-matters-athens",
+        "her-health-athens",
+        "city-of-refuge-athens",
+        "athens-farmers-market-double-snap"
+      ]
     }
   ]
 }

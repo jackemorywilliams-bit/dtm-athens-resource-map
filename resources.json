@@ -2426,5 +2426,601 @@
     },
     "lastVerified": "2026-07-08",
     "verified": true
+  },
+  {
+    "id": "chess-and-community",
+    "name": "Chess and Community",
+    "categories": [
+      "Youth & Family"
+    ],
+    "description": "A youth organization that uses chess, robotics, and debate to help young people in Athens build thinking skills, confidence, and community. Healthy families and community are the goal — chess is just the starting point.",
+    "whatToBring": "",
+    "warmNextStep": "Call (706) 540-3299 or email info@chessandcommunity.org and ask how your young person can get involved.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "(706) 540-3299",
+        "source": "https://www.chessandcommunity.org/contact"
+      },
+      "address": {
+        "value": "465 Huntington Rd | Suite 150\nAthens, GA 30606",
+        "source": "https://www.chessandcommunity.org/contact"
+      },
+      "hours": {
+        "value": "",
+        "source": ""
+      },
+      "website": {
+        "value": "https://www.chessandcommunity.org/",
+        "source": "https://www.chessandcommunity.org/"
+      }
+    },
+    "servesPopulation": [
+      "Youth and their families"
+    ],
+    "geo": {
+      "lat": 33.9408625,
+      "lng": -83.4649048,
+      "source": "https://nominatim.openstreetmap.org/search?q=465+Huntington+Road,+Athens,+Georgia+30606&format=json (street-level match)"
+    },
+    "lastVerified": "2026-07-22",
+    "verified": true
+  },
+  {
+    "id": "divas-who-win-freedom-center",
+    "name": "DIVAS Who Win Freedom Center",
+    "categories": [
+      "Addiction Recovery",
+      "Counseling & Mental Health"
+    ],
+    "description": "A center for women working to overcome sex trafficking, prostitution, and addiction. They walk alongside survivors with support and community as you move toward wellness, at your own pace and without judgment.",
+    "whatToBring": "Nothing. You can reach out just to talk about what support might look like.",
+    "warmNextStep": "Call 706.850.5945 and tell them a little about your situation — they will help you figure out a next step.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "706.850.5945",
+        "source": "https://www.divaswhowin.org/"
+      },
+      "address": {
+        "value": "645 Hawthorne Avenue, Athens, GA 30606",
+        "source": "https://www.divaswhowin.org/"
+      },
+      "hours": {
+        "value": "",
+        "source": ""
+      },
+      "website": {
+        "value": "https://www.divaswhowin.org/",
+        "source": "https://www.divaswhowin.org/"
+      }
+    },
+    "servesPopulation": [
+      "Women recovering from sex trafficking, prostitution, and addiction"
+    ],
+    "geo": {
+      "lat": 33.9605629,
+      "lng": -83.4133206,
+      "source": "https://nominatim.openstreetmap.org/search?q=645+Hawthorne+Avenue,+Athens,+Georgia&format=json"
+    },
+    "lastVerified": "2026-07-22",
+    "verified": true
+  },
+  {
+    "id": "east-athens-development-corporation",
+    "name": "East Athens Development Corporation",
+    "categories": [
+      "Jobs & Workforce",
+      "Youth & Family",
+      "Food"
+    ],
+    "description": "A neighborhood organization in East Athens offering job coaching and placement to help you build skills and find and keep work, a drive-thru food distribution that gives out more than 100,000 pounds of food per month, free tax help (VITA), and youth programs including a literacy program, tennis club, and summer enrichment.",
+    "whatToBring": "",
+    "warmNextStep": "Call 706-208-0048 or stop by 410 McKinley Drive on a weekday between 10 and 4 and ask about the program you're interested in.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "706-208-0048",
+        "source": "https://www.eadcinc.org/contact"
+      },
+      "address": {
+        "value": "410 McKinley Drive\nAthens, GA 30601",
+        "source": "https://www.eadcinc.org/contact"
+      },
+      "hours": {
+        "value": "Monday-Thursday\n10:00 a.m. - 4:00 p.m.",
+        "source": "https://www.eadcinc.org/contact"
+      },
+      "website": {
+        "value": "https://www.eadcinc.org/",
+        "source": "https://www.eadcinc.org/"
+      }
+    },
+    "servesPopulation": [
+      "East Athens residents",
+      "Job seekers",
+      "Youth and families"
+    ],
+    "geo": {
+      "lat": 33.9592943,
+      "lng": -83.3555044,
+      "source": "https://nominatim.openstreetmap.org/search?q=410+McKinley+Drive,+Athens,+Georgia+30601&format=json"
+    },
+    "lastVerified": "2026-07-22",
+    "verified": true
+  },
+  {
+    "id": "family-connection-cis-of-athens",
+    "name": "Family Connection-Communities in Schools of Athens",
+    "categories": [
+      "Youth & Family"
+    ],
+    "description": "Connects students, families, and residents with the relationships and resources they need to thrive — supporting students with coordinated services in schools and linking families to help across the community.",
+    "whatToBring": "Nothing. Just be ready to share what kind of support your student or family needs.",
+    "warmNextStep": "Call (706) 369-9732 and tell them what's going on with your student or family — they know the local resources and can point you to the right one.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "(706) 369-9732",
+        "source": "https://www.fc-cisofathens.org/contact"
+      },
+      "address": {
+        "value": "",
+        "source": ""
+      },
+      "hours": {
+        "value": "",
+        "source": ""
+      },
+      "website": {
+        "value": "https://www.fc-cisofathens.org/",
+        "source": "https://www.fc-cisofathens.org/"
+      }
+    },
+    "servesPopulation": [
+      "Students and families in Athens"
+    ],
+    "geo": {
+      "lat": null,
+      "lng": null,
+      "source": ""
+    },
+    "lastVerified": "2026-07-22",
+    "verified": true
+  },
+  {
+    "id": "hands-on-historic-athens",
+    "name": "Hands On Historic Athens",
+    "categories": [
+      "Housing & Shelter"
+    ],
+    "description": "A Historic Athens program that helps low-income homeowners with home maintenance projects in homes that are 50 years or older — things like floor and ceiling repair, minor plumbing, roof and gutter repair, painting, yard clean-up, accessibility modifications, and home weatherization, at no charge to qualified homeowners.",
+    "whatToBring": "",
+    "warmNextStep": "Call 706-389-8431 or email outreach@historicathens.com and ask to start a project inquiry — you can also request a paper application.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "706-389-8431",
+        "source": "https://www.historicathens.com/hoha"
+      },
+      "address": {
+        "value": "",
+        "source": ""
+      },
+      "hours": {
+        "value": "",
+        "source": ""
+      },
+      "website": {
+        "value": "https://www.historicathens.com/hoha",
+        "source": "https://www.historicathens.com/hoha"
+      }
+    },
+    "servesPopulation": [
+      "Low-income homeowners in homes 50 years or older"
+    ],
+    "geo": {
+      "lat": null,
+      "lng": null,
+      "source": ""
+    },
+    "lastVerified": "2026-07-22",
+    "verified": true
+  },
+  {
+    "id": "ywco-athens",
+    "name": "YWCO Athens",
+    "categories": [
+      "Youth & Family"
+    ],
+    "description": "A community center on the east side with youth programs including after-school care, school break camps, Girls Club, summer day camp, and learn-to-swim classes.",
+    "whatToBring": "",
+    "warmNextStep": "Call (706) 354-7880 and ask about signing your child up for after-school care or summer camp.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "(706) 354-7880",
+        "source": "https://www.ywco.org/contact"
+      },
+      "address": {
+        "value": "562 Research Drive,\nAthens, GA, 30605,\nUnited States",
+        "source": "https://www.ywco.org/contact"
+      },
+      "hours": {
+        "value": "",
+        "source": ""
+      },
+      "website": {
+        "value": "https://www.ywco.org/",
+        "source": "https://www.ywco.org/"
+      }
+    },
+    "servesPopulation": [
+      "Children and youth",
+      "Families"
+    ],
+    "geo": {
+      "lat": 33.9280027,
+      "lng": -83.3443731,
+      "source": "https://nominatim.openstreetmap.org/search?q=562+Research+Drive,+Athens,+Georgia+30605&format=json"
+    },
+    "lastVerified": "2026-07-22",
+    "verified": true
+  },
+  {
+    "id": "acc-high-school-completion-initiative",
+    "name": "Athens-Clarke County High School Completion Initiative",
+    "categories": [
+      "GED & Adult Education",
+      "Youth & Family"
+    ],
+    "description": "Helps young people in Athens finish high school, and runs MEU (Music, Education, Uplift) Radio Athens and a summer camp to entertain, inform, and motivate local youth.",
+    "whatToBring": "",
+    "warmNextStep": "Call 706.850-2626 or email educationmatters1470@gmail.com and say you want help finishing high school.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "706.850-2626",
+        "source": "https://www.acchsci.org/"
+      },
+      "address": {
+        "value": "855 Sunset Drive, Ste 12\nAthens GA 30606",
+        "source": "https://www.acchsci.org/"
+      },
+      "hours": {
+        "value": "",
+        "source": ""
+      },
+      "website": {
+        "value": "https://www.acchsci.org/",
+        "source": "https://www.acchsci.org/"
+      }
+    },
+    "servesPopulation": [
+      "Youth in Athens-Clarke County"
+    ],
+    "geo": {
+      "lat": 33.9684101,
+      "lng": -83.4098493,
+      "source": "https://nominatim.openstreetmap.org/search?q=855+Sunset+Drive,+Athens,+Georgia+30606&format=json"
+    },
+    "lastVerified": "2026-07-22",
+    "verified": true
+  },
+  {
+    "id": "advantage-homeless-day-service-center",
+    "name": "Advantage Homeless Day Service Center",
+    "categories": [
+      "Housing & Shelter"
+    ],
+    "description": "A daytime center at the Athens Resource Center on North Avenue for anyone experiencing homelessness. You can receive mail and messages, use the telephones, do laundry, take a shower, and meet with a case manager who can connect you to housing supports — including possible help with rent or a security deposit.",
+    "whatToBring": "Just yourself — it's open to the public on weekdays.",
+    "warmNextStep": "Walk in Monday through Friday between 10:00 and 4:30 and ask to speak with someone about what you need, or call 706-354-1154 ext. 1700 first.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "706-354-1154 ext. 1700",
+        "source": "https://advantagebhs.org/homeless-services/"
+      },
+      "address": {
+        "value": "240 North Ave., Athens, GA 30601",
+        "source": "https://advantagebhs.org/homeless-services/"
+      },
+      "hours": {
+        "value": "Monday thru Friday, 10:00 a.m. to 4:30 p.m.",
+        "source": "https://advantagebhs.org/athens-clarke-county/"
+      },
+      "website": {
+        "value": "https://advantagebhs.org/homeless-services/",
+        "source": "https://advantagebhs.org/homeless-services/"
+      }
+    },
+    "servesPopulation": [
+      "People experiencing homelessness"
+    ],
+    "geo": {
+      "lat": 33.9719429,
+      "lng": -83.3660351,
+      "source": "https://nominatim.openstreetmap.org/search?q=240+North+Avenue,+Athens,+Georgia+30601&format=json"
+    },
+    "lastVerified": "2026-07-22",
+    "verified": true
+  },
+  {
+    "id": "advantage-pavilion-for-behavioral-health",
+    "name": "Advantage Pavilion for Behavioral Health",
+    "categories": [
+      "Counseling & Mental Health",
+      "Addiction Recovery"
+    ],
+    "description": "Advantage's behavioral health center on Mitchell Bridge Road, home to a Behavioral Health Crisis Center that operates 24 hours a day. It has a Crisis Walk-In Center for crisis assessment, a Temporary Observation Unit where adults in crisis may stay for up to 23 hours, and a 30-bed Crisis Stabilization Unit for short-term residential stabilization for psychiatric and substance use crises. Outpatient mental health and addiction services are also based here.",
+    "whatToBring": "Nothing is required — people are accepted on a voluntary basis, and you can come in a crisis without an appointment.",
+    "warmNextStep": "If you're in crisis, call (855) 333-9544 or walk in any time — the crisis programs run 24 hours a day.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "(855) 333-9544",
+        "source": "https://advantagebhs.org/athens-clarke-county/"
+      },
+      "address": {
+        "value": "240 Mitchell Bridge Road, Athens, GA 30606",
+        "source": "https://advantagebhs.org/athens-clarke-county/"
+      },
+      "hours": {
+        "value": "The programs operate 24 hours a day",
+        "source": "https://advantagebhs.org/crisis-stabilization/"
+      },
+      "website": {
+        "value": "https://advantagebhs.org/athens-clarke-county/",
+        "source": "https://advantagebhs.org/athens-clarke-county/"
+      }
+    },
+    "servesPopulation": [
+      "Adults in mental health or substance use crisis"
+    ],
+    "geo": {
+      "lat": 33.961657,
+      "lng": -83.432823,
+      "source": "https://nominatim.openstreetmap.org/search?q=240+Mitchell+Bridge+Road,+Athens,+Georgia+30606&format=json"
+    },
+    "lastVerified": "2026-07-22",
+    "verified": true
+  },
+  {
+    "id": "city-of-refuge-athens",
+    "name": "City of Refuge Athens",
+    "categories": [
+      "Food"
+    ],
+    "description": "A faith-based group that gives out free food at 565 Tallassee Road, usually on Wednesday mornings from 10 AM to 12 PM, with some afternoon dates too. They post each month's distribution schedule on their website.",
+    "whatToBring": "",
+    "warmNextStep": "Check this month's dates on their website or call 706-207-2874, then come to 565 Tallassee Rd during a distribution — no appointment needed.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "706-207-2874",
+        "source": "https://www.cityofrefugeathens.org/"
+      },
+      "address": {
+        "value": "565 Tallassee Rd, Athens, GA 30606",
+        "source": "https://www.cityofrefugeathens.org/"
+      },
+      "hours": {
+        "value": "",
+        "source": ""
+      },
+      "website": {
+        "value": "https://www.cityofrefugeathens.org/",
+        "source": "https://www.cityofrefugeathens.org/"
+      }
+    },
+    "servesPopulation": [
+      "Anyone needing food"
+    ],
+    "geo": {
+      "lat": 33.9697666,
+      "lng": -83.4458475,
+      "source": "https://nominatim.openstreetmap.org/search?q=565+Tallassee+Road,+Athens,+Georgia+30606&format=json"
+    },
+    "lastVerified": "2026-07-22",
+    "verified": true
+  },
+  {
+    "id": "teen-matters-athens",
+    "name": "Teen Matters Athens",
+    "categories": [
+      "Healthcare (free/low-cost)",
+      "Youth & Family"
+    ],
+    "description": "Free and confidential health services for young people ages 11-19, with two Athens clinics: the Cedar clinic at 1275 Cedar Shoals Dr (Monday and Tuesday afternoons) and the Central clinic at 168 S. Rocksprings Ct (Tuesday through Thursday afternoons, 706.369.5670). You can also text questions to 706.410.8558.",
+    "whatToBring": "Visits are confidential.",
+    "warmNextStep": "Call 706.227.7198 for the Cedar clinic or 706.369.5670 for the Central clinic, or just text 706.410.8558 with your question.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "706.227.7198",
+        "source": "https://teenmatters.com/clinic-location-and-services/tm-athens/"
+      },
+      "address": {
+        "value": "1275 Cedar Shoals Dr\nAthens, GA 30605",
+        "source": "https://teenmatters.com/clinic-location-and-services/tm-athens/"
+      },
+      "hours": {
+        "value": "",
+        "source": ""
+      },
+      "website": {
+        "value": "https://teenmatters.com/clinic-location-and-services/tm-athens/",
+        "source": "https://teenmatters.com/clinic-location-and-services/tm-athens/"
+      }
+    },
+    "servesPopulation": [
+      "Young people ages 11-19"
+    ],
+    "geo": {
+      "lat": 33.9247586,
+      "lng": -83.3317811,
+      "source": "https://nominatim.openstreetmap.org/search?q=1275+Cedar+Shoals+Drive,+Athens,+Georgia+30605&format=json"
+    },
+    "lastVerified": "2026-07-22",
+    "verified": true
+  },
+  {
+    "id": "athens-farmers-market-double-snap",
+    "name": "Athens Farmers Market SNAP Doubling",
+    "categories": [
+      "Food"
+    ],
+    "description": "The Athens Farmers Market doubles your SNAP dollars: swipe your EBT card at the main market booth and you get twice that amount in wooden tokens to spend on fruits and vegetables — $10 becomes $20. The market runs seasonally: Saturdays at Bishop Park (705 Sunset Drive) 8am-12pm March through December (9am-1pm in January and February), and Wednesdays at Creature Comforts (271 W Hancock) 5pm-8pm March through November.",
+    "whatToBring": "Your EBT card.",
+    "warmNextStep": "Bring your EBT card to the main market booth — look for the red and white sign that says CREDIT DEBIT EBT HERE — and they'll swipe it and hand you double in tokens.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "",
+        "source": ""
+      },
+      "address": {
+        "value": "705 Sunset Drive, Athens",
+        "source": "https://athensfarmersmarket.net/"
+      },
+      "hours": {
+        "value": "",
+        "source": ""
+      },
+      "website": {
+        "value": "https://athensfarmersmarket.net/snap-doubling",
+        "source": "https://athensfarmersmarket.net/snap-doubling"
+      }
+    },
+    "servesPopulation": [
+      "SNAP/EBT cardholders"
+    ],
+    "geo": {
+      "lat": 33.9653587,
+      "lng": -83.4115605,
+      "source": "https://nominatim.openstreetmap.org/search?q=705+Sunset+Drive,+Athens,+Georgia+30606&format=json"
+    },
+    "lastVerified": "2026-07-22",
+    "verified": true
+  },
+  {
+    "id": "east-georgia-cancer-coalition",
+    "name": "East Georgia Cancer Coalition",
+    "categories": [
+      "Healthcare (free/low-cost)"
+    ],
+    "description": "An Athens-based nonprofit that provides cancer education, prevention information, screening services, and help accessing treatment centers and clinical trials across a 53-county East Georgia region. They have provided colorectal screening tests, mammograms, and breast screenings at no cost to patients, plus support groups and wellness services for survivors and patients.",
+    "whatToBring": "",
+    "warmNextStep": "Call 706-821-1949 and ask about free cancer screenings or support for patients and survivors.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "706-821-1949",
+        "source": "https://www.eastgeorgiacancercoalition.org/contact-us"
+      },
+      "address": {
+        "value": "315 Riverbend Road, Suite 3006 Athens, GA 30602",
+        "source": "https://www.eastgeorgiacancercoalition.org/contact-us"
+      },
+      "hours": {
+        "value": "",
+        "source": ""
+      },
+      "website": {
+        "value": "https://www.eastgeorgiacancercoalition.org/",
+        "source": "https://www.eastgeorgiacancercoalition.org/"
+      }
+    },
+    "servesPopulation": [
+      "Cancer patients, survivors, and families",
+      "People needing cancer screenings"
+    ],
+    "geo": {
+      "lat": 33.9272797,
+      "lng": -83.3670626,
+      "source": "https://nominatim.openstreetmap.org/search?q=315+Riverbend+Road,+Athens,+Georgia+30602&format=json"
+    },
+    "lastVerified": "2026-07-22",
+    "verified": true
+  },
+  {
+    "id": "georgia-conflict-center",
+    "name": "Georgia Conflict Center",
+    "categories": [
+      "Youth & Family"
+    ],
+    "description": "Serving the Athens community since 2010 with training and support in conflict transformation, restorative justice, and nonviolent communication — helping children, youth, and adults handle conflict in schools, workplaces, and the community as a chance to learn and grow.",
+    "whatToBring": "",
+    "warmNextStep": "Call (706) 206-7472 or email info@gaconflict.org and describe the conflict or situation you'd like help with.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "(706) 206-7472",
+        "source": "https://www.gaconflict.org/contact"
+      },
+      "address": {
+        "value": "",
+        "source": ""
+      },
+      "hours": {
+        "value": "",
+        "source": ""
+      },
+      "website": {
+        "value": "https://www.gaconflict.org/",
+        "source": "https://www.gaconflict.org/"
+      }
+    },
+    "servesPopulation": [
+      "Children, youth, and adults navigating conflict"
+    ],
+    "geo": {
+      "lat": null,
+      "lng": null,
+      "source": ""
+    },
+    "lastVerified": "2026-07-22",
+    "verified": true
+  },
+  {
+    "id": "her-health-athens",
+    "name": "HER Health",
+    "categories": [
+      "Healthcare (free/low-cost)",
+      "Youth & Family"
+    ],
+    "description": "A clinic on Prince Avenue focused on gynecology and sexual health for teens and young adult women in Athens and surrounding areas — menstrual care, contraceptive care, gynecology exams and pap smears, and sexual health care.",
+    "whatToBring": "",
+    "warmNextStep": "Call 706-623-8098 and ask to set up a visit — tell them it's your first time and they'll walk you through it.",
+    "busRoute": "",
+    "contact": {
+      "phone": {
+        "value": "706-623-8098",
+        "source": "https://www.herhealthga.com/"
+      },
+      "address": {
+        "value": "740 Prince Ave Unit 12A\nAthens, Georgia 30606",
+        "source": "https://www.herhealthga.com/"
+      },
+      "hours": {
+        "value": "Monday — Thursday 9:00am-5:00pm (Lunch 12-1p)\nFriday 9:00am-2:00pm",
+        "source": "https://www.herhealthga.com/"
+      },
+      "website": {
+        "value": "https://www.herhealthga.com/",
+        "source": "https://www.herhealthga.com/"
+      }
+    },
+    "servesPopulation": [
+      "Teens and young adult women"
+    ],
+    "geo": {
+      "lat": 33.9626096,
+      "lng": -83.390126,
+      "source": "https://nominatim.openstreetmap.org/search?q=740+Prince+Avenue,+Athens,+Georgia+30606&format=json"
+    },
+    "lastVerified": "2026-07-22",
+    "verified": true
   }
 ]
