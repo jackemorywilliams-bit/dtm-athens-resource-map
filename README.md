@@ -85,9 +85,10 @@ human has phone-verified the entries (see "Needs human call-down" in
 
 ## Embedding in the DTM website
 
-```html
-<iframe src="https://<org>.github.io/<repo>/" title="Athens Resource Map" style="width:100%;height:80vh;border:0;border-radius:12px;"></iframe>
-```
+See **[INTEGRATION.md](INTEGRATION.md)** — a 10-minute, no-plugin walkthrough
+written against DTM's actual WordPress/WPBakery site, including the iframe
+snippet (with the `allow="geolocation"` attribute "Near me" needs), menu
+setup, and the optional `resources.downtownministries.org` subdomain.
 
 ## Editing the data
 
