@@ -6,6 +6,19 @@
 <title>Athens Area Resource Map | Downtown Ministries</title>
 <meta name="description" content="A map of food, shelter, healthcare, and helping hands in Athens-Clarke County, Georgia, from Downtown Ministries.">
 
+<link rel="icon" href="brand/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="brand/favicon-32.png">
+
+<!-- Social meta. og:image/twitter:image must be ABSOLUTE URLs because crawlers
+     cannot resolve relative og URLs; meta tags never load at runtime, so the
+     file:// and iframe guarantees are unaffected. -->
+<meta property="og:title" content="Athens Area Resource Map | Downtown Ministries">
+<meta property="og:description" content="A map of food, shelter, healthcare, and helping hands in Athens-Clarke County, Georgia, from Downtown Ministries.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://jackemorywilliams-bit.github.io/dtm-athens-resource-map/brand/og-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://jackemorywilliams-bit.github.io/dtm-athens-resource-map/brand/og-card.png">
+
 <!-- Leaflet core (ARCH-1: CDN only; clustering below is a progressive enhancement) -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
       integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
@@ -71,7 +84,9 @@
     color: var(--accent);
   }
 
-  /* ---------- Brand header: family-of-ministries logo panel ---------- */
+  /* ---------- Brand header: family-of-ministries logo panel ----------
+     Logos are constrained to light --paper surfaces; the ODB black arch has
+     no inverse mark, do not place these on dark backgrounds. */
   header.brand {
     text-align: center;
     padding: 1.8rem 1rem 1.4rem;
@@ -114,7 +129,7 @@
   }
   /* DTA: red typographic lockup, self-contained asset */
   .lockup-dta img { max-height: 56px; }
-  /* DTM: parent lockup — slightly larger, anchors the lineup */
+  /* DTM: parent lockup, slightly larger, anchors the lineup */
   .lockup-dtm img { max-height: 64px; }
   .lockup-dtm .dtm-word {
     margin: .45rem 0 0;
@@ -133,7 +148,7 @@
     letter-spacing: .08em;
     text-transform: uppercase;
     line-height: 1.35;
-    color: #c8323e;
+    color: var(--dta-red);
     text-align: center;
   }
   @media (max-width: 640px) {
@@ -364,6 +379,16 @@
     background: var(--accent-soft);
   }
   .tag.pop { border-color: var(--rule-soft); color: var(--ink-soft); background: transparent; }
+  /* Quiet mark on DTM's own program entries (cards + popups), never partners. */
+  .program-badge {
+    display: flex;
+    align-items: center;
+    gap: .35rem;
+    font-size: .72rem;
+    color: var(--ink-soft);
+    margin: .15rem 0 .45rem;
+  }
+  .program-badge img { display: block; flex: 0 0 auto; }
   .badge-confirm {
     display: inline-block;
     font-size: .85rem;
@@ -573,7 +598,14 @@
     justify-content: space-between;
     gap: .6rem 1.5rem;
   }
-  .foot-left { margin: 0; font-weight: 700; }
+  .foot-left {
+    margin: 0;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: .45rem;
+  }
+  .foot-left img { display: block; flex: 0 0 auto; }
   .foot-mission {
     margin: 0;
     font-style: italic;
@@ -601,18 +633,23 @@
 <header class="brand">
   <div class="logo-panel">
     <div class="lockup lockup-odb">
-      <img src="brand/odb-logo.png" alt="Our Daily Bread">
+      <!-- 300x129 natural; width computed for the 52px CSS max-height (never above 300px wide) -->
+      <img src="brand/odb-logo.png" alt="Our Daily Bread" width="121" height="52" loading="eager">
       <p class="odb-sub">Downtown Ministries</p>
     </div>
     <div class="lockup lockup-dta">
-      <img src="brand/dta-logo.png" alt="Downtown Academy">
+      <!-- 320x109 natural; width computed for the 56px CSS max-height -->
+      <img src="brand/dta-logo.png" alt="Downtown Academy" width="164" height="56" loading="eager">
     </div>
     <div class="lockup lockup-dtm">
-      <img src="brand/dtm-bird.png" alt="Downtown Ministries">
+      <!-- 200x76 natural; width computed for the 64px CSS max-height -->
+      <img src="brand/dtm-bird.png" alt="Downtown Ministries" width="168" height="64" loading="eager">
       <p class="dtm-word">Downtown Ministries</p>
     </div>
+    <!-- placeholder mark: no official Emerging Leaders asset exists; replace when DTM provides one -->
     <div class="lockup lockup-el">
-      <img src="brand/dtm-bird.png" alt="Emerging Leaders Internship Program">
+      <!-- 200x76 natural; width computed for the 28px CSS max-height -->
+      <img src="brand/dtm-bird.png" alt="Emerging Leaders Internship Program" width="74" height="28" loading="eager">
       <p class="el-word">Emerging Leaders<br>Internship Program</p>
     </div>
   </div>
@@ -697,7 +734,7 @@
 </div>
 <footer class="site">
   <div class="foot-row">
-    <p class="foot-left">Downtown Ministries &middot; Athens, Georgia</p>
+    <p class="foot-left"><img src="brand/dtm-bird.png" alt="" width="58" height="22" loading="lazy">Downtown Ministries &middot; Athens, Georgia</p>
     <p class="foot-mission">We treat what is. We educate so what is, will not always be.</p>
     <p class="foot-tag eyebrow">Resource Map</p>
   </div>
@@ -729,7 +766,7 @@ const SERVICE_AREA = [[33.55, -83.85], [34.25, -82.95]];
 
 /* ---------- category color groups (validated palette; the per-group icon
    silhouette is the color-blind-safe secondary encoding). Each `icon` is a
-   24x24 SVG path drawn in currentColor — one shared template per group,
+   24x24 SVG path drawn in currentColor, one shared template per group,
    reused by map pins, key swatches, and card dots. ---------- */
 
 const GROUPS = [
@@ -775,6 +812,17 @@ function iconSvg(g) {
 
 // Decorative brand mark for DTM Partner pins (same path from / and /docs).
 const BIRD_IMG = '<img src="brand/dtm-bird.png" alt="" aria-hidden="true">';
+
+// DTM's own programs (derived from entry ids, no schema change): these two get
+// a quiet "A Downtown Ministries program" mark on cards and popups. Partner
+// entries are NOT badged; the DTM Partners category mark covers them.
+const DTM_PROGRAM_IDS = ["our-daily-bread-community-kitchen", "downtown-ministries"];
+function programBadge(r) {
+  if (DTM_PROGRAM_IDS.indexOf(r.id) === -1) return "";
+  // 200x76 natural bird at 16px tall = 42px wide (explicit dims, no shift).
+  return '<p class="program-badge"><img src="brand/dtm-bird.png" alt="" ' +
+    'width="42" height="16" loading="lazy">A Downtown Ministries program</p>';
+}
 function glyphHtml(g) {
   return g.bird ? BIRD_IMG : iconSvg(g);
 }
@@ -1054,6 +1102,8 @@ function cardHtml(r) {
     }).join("") +
     "</div>";
 
+  h += programBadge(r);
+
   if (r.verified === false) {
     h += '<span class="badge-confirm">Please call to confirm</span> ';
   }
@@ -1164,6 +1214,7 @@ function popupHtml(r) {
   const dirs = directionsUrl(r);
 
   let h = "<h3>" + esc(r.name) + "</h3>";
+  h += programBadge(r);
   if (r.verified === false) {
     h += '<span class="popup-confirm">Please call to confirm</span>';
   }
@@ -1309,7 +1360,7 @@ function updateMap(visible) {
 }
 
 // Un-searched state: every pin at full opacity so the breadth of help shows,
-// and no refit — the map keeps its calm Athens-wide view.
+// and no refit, the map keeps its calm Athens-wide view.
 function resetMap() {
   if (!mapReady) return;
   Object.keys(markersById).forEach(function (id) {
@@ -1355,7 +1406,7 @@ function onLocationFound(e) {
   const inArea = L.latLngBounds(SERVICE_AREA).contains(e.latlng);
   if (coarse || !inArea) {
     locateMsg.textContent =
-      "We could not pin you down nearby, so here is the Athens view — every place is on the map.";
+      "We could not pin you down nearby, so here is the Athens view. Every place is on the map.";
     if (hereMarker) { map.removeLayer(hereMarker); hereMarker = null; }
     map.setView(ATHENS_CENTER, HOME_ZOOM);
     return;
