@@ -71,40 +71,78 @@
     color: var(--accent);
   }
 
-  /* ---------- Brand header lockup ---------- */
+  /* ---------- Brand header: family-of-ministries logo panel ---------- */
   header.brand {
     text-align: center;
-    padding: 2rem 1rem 1.4rem;
+    padding: 1.8rem 1rem 1.4rem;
   }
-  header.brand img.bird {
+  .logo-panel {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    justify-items: center;
+    gap: 1.25rem 1rem;
+    max-width: 64rem;
+    margin: 0 auto;
+    padding: 0 .5rem 1.5rem;
+    border-bottom: 1px solid var(--rule-soft);
+    background: var(--paper);
+  }
+  .lockup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    max-width: 100%;
+  }
+  .lockup img {
     display: block;
-    margin: 0 auto .6rem;
-    height: 76px;
     width: auto;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
   }
-  .wordmark {
-    margin: 0;
+  /* ODB: arch mark + letterspaced ministry line (ODB lockup convention) */
+  .lockup-odb img { max-height: 52px; }
+  .lockup-odb .odb-sub {
+    margin: .4rem 0 0;
+    font-size: .55rem;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  /* DTA: red typographic lockup, self-contained asset */
+  .lockup-dta img { max-height: 56px; }
+  /* DTM: parent lockup — slightly larger, anchors the lineup */
+  .lockup-dtm img { max-height: 64px; }
+  .lockup-dtm .dtm-word {
+    margin: .45rem 0 0;
     font-weight: 700;
-    font-size: 1.05rem;
+    font-size: .95rem;
     letter-spacing: .12em;
     text-transform: uppercase;
     color: var(--ink);
   }
-  .hairline {
-    border: 0;
-    border-top: 1px solid var(--rule-soft);
-    width: 14rem;
-    max-width: 70%;
-    margin: .55rem auto;
-  }
-  .lineup {
-    margin: 0;
+  /* Emerging Leaders: typographic program lockup (no asset exists) */
+  .lockup-el img { max-height: 28px; }
+  .lockup-el .el-word {
+    margin: .35rem 0 0;
     font-weight: 700;
-    font-size: .85rem;
-    letter-spacing: .18em;
-    color: var(--ink);
+    font-size: .7rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    line-height: 1.35;
+    color: #c8323e;
+    text-align: center;
   }
-  .lineup .dta { color: var(--dta-red); }
+  @media (max-width: 640px) {
+    .logo-panel {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.4rem 1rem;
+    }
+    .lockup-odb .odb-sub { letter-spacing: .22em; }
+  }
   .brick-rule {
     height: 3px;
     background: var(--accent);
@@ -559,12 +597,25 @@
 <body>
 <a class="skip-link" href="#search">Skip to search</a>
 
-<!-- 1. Brand header lockup -->
+<!-- 1. Brand header: logo panel (ODB, DTA, DTM, Emerging Leaders) -->
 <header class="brand">
-  <img class="bird" src="brand/dtm-bird.png" alt="Downtown Ministries bird logo">
-  <p class="wordmark">Downtown Ministries</p>
-  <hr class="hairline">
-  <p class="lineup">DTM &middot; ODB &middot; <span class="dta">DTA</span></p>
+  <div class="logo-panel">
+    <div class="lockup lockup-odb">
+      <img src="brand/odb-logo.png" alt="Our Daily Bread">
+      <p class="odb-sub">Downtown Ministries</p>
+    </div>
+    <div class="lockup lockup-dta">
+      <img src="brand/dta-logo.png" alt="Downtown Academy">
+    </div>
+    <div class="lockup lockup-dtm">
+      <img src="brand/dtm-bird.png" alt="Downtown Ministries">
+      <p class="dtm-word">Downtown Ministries</p>
+    </div>
+    <div class="lockup lockup-el">
+      <img src="brand/dtm-bird.png" alt="Emerging Leaders Internship Program">
+      <p class="el-word">Emerging Leaders<br>Internship Program</p>
+    </div>
+  </div>
   <div class="brick-rule" role="presentation"></div>
   <h1>Athens Area Resource Map</h1>
   <p class="subtitle">Food, shelter, healthcare, and a place to begin in Athens-Clarke County.</p>
