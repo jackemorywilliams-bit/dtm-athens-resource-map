@@ -32,7 +32,7 @@ DOCS_BRAND = HERE / "docs" / "brand"
 
 RAW_BIRD = Path(os.environ.get("RAW_BIRD", "/Users/emorywilliams/Downloads/dtm_bird_logo.png"))
 RAW_ODB = Path(os.environ.get("RAW_ODB", "/Users/emorywilliams/Downloads/odb_logo.png"))
-RAW_DTA = Path(os.environ.get("RAW_DTA", "/Users/emorywilliams/Downloads/dta_logo.png"))
+RAW_DTA = Path(os.environ.get("RAW_DTA", "/Users/emorywilliams/Downloads/dta_eagle_logo.jpg"))
 
 INK = (28, 28, 28, 255)          # --ink
 ACCENT = (139, 58, 43, 255)      # --accent (brick)
@@ -95,22 +95,24 @@ def odb() -> None:
     out[:, :, 3] = alpha
     img = Image.fromarray(out)
     img = img.crop(img.getbbox())
-    img = img.crop((0, 0, img.width, int(img.height * 0.78)))  # drop baked subtitle band
+    # NOTE: no subtitle crop — the raw source is already trimmed below the arch;
+    # cropping further amputates the mark (2026-07-23 correction).
     img.thumbnail((300, 300), Image.LANCZOS)  # low-res source: 300px cap
     save(img, "odb-logo.png", quantize=64)
 
 
 def dta() -> None:
-    img = Image.open(RAW_DTA).convert("RGBA")
-    px = img.load()
-    for y in range(img.height):
-        for x in range(img.width):
-            r, g, b, a = px[x, y]
-            if r > 240 and g > 240 and b > 240:
-                px[x, y] = (255, 255, 255, 0)
+    # Real DTA eagle mark (source: DTA's own social avatar, JPEG on white).
+    # Color-preserving soft alpha: distance-from-white drives transparency,
+    # original red/black pixels keep their color.
+    arr = np.array(Image.open(RAW_DTA).convert("RGB")).astype(int)
+    dist = 255 - arr.min(axis=2)  # 0 for white, high for ink/red
+    alpha = np.clip(dist * 1.6, 0, 255).astype(np.uint8)
+    out = np.dstack([arr.astype(np.uint8), alpha])
+    img = Image.fromarray(out, "RGBA")
     img = img.crop(img.getbbox())
     img.thumbnail((320, 320), Image.LANCZOS)
-    save(img, "dta-logo.png", quantize=32)
+    save(img, "dta-logo.png", quantize=64)
 
 
 def el_placeholder() -> None:
